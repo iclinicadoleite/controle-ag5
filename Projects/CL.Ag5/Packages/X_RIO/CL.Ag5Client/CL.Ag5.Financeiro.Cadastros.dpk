@@ -1,0 +1,53 @@
+package CL.Ag5.Financeiro.Cadastros ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  Tc.VirtualTrees.Extender;
+
+contains
+  UfrmFIN_PlanoContas2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UfrmFIN_PlanoContas2.pas' {frmFIN_PlanoContas2},
+  UdtmFIN_PlanoContas2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UdtmFIN_PlanoContas2.pas' {dtmFIN_PlanoContas2: TDataModule},
+  UFin_PlanoContasRelatorio in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\Reports\UFin_PlanoContasRelatorio.pas' {FIN_PlanoContasRelatorio: TTcForm},
+  UfrmFIN_CentrosCusto in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UfrmFIN_CentrosCusto.pas' {frmFIN_CentrosCusto},
+  UdtmFIN_CentrosCusto in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UdtmFIN_CentrosCusto.pas' {dtmFIN_CentrosCusto: TDataModule},
+  UFin_CentroCustosRelatorio in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\Reports\UFin_CentroCustosRelatorio.pas' {Fin_CentroCustosReport: TTcForm},
+  UfrmFIN_Contas2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UfrmFIN_Contas2.pas' {frmFIN_Contas2},
+  UdtmFIN_Contas2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UdtmFIN_Contas2.pas' {dtmFIN_Contas2: TDataModule},
+  UfrmFIN_Bancos in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UfrmFIN_Bancos.pas' {frmFIN_Bancos},
+  UdtmFIN_Bancos in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UdtmFIN_Bancos.pas' {dtmFIN_Bancos: TDataModule},
+  UFin_MovimentacaoContasDialog in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\Reports\UFin_MovimentacaoContasDialog.pas' {FIN_MovimentacaoContasDialog: TTcForm},
+  UFin_MovimentacaoContasReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\Reports\UFin_MovimentacaoContasReport.pas' {FIN_MovimentacaoContasReport: TTcForm},
+  UFin_MovimentacaoContasDataModule in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\Reports\UFin_MovimentacaoContasDataModule.pas' {FIN_MovimentacaoContasDataModule: TDataModule},
+  UdtmFIN_PlanoContasEspeciais in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UdtmFIN_PlanoContasEspeciais.pas' {dtmFIN_PlanoContasEspeciais: T_dtmBASE},
+  UfrmFIN_PlanoContasEspeciais in '..\..\..\Source\CL.Ag5Client\Financeiro\Cadastros\UfrmFIN_PlanoContasEspeciais.pas' {frmFIN_PlanoContasEspeciais: TTcForm};
+
+end.

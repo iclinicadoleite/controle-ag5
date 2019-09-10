@@ -1,0 +1,56 @@
+package CL.Ag5.Estoque.Relatorios ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB.Entidades,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.DB.Financeiro,
+  CL.Ag5.Svc.Estoque.Produtos,
+  dsnapcon;
+
+contains
+  UEST_ProdutosInsumosReportDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_ProdutosInsumosReportDatamodule.pas' {EST_ProdutosInsumosReportDatamodule: T_dtmBASE},
+  UEST_ProdutosInsumosReportWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_ProdutosInsumosReportWizard.pas' {EST_ProdutosInsumosReportWizard: TTcForm},
+  UFIN_ProdutosInsumosMovimentoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UFIN_ProdutosInsumosMovimentoReport.pas' {FIN_ProdutosInsumosMovimentoReport: TTcForm},
+  UEST_EntradasReportDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_EntradasReportDatamodule.pas' {EST_EntradasReportDatamodule: T_dtmBASE},
+  UEST_EntradasReportWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_EntradasReportWizard.pas' {EST_EntradasReportWizard: TTcForm},
+  UEST_EntradasReport in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_EntradasReport.pas' {EST_EntradasReport: TTcForm},
+  UEST_SaidasReport in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_SaidasReport.pas' {EST_SaidasReport: TTcForm},
+  UEST_SaidasReportDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_SaidasReportDatamodule.pas' {EST_SaidasReportDatamodule: T_dtmBASE},
+  UEST_SaidasReportWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_SaidasReportWizard.pas' {EST_SaidasReportWizard: TTcForm},
+  UEST_DepreciacoesReport in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_DepreciacoesReport.pas' {EST_DepreciacoesReport: TTcForm},
+  UEST_DepreciacoesReportDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_DepreciacoesReportDatamodule.pas' {EST_DepreciacoesReportDatamodule: T_dtmBASE},
+  UEST_DepreciacoesReportWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_DepreciacoesReportWizard.pas' {EST_DepreciacoesReportWizard: TTcForm},
+  UEST_CompraEstoqueMinimoDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_CompraEstoqueMinimoDatamodule.pas' {EST_CompraEstoqueMinimoDatamodule: T_dtmBASE},
+  UEST_CompraEstoqueMinimoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Relatorios\UEST_CompraEstoqueMinimoReport.pas' {EST_CompraEstoqueMinimoReport: TTcForm};
+
+end.

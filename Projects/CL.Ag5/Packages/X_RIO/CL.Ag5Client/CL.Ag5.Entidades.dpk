@@ -1,0 +1,47 @@
+package CL.Ag5.Entidades;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5_,
+  CL.Ag5.DB.Entidades,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Svc.Financeiro.Apropriacao;
+
+contains
+  UdtmCAD_Fornecedores in '..\..\..\Source\CL.Ag5Client\Entidades\UdtmCAD_Fornecedores.pas' {dtmCAD_Fornecedores: TDataModule},
+  UdtmCAD_Clientes in '..\..\..\Source\CL.Ag5Client\Entidades\UdtmCAD_Clientes.pas' {dtmCAD_Clientes: T_dtmBASEDBListEdit},
+  UfrmCAD_Clientes in '..\..\..\Source\CL.Ag5Client\Entidades\UfrmCAD_Clientes.pas' {frmCAD_Clientes: TTcForm},
+  UfrmCAD_Fornecedores in '..\..\..\Source\CL.Ag5Client\Entidades\UfrmCAD_Fornecedores.pas' {frmCAD_Fornecedores: TTcForm},
+  UCAD_TiposDatamodule in '..\..\..\Source\CL.Ag5Client\Entidades\UCAD_TiposDatamodule.pas' {CAD_TiposDatamodule: T_dtmBASEDBListEdit},
+  UCAD_TiposWizard in '..\..\..\Source\CL.Ag5Client\Entidades\UCAD_TiposWizard.pas' {CAD_TiposWizard: TTcForm},
+  UCAD_EntidadesReport in '..\..\..\Source\CL.Ag5Client\Entidades\UCAD_EntidadesReport.pas' {qrCAD_EntidadesReport: TTcForm},
+  UCAD_EntidadesReportDialog in '..\..\..\Source\CL.Ag5Client\Entidades\UCAD_EntidadesReportDialog.pas' {CAD_EntidadesReportDialog: TTcForm};
+
+end.

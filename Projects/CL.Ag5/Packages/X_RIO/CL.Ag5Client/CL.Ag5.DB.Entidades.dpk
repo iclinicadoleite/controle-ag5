@@ -1,0 +1,44 @@
+package CL.Ag5.DB.Entidades;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  //MPCore,
+  CL.Ag5.UI,
+  CL.Ag5.DB,
+  Tc.VCL.Ctrls.Edits,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Svc.Financeiro.Apropriacao ;
+
+contains
+  UDBEntidades in '..\..\..\Source\CL.Ag5Client\Entidades\UDBEntidades.pas' {DBEntidades: T_DBResources},
+  UDBEntidades.Update in '..\..\..\Source\CL.Ag5Client\Entidades\UDBEntidades.Update.pas',
+  SearchsEntidades in '..\..\..\Source\CL.Ag5Client\Entidades\SearchsEntidades.pas';
+
+end.

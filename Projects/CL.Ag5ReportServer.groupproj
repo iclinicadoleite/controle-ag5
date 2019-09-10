@@ -1,0 +1,84 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{AD836EB4-9ED7-4BA1-ADB6-44D6FF515942}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="T:\ModulosPrimeProject\Project\Framework\Packages\2010\MPCore.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="CL.Ag5ReportServer\CL.Ag5.ReportServerApp.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="CL.Ag5ReportServer\CL.Ag5.ReportServerConsole.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="CL.Ag5ReportServer\CL.Ag5.ReportServerSvc.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="CL.Ag5ReportServer\CL.Ag5.ReportServerConfig.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="MPCore">
+			<MSBuild Projects="T:\ModulosPrimeProject\Project\Framework\Packages\2010\MPCore.dproj"/>
+		</Target>
+		<Target Name="MPCore:Clean">
+			<MSBuild Targets="Clean" Projects="T:\ModulosPrimeProject\Project\Framework\Packages\2010\MPCore.dproj"/>
+		</Target>
+		<Target Name="MPCore:Make">
+			<MSBuild Targets="Make" Projects="T:\ModulosPrimeProject\Project\Framework\Packages\2010\MPCore.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerApp">
+			<MSBuild Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerApp.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerApp:Clean">
+			<MSBuild Targets="Clean" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerApp.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerApp:Make">
+			<MSBuild Targets="Make" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerApp.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConsole">
+			<MSBuild Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConsole.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConsole:Clean">
+			<MSBuild Targets="Clean" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConsole.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConsole:Make">
+			<MSBuild Targets="Make" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConsole.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerSvc">
+			<MSBuild Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerSvc.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerSvc:Clean">
+			<MSBuild Targets="Clean" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerSvc.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerSvc:Make">
+			<MSBuild Targets="Make" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerSvc.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConfig">
+			<MSBuild Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConfig.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConfig:Clean">
+			<MSBuild Targets="Clean" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConfig.dproj"/>
+		</Target>
+		<Target Name="CL_Ag5_ReportServerConfig:Make">
+			<MSBuild Targets="Make" Projects="CL.Ag5ReportServer\CL.Ag5.ReportServerConfig.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="MPCore;CL_Ag5_ReportServerApp;CL_Ag5_ReportServerConsole;CL_Ag5_ReportServerSvc;CL_Ag5_ReportServerConfig"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="MPCore:Clean;CL_Ag5_ReportServerApp:Clean;CL_Ag5_ReportServerConsole:Clean;CL_Ag5_ReportServerSvc:Clean;CL_Ag5_ReportServerConfig:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="MPCore:Make;CL_Ag5_ReportServerApp:Make;CL_Ag5_ReportServerConsole:Make;CL_Ag5_ReportServerSvc:Make;CL_Ag5_ReportServerConfig:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

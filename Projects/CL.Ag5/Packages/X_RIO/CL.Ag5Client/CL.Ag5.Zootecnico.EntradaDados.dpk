@@ -1,0 +1,57 @@
+﻿package CL.Ag5.Zootecnico.EntradaDados ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico,
+  SMImportDX_RIO;
+
+contains
+  UZoo_EntradaDadosBaseWizard in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_EntradaDadosBaseWizard.pas' {Zoo_EntradaDadosBaseWizard: TTcForm},
+  UZoo_EntradaEstoqueSemenDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UZoo_EntradaEstoqueSemenDatamodule.pas' {Zoo_EntradaEstoqueSemenDatamodule: T_dtmBASE},
+  UZoo_DescartesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\UZoo_DescartesDatamodule.pas' {Zoo_DescartesDatamodule: TDataMoDatamodule},
+  UZoo_DescartesWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\UZoo_DescartesWizard.pas' {Zoo_DescartesWizard},
+  UZoo_TrocaDeBrincoWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeBrincoWizard.pas' {Zoo_TrocaDeBrincoWizard},
+  UZoo_TrocaDeRetiroWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeRetiroWizard.pas' {Zoo_TrocaDeRetiroWizard},
+  UZoo_TrocaDeLoteWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeLoteWizard.pas' {Zoo_TrocaDeLoteWizard},
+  UZoo_TrocaDeRetiroDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeRetiroDatamodule.pas' {Zoo_TrocaDeRetiroDatamodule: TDataModule},
+  UZoo_TrocaDeBrincoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeBrincoDatamodule.pas' {Zoo_TrocaDeBrincoDatamodule: TDataModule},
+  UZoo_TrocaDeLoteDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Trocas\UZoo_TrocaDeLoteDatamodule.pas' {Zoo_TrocaDeLoteDatamodule: TDataModule},
+  UfrmZoo_DesktopIndicadores in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Rebanho\UfrmZoo_DesktopIndicadores.pas' {frmZoo_DesktopIndicadores},
+  UZoo_IndicadoresDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Rebanho\UZoo_IndicadoresDatamodule.pas' {Zoo_IndicadoresDatamodule: TDataModule},
+  UZoo_IndicadoresWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Rebanho\UZoo_IndicadoresWizard.pas' {Zoo_IndicadoresWizard},
+  UZoo_EntradaEstoqueSemenWizard in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UZoo_EntradaEstoqueSemenWizard.pas' {Zoo_EntradaEstoqueSemenWizard: T__Form},
+  UZoo_TrocaRetirosLotesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\UZoo_TrocaRetirosLotesDatamodule.pas' {ZooTrocaRetirosLotesDatamodule: TDataModule},
+  UZoo_TrocaRetirosLotesWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\UZoo_TrocaRetirosLotesWizard.pas' {ZooTrocaRetirosLotesWizard: TTcForm};
+
+end.
+
+
+

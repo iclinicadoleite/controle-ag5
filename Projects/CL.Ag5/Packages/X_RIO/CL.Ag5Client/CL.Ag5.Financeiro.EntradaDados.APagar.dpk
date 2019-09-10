@@ -1,0 +1,59 @@
+package CL.Ag5.Financeiro.EntradaDados.APagar ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Svc.Financeiro.EntradaDados.APagar,
+  CL.Ag5.Svc.Estoque.EntradaDados.Compras;
+
+contains
+  UnitPeriodo in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UnitPeriodo.pas' {frmPeriodo},
+  FIN_APagarTypes in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\FIN_APagarTypes.pas',
+  UFIN_OutrasDespesasWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFIN_OutrasDespesasWizard.pas' {FIN_OutrasDespesasWizard: TTcForm},
+  UFIN_OutrasDespesasDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFIN_OutrasDespesasDatamodule.pas' {FIN_OutrasDespesasDatamodule: T_dtmBASEDBListEdit},
+  UFin_BaixaAPagarColetivoDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFin_BaixaAPagarColetivoDatamodule.pas' {Fin_BaixaAPagarColetivoDatamodule: T_dtmBASE},
+  UFin_BaixaAPagarColetivo in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFin_BaixaAPagarColetivo.pas' {FIN_BaixaAPagarColetivo: TTcForm},
+  UFin_BaixaAPagarDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFin_BaixaAPagarDatamodule.pas' {Fin_BaixaAPagarDatamodule: T_dtmBASE},
+  UFin_BaixaAPagarWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UFin_BaixaAPagarWizard.pas' {FIN_BaixaAPagarWizard: TTcForm},
+  UdtmFIN_ApagarBaixaTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UdtmFIN_ApagarBaixaTitulo.pas' {dtmFIN_ApagarBaixaTitulo: TDataModule},
+  UfrmFIN_ApagarBaixaTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UfrmFIN_ApagarBaixaTitulo.pas' {frmFIN_ApagarBaixaTitulo},
+  UfrmFIN_ApagarBaixaApropriacao in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UfrmFIN_ApagarBaixaApropriacao.pas' {frmFIN_ApagarBaixaApropriacao},
+  UfdrFIN_APagar in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfdrFIN_APagar.pas' {fdrFIN_APagar: TTcForm},
+  UfqrFIN_APagar in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfqrFIN_APagar.pas' {fqrFIN_APagar: TTcForm},
+  UfdrFIN_APagarEntidade in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfdrFIN_APagarEntidade.pas' {fdrFIN_APagarEntidade: TTcForm},
+  UfqrFIN_APagarEntidade in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfqrFIN_APagarEntidade.pas' {fqrFIN_APagarEntidade: TTcForm},
+  UfqrFIN_APagarCompensacao in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfqrFIN_APagarCompensacao.pas' {fqrFIN_APagarCompensacao: TTcForm},
+  UfqrFIN_APagarTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfqrFIN_APagarTitulo.pas' {fqrFIN_APagarTitulo: TTcForm},
+  UfqrFIN_APagarAtraso in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\Reports\UfqrFIN_APagarAtraso.pas' {fqrFIN_APagarAtraso: TTcForm},
+  UfrmFIN_DesktopPagamentos in '..\..\..\Source\CL.Ag5Client\Financeiro\APagar\UfrmFIN_DesktopPagamentos.pas' {frmFIN_DesktopPagamentos: TTcForm};
+
+end.

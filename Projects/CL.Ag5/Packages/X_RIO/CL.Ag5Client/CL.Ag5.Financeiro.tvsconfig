@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.FRISIA.Threads" Type="System.String" Value="FRISIA\Threads" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Unit1" Type="System.String" Value="Unit1" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.SaveCreditos" Type="System.String" Value="FRISIA\Threads\SaveCreditos" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.SaveCheques" Type="System.String" Value="FRISIA\Threads\SaveCheques" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.NotasFiscaisVenda" Type="System.String" Value="FRISIA\Threads\NotasFiscaisVenda" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.NotasFiscaisDevolucao" Type="System.String" Value="FRISIA\Threads\NotasFiscaisDevolucao" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.NotasFiscaisCompra" Type="System.String" Value="FRISIA\Threads\NotasFiscaisCompra" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Threads.NotasFiscaisBase" Type="System.String" Value="FRISIA\Threads\NotasFiscaisBase" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.NSMsgs" Type="System.String" Value="FRISIA\NSMsgs" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.DAO" Type="System.String" Value="FRISIA\DAO" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA" Type="System.String" Value="FRISIA" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.TThreadPool" Type="System.String" Value="TThreadPool" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UdtmFIN_FinanciamentosFrisia" Type="System.String" Value="UdtmFIN_FinanciamentosFrisia" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UdtmFRISIAPendencias" Type="System.String" Value="UdtmFRISIAPendencias" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UdtmIntegracaoFrisia" Type="System.String" Value="UdtmIntegracaoFrisia" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UfrmFIN_FinanciamentosFrisia" Type="System.String" Value="UfrmFIN_FinanciamentosFrisia" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UfrmFRISIADesktop" Type="System.String" Value="UfrmFRISIADesktop" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UfrmFRISIAPendencias" Type="System.String" Value="UfrmFRISIAPendencias" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UfrmIntegracaoFrisia" Type="System.String" Value="UfrmIntegracaoFrisia" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UIntegracaoFrisiaAnimationThread" Type="System.String" Value="UIntegracaoFrisiaAnimationThread" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.WSFrisia" Type="System.String" Value="WSFrisia" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.Utils" Type="System.String" Value="FRISIA\Utils" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.WebServiceConsumer" Type="System.String" Value="FRISIA\WebServiceConsumer" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.WebServiceConsumer.Cheques" Type="System.String" Value="FRISIA\WebServiceConsumer\Cheques" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.FRISIA.WebServiceConsumer.NotasFiscais" Type="System.String" Value="FRISIA\WebServiceConsumer\NotasFiscais" Category="General" IsBrowsable="False" />
+</TgConfig>

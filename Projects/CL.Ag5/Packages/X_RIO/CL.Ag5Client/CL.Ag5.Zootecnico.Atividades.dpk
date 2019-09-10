@@ -1,0 +1,84 @@
+package CL.Ag5.Zootecnico.Atividades;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico.BancoDados,
+  JvMM;
+
+contains
+  UZoo_AtividadesCiosCoberturasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesCiosCoberturasDatamodule.pas' {Zoo_AtividadesCiosCoberturasDatamodule: T_dtmBASE},
+  UZoo_AtividadesCiosCoberturasWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesCiosCoberturasWizard.pas' {Zoo_AtividadesCiosCoberturasWizard: T__Form},
+  UZoo_AtividadesCrescimentoDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesCrescimentoDesktop.pas' {Zoo_AtividadesCrescimentoDesktop: T__Form},
+  UZoo_AtividadesDesmameDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesDesmameDatamodule.pas' {Zoo_AtividadesDesmameDatamodule: T_dtmBASE},
+  UZoo_AtividadesDesmameWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesDesmameWizard.pas' {Zoo_AtividadesDesmameWizard: T__Form},
+  UZoo_AtividadesListaDeAcoesDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesListaDeAcoesDesktop.pas' {Zoo_AtividadesListaDeAcoesDesktop: T__Form},
+  UZoo_AtividadesListagemVeterianariasDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesListagemVeterianariasDesktop.pas' {Zoo_AtividadesListagemVeterianariasDesktop: T__Form},
+  UZoo_AtividadesListagensWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesListagensWizard.pas' {Zoo_AtividadesListagensWizard: T__Form},
+  UZoo_AtividadesLVCiclosAnormaisDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVCiclosAnormaisDatamodule.pas' {Zoo_AtividadesLVCiclosAnormaisDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVCiclosAnormaisWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVCiclosAnormaisWizard.pas' {Zoo_AtividadesLVCiclosAnormaisWizard: T__Form},
+  UZoo_AtividadesLVDiagnosticoPrenhezDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVDiagnosticoPrenhezDatamodule2.pas' {Zoo_AtividadesLVDiagnosticoPrenhezDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVDiagnosticoPrenhezWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVDiagnosticoPrenhezWizard2.pas' {Zoo_AtividadesLVDiagnosticoPrenhezWizard: T__Form},
+  UZoo_AtividadesLVListagemGeralDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVListagemGeralDatamodule2.pas' {Zoo_AtividadesLVListagemGeralDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVListagemGeralWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVListagemGeralWizard2.pas' {Zoo_AtividadesLVListagemGeralWizard: T__Form},
+  UZoo_AtividadesLVNovilhasNaoPrenhesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVNovilhasNaoPrenhesDatamodule.pas' {Zoo_AtividadesLVNovilhasNaoPrenhesDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVNovilhasNaoPrenhesWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVNovilhasNaoPrenhesWizard.pas' {Zoo_AtividadesLVNovilhasNaoPrenhesWizard: T__Form},
+  UZoo_AtividadesLVPosPartoSCioDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVPosPartoSCioDatamodule.pas' {Zoo_AtividadesLVPosPartoSCioDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVPosPartoSCioWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVPosPartoSCioWizard.pas' {Zoo_AtividadesLVPosPartoSCioWizard: T__Form},
+  UZoo_AtividadesLVRecemParidosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVRecemParidosDatamodule.pas' {Zoo_AtividadesLVRecemParidosDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVRecemParidosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVRecemParidosWizard.pas' {Zoo_AtividadesLVRecemParidosWizard: T__Form},
+  UZoo_AtividadesLVReexaminarDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVReexaminarDatamodule.pas' {Zoo_AtividadesLVReexaminarDatamodule: T_dtmBASE},
+  UZoo_AtividadesLVReexaminarWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesLVReexaminarWizard.pas' {Zoo_AtividadesLVReexaminarWizard: T__Form},
+  UZoo_AtividadesPartosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPartosDatamodule.pas' {Zoo_AtividadesPartosDatamodule: T_dtmBASE},
+  UZoo_AtividadesPartosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPartosWizard.pas' {Zoo_AtividadesPartosWizard: T__Form},
+  UZoo_AtividadesPesagemLeiteDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPesagemLeiteDatamodule.pas' {Zoo_AtividadesPesagemLeiteDatamodule: T_dtmBASE},
+  UZoo_AtividadesPesagemLeiteWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPesagemLeiteWizard.pas' {Zoo_AtividadesPesagemLeiteWizard: T__Form},
+  UZoo_AtividadesPesoAlturaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPesoAlturaDatamodule.pas' {Zoo_AtividadesPesoAlturaDatamodule: T_dtmBASE},
+  UZoo_AtividadesPesoAlturaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesPesoAlturaWizard.pas' {Zoo_AtividadesPesoAlturaWizard: T__Form},
+  UZoo_AtividadesProducaoDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesProducaoDesktop.pas' {Zoo_AtividadesProducaoDesktop: T__Form},
+  UZoo_AtividadesReproducaoDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesReproducaoDesktop.pas' {Zoo_AtividadesReproducaoDesktop: T__Form},
+  UZoo_AtividadesSanidadeDesktop in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesSanidadeDesktop.pas' {Zoo_AtividadesSanidadeDesktop: T__Form},
+  UZoo_AtividadesSecagemDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesSecagemDatamodule.pas' {Zoo_AtividadesSecagemDatamodule: T_dtmBASE},
+  UZoo_AtividadesSecagemWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesSecagemWizard.pas' {Zoo_AtividadesSecagemWizard: T__Form},
+  UZoo_AtividadesTarefasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesTarefasDatamodule.pas' {Zoo_AtividadesTarefasDatamodule: T_dtmBASE},
+  UZoo_AtividadesDiarioDaMastiteWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesDiarioDaMastiteWizard.pas' {Zoo_AtividadesDiarioDaMastiteWizard: T__Form},
+  UZoo_AtividadesDiarioDaMastiteDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesDiarioDaMastiteDatamodule.pas' {Zoo_AtividadesDiarioDaMastiteDatamodule: T_dtmBASE},
+  UZoo_AtividadesBaseWizard in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_AtividadesBaseWizard.pas' {Zoo_AtividadesBaseWizard: TTcForm},
+  UZoo_AtividadesListagensDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesListagensDatamodule.pas' {Zoo_AtividadesListagensDataModule: T_dtmBASEDBListEdit},
+  UZoo_AtividadesProtocolosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesProtocolosWizard.pas' {Zoo_AtividadesProtocolosWizard: TTcForm},
+  UZoo_AtividadesProtocolosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesProtocolosDatamodule.pas' {Zoo_AtividadesProtocolosDatamodule: T_dtmBASE},
+  UZoo_DesktopAtividadesColetivo in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_DesktopAtividadesColetivo.pas' {Zoo_DesktopAtividadesColetivo: TTcForm},
+  UZoo_DesktopAtividadesAExecutar in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_DesktopAtividadesAExecutar.pas' {Zoo_DesktopAtividadesAExecutar: TTcForm},
+  UZoo_AtividadesTarefasWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesTarefasWizard.pas' {Zoo_AtividadesTarefasWizard: TTcForm},
+  UZoo_AtividadesDiarioDaMastiteReport2 in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesDiarioDaMastiteReport2.pas' {Zoo_AtividadesDiarioDaMastiteReport: TTcForm},
+  UZoo_AtividadesUltimasTarefasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesUltimasTarefasDatamodule.pas' {Zoo_AtividadesUltimasTarefasDatamodule: T_dtmBASE},
+  UZoo_AtividadesUltimasTarefasWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Atividades\UZoo_AtividadesUltimasTarefasWizard.pas' {Zoo_AtividadesUltimasTarefasWizard: TTcForm};
+
+end.

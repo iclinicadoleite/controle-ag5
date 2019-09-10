@@ -1,0 +1,57 @@
+package CL.Ag5.Financeiro.Utils ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.DB.Entidades,
+  CL.Ag5.DB.Financeiro,
+  CL.Ag5.DB.Anexos,
+  CL.Ag5.Svc.Estoque.Produtos,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.ModulesDesktop,
+  TCSPEDPck,
+  TCSPEDIntegrate,
+  TCSPEDQRPck,
+  TCNFePck,
+  TCNFeIntegrate,
+  TCNFeDANFeQR;
+
+contains
+  ModuleDesktopFinanceiro in '..\..\..\Source\CL.Ag5Client\Financeiro\ModuleDesktopFinanceiro.pas' {FinDesktop},
+  UFIN_AnexosDatamodule in '..\..\..\Source\CL.Ag5Client\Anexos\UFIN_AnexosDatamodule.pas' {FIN_AnexosDatamodule: T_dtmBASE},
+  UFIN_AnexosWizard in '..\..\..\Source\CL.Ag5Client\Anexos\UFIN_AnexosWizard.pas' {FIN_AnexosWizard: TTcForm},
+  SearchsFinanceiro in '..\..\..\Source\CL.Ag5Client\Financeiro\SearchsFinanceiro.pas',
+  UFIN_ApropriacaoDialog in '..\..\..\Source\CL.Ag5Client\Financeiro\UFIN_ApropriacaoDialog.pas' {FIN_ApropriacaoDialog: TTcForm},
+  UFIN_ApropriacaoClass in '..\..\..\Source\CL.Ag5Client\Financeiro\UFIN_ApropriacaoClass.pas',
+  UFIN_FinanceiroMascaraPlanoContasClass in '..\..\..\Source\CL.Ag5Client\Financeiro\UFIN_FinanceiroMascaraPlanoContasClass.pas',
+  UFIN.DRE.Utils in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Utils.pas';
+
+end.

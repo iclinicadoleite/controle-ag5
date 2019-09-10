@@ -1,0 +1,53 @@
+package CL.Ag5.Zootecnico.BancoDados;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  TeeDB926,
+  TeePro926,
+  CL.Ag5.Zootecnico;
+
+contains
+  UZoo_AnimaisGenealogiaClass in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_AnimaisGenealogiaClass.pas' {Zoo_AnimaisGenealogiaFrame: TFrame},
+  UdtmZoo_HistoricoBrincos in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UdtmZoo_HistoricoBrincos.pas' {dtmZoo_HistoricoBrincos: TDataModule},
+  UdtmZoo_HistoricoLotes in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UdtmZoo_HistoricoLotes.pas' {dtmZoo_HistoricoLotes: TDataModule},
+  UdtmZoo_HistoricoRetiros in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UdtmZoo_HistoricoRetiros.pas' {dtmZoo_HistoricoRetiros: TDataModule},
+  UdtmZoo_HistoricoStatus in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UdtmZoo_HistoricoStatus.pas' {dtmZoo_HistoricoStatus: TDataModule},
+  UfdlgZoo_HistoricoBrincos in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UfdlgZoo_HistoricoBrincos.pas' {fdlgZoo_HistoricoBrincos},
+  UfdlgZoo_HistoricoLotes in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UfdlgZoo_HistoricoLotes.pas' {fdlgZoo_HistoricoLotes},
+  UfdlgZoo_HistoricoRetiros in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UfdlgZoo_HistoricoRetiros.pas' {fdlgZoo_HistoricoRetiros},
+  UfdlgZoo_HistoricoStatus in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UfdlgZoo_HistoricoStatus.pas' {fdlgZoo_HistoricoStatus},
+  UZoo_EditLinhagemFrame in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_EditLinhagemFrame.pas' {Zoo_EditLinhagemFrame: TFrame},
+  UZoo_EditLinhagemDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_EditLinhagemDatamodule.pas' {Zoo_EditLinhagemDatamodule: T_dtmBASE},
+  UZoo_BancoDadosTanquesForm in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_BancoDadosTanquesForm.pas' {Zoo_BancoDadosTanquesForm: TTcForm},
+  UZoo_BancoDadosTanquesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_BancoDadosTanquesDatamodule.pas' {Zoo_BancoDadosTanquesDatamodule: T_dtmBASEDBListEdit},
+  UdtmZoo_HistoricoToques in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UdtmZoo_HistoricoToques.pas' {dtmZoo_HistoricoToques: T_dtmBASE},
+  UfdlgZoo_HistoricoToques in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\UfdlgZoo_HistoricoToques.pas' {fdlgZoo_HistoricoToques: TTcForm};
+
+end.

@@ -1,0 +1,63 @@
+package CL.Ag5.DB;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  DbxCommonDriver,
+  dbrtl,
+  dsnap,
+  dbexpress,
+  dbxcds,
+  DBXFirebirdDriver,
+  Jcl,
+  Tc.DBRTL.DBX,
+  Tc.JVCL.Extender,
+  DataSnapCommon,
+  DbxClientDriver,
+  CustomIPTransport,
+  IndyIPCommon,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  IndyIPClient,
+  Tc.VCL,
+  Tc.DBRTL,
+  Tc.DBRTL.DBX.FirebirdDrv,
+  Tc.DBRTL.Firebird,
+  CL.Ag5.Svc.NSMsgs;
+
+contains
+  AppProfileIntf in '..\..\..\Source\_CommonSources\AppProfileIntf.pas',
+  AppProfile in '..\..\..\Source\_CommonSources\AppProfile.pas',
+  CLAG5.DatabaseIntf in '..\..\..\Source\_CommonSources\CLAG5.DatabaseIntf.pas',
+  ClAg5.Common.Journaling in '..\..\..\Source\_CommonSources\ClAg5.Common.Journaling.pas',
+  ClAg5.Common.RLogTriggers in '..\..\..\Source\_CommonSources\ClAg5.Common.RLogTriggers.pas',
+  UDBUpdate in '..\..\..\Source\_CommonSources\UDBUpdate.pas';
+
+end.

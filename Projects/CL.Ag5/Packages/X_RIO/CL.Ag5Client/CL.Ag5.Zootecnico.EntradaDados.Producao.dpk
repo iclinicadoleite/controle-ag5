@@ -1,0 +1,50 @@
+package CL.Ag5.Zootecnico.EntradaDados.Producao;
+
+{$R *.res}
+{$R *.dres}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico,
+  CL.Ag5.Zootecnico.EntradaDados;
+//  UZoo_ProducaoAnaliseLeiteWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoAnaliseLeiteWizard.pas' {Zoo_ProducaoAnaliseLeiteWizard: T__Form},
+//  UZoo_ProducaoAnaliseLeiteDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoAnaliseLeiteDatamodule.pas' {Zoo_ProducaoAnaliseLeiteDatamodule: T_dtmBASE},
+
+contains
+  UZoo_DesktopProducao in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_DesktopProducao.pas' {frmZoo_DesktopProducao},
+  UZoo_ProducaoSecagemWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoSecagemWizard.pas' {Zoo_ProducaoSecagemWizard},
+  UZoo_ProducaoSecagemDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoSecagemDatamodule.pas' {Zoo_ProducaoSecagemDatamodule: TDataModule},
+  UZoo_ProducaoAnaliseLeiteWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoAnaliseLeiteWizard2.pas' {Zoo_ProducaoAnaliseLeiteWizard: T__Form},
+  UZoo_ProducaoAnaliseLeiteDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoAnaliseLeiteDatamodule2.pas' {Zoo_ProducaoAnaliseLeiteDatamodule: T_dtmBASE},
+  UZoo_ProducaoRecalculoLactacao in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoRecalculoLactacao.pas' {frmZoo_ProducaoRecalculoLactacao},
+  UZoo_ImportaPesagemWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ImportaPesagemWizard.pas' {Zoo_ImportaPesagemWizard: TTcForm},
+  UZoo_ProducaoControleLeiteiroDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoControleLeiteiroDatamodule2.pas' {Zoo_ProducaoControleLeiteiroDatamodule2: T_dtmBASE},
+  UZoo_ProducaoControleLeiteiroWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Producao\UZoo_ProducaoControleLeiteiroWizard2.pas' {Zoo_ProducaoControleLeiteiroWizard2: TTcForm};
+
+end.

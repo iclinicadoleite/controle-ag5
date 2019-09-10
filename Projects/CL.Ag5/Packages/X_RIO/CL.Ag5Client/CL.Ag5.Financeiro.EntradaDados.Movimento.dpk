@@ -1,0 +1,48 @@
+package CL.Ag5.Financeiro.EntradaDados.Movimento ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Financeiro.EntradaDados.APagar,
+  CL.Ag5.Financeiro.EntradaDados.AReceber;
+
+contains
+  UFIN_TransferenciaValoresForm in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_TransferenciaValoresForm.pas' {frmFIN_TransferenciaValores: TTcForm},
+  UFIN_TransferenciaValoresDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_TransferenciaValoresDatamodule.pas' {dtmFIN_TransferenciaValores: T_dtmBASEDBListEdit},
+  UFIN_ConciliacaoBancariaDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_ConciliacaoBancariaDatamodule.pas' {FIN_ConciliacaoBancariaDatamodule: T_dtmBASEDBListEdit},
+  UFIN_ConciliacaoBancariaWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_ConciliacaoBancariaWizard.pas' {FIN_ConciliacaoBancariaWizard: TTcForm},
+  UFIN_AjustaSaldoDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_AjustaSaldoDatamodule.pas' {FIN_AjustaSaldoDatamodule: T_dtmBASE},
+  UFIN_AjustaSaldoWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_AjustaSaldoWizard.pas' {FIN_AjustaSaldoWizard: TTcForm},
+  UFIN_CadastroTarifaBancariaWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFIN_CadastroTarifaBancariaWizard.pas' {FIN_CadastroTarifaBancariaWizard: TTcForm},
+  UFinQueryInclusaoReceitaDespesa in '..\..\..\Source\CL.Ag5Client\Financeiro\Movimento\UFinQueryInclusaoReceitaDespesa.pas' {FinQueryInclusaoReceitaDespesa: TTcForm};
+
+end.

@@ -1,0 +1,50 @@
+package CL.Ag5.Estoque.EntradaDados.Compras ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Svc.Estoque.Patrimonio,
+  CL.Ag5.Svc.Estoque.Produtos,
+  CL.Ag5.Svc.Estoque.EntradaDados.Compras;
+
+contains
+  UfrmCOMPRAS_Pedido3 in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\UfrmCOMPRAS_Pedido3.pas' {frmCOMPRAS_Pedido},
+  UdtmCOMPRAS_Pedido3 in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\UdtmCOMPRAS_Pedido3.pas' {dtmCOMPRAS_Pedido: TDataModule},
+  UfqrCOMPRAS_Pedido in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\Report\UfqrCOMPRAS_Pedido.pas' {fqrCOMPRAS_Pedido},
+  UFin_ComprasPorPeriodoDialog in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\Report\UFin_ComprasPorPeriodoDialog.pas' {Fin_ComprasPorPeriodoDialog: TTcForm},
+  UFin_ComprasPorPeriodoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\Report\UFin_ComprasPorPeriodoReport.pas' {Fin_ComprasPorPeriodoReport: TTcForm},
+  UFin_ComprasPorCentroCustoDialog in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\Report\UFin_ComprasPorCentroCustoDialog.pas' {Fin_ComprasPorCentroCustoDialog: TTcForm},
+  UFin_ComprasPorCentroCustoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\Report\UFin_ComprasPorCentroCustoReport.pas' {Fin_ComprasPorCentroCustoReport: TTcForm},
+  UfrmImportNFeCompra in '..\..\..\Source\CL.Ag5Client\Estoque\Compras\UfrmImportNFeCompra.pas' {frmImportNFeCompra: TTcForm};
+
+end.

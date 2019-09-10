@@ -1,0 +1,36 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{DD78FCB0-4C23-49CE-902B-C5D70AA356D7}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="CL.Ag5SerialGen\ClAg5SerialGenerator.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="ClAg5SerialGenerator">
+			<MSBuild Projects="CL.Ag5SerialGen\ClAg5SerialGenerator.dproj"/>
+		</Target>
+		<Target Name="ClAg5SerialGenerator:Clean">
+			<MSBuild Targets="Clean" Projects="CL.Ag5SerialGen\ClAg5SerialGenerator.dproj"/>
+		</Target>
+		<Target Name="ClAg5SerialGenerator:Make">
+			<MSBuild Targets="Make" Projects="CL.Ag5SerialGen\ClAg5SerialGenerator.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="ClAg5SerialGenerator"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="ClAg5SerialGenerator:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="ClAg5SerialGenerator:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

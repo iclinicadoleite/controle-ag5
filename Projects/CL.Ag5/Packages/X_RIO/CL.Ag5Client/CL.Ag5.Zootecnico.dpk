@@ -1,0 +1,51 @@
+package CL.Ag5.Zootecnico;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5_,
+  CL.Ag5.DB,
+  CL.Ag5.Entidades,
+  CL.Ag5.DB.Zootecnico,
+  CL.Ag5.ModulesDesktop,
+  CL.Ag5.Svc.Zootecnico;
+
+contains
+  ModuleDesktopZootecnico in '..\..\..\Source\CL.Ag5Client\Zoo\ModuleDesktopZootecnico.pas' {ZooDesktop},
+  SearchsZootecnico in '..\..\..\Source\CL.Ag5Client\Zoo\SearchsZootecnico.pas',
+  ResultadoExamesClass in '..\..\..\Source\CL.Ag5Client\Zoo\ResultadoExamesClass.pas',
+  ProtocolosAnimalClass in '..\..\..\Source\CL.Ag5Client\Zoo\ProtocolosAnimalClass.pas',
+  TarefasAnimalClass in '..\..\..\Source\CL.Ag5Client\Zoo\TarefasAnimalClass.pas',
+  UZoo_GrauDeSangueClass in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_GrauDeSangueClass.pas',
+  UZoo_ListaRacasFrame in '..\..\..\Source\CL.Ag5Client\Zoo\UZoo_ListaRacasFrame.pas' {Zoo_ListaRacasFrame: TFrame},
+  ClAg5ClientZootecnicoCommonTypes in '..\..\..\Source\CL.Ag5Client\Zoo\ClAg5ClientZootecnicoCommonTypes.pas',
+  DiagnosticosAnimalClass in '..\..\..\Source\CL.Ag5Client\Zoo\DiagnosticosAnimalClass.pas';
+
+end.

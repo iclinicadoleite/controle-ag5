@@ -1,0 +1,1186 @@
+unit UDBEntidades.Update;
+
+interface
+
+uses
+  UDBUpdate,
+  Tc.VCL.Application ;
+
+type
+
+{$M+}
+  TDBEntidadesUpdate = class( TDBUpdate )
+  published
+    procedure _5_000_01;
+    procedure _5_000_03;
+    procedure _5_000_17;
+    procedure _5_000_18;
+    procedure _5_000_19;
+    procedure _5_000_24;
+    procedure _5_000_34;
+    procedure _5_000_35;
+//    procedure _5_000_61; // deprecated ... moved to init db
+    procedure _5_000_64;
+    procedure _5_000_80;
+    procedure _5_000_91; // SEATTLE
+    procedure _5_001_02;
+    procedure _5_001_12;
+    procedure _5_001_13;
+    procedure _5_001_14 ;
+                        // BERLIN
+    procedure _5_001_68 ;
+    procedure _5_001_94 ;
+    procedure _5_001_95 ;
+    procedure _5_002_01 ;
+    procedure _5_002_02 ;
+    procedure _5_002_03 ;
+  end;
+{$M-}
+
+implementation
+
+Uses Tc.RTL.Exceptions, System.SysUtils, DataSnap.DBClient, Tc.DataSnap.DBClient.Helpers,
+    GuidSuppl, Tc.RTL.MD5 ;
+
+procedure TDBEntidadesUpdate._5_002_03;
+const
+   _ALTER_TRIGGER_CAD_ENTIDADES_BI =
+          'CREATE OR ALTER TRIGGER CAD_ENTIDADES_BI FOR CAD_ENTIDADES'
+   +#13#10'ACTIVE BEFORE INSERT POSITION 1005'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10''
+   +#13#10'  IF ( NEW.CODIGO IS NULL ) THEN'
+   +#13#10'    BEGIN'
+   +#13#10'      IF ( NEW.IS_CLIENTE = ''T'' ) THEN'
+   +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+   +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KSYS$DOMAIN, ''CAD_ENTIDADE_CLIENTE'' )'
+   +#13#10'        INTO NEW.CODIGO ;'
+   +#13#10'      ELSE IF ( NEW.IS_FORNECEDOR = ''T'' ) THEN'
+   +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+   +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KSYS$DOMAIN, ''CAD_ENTIDADE_FORNECEDOR'' )'
+   +#13#10'        INTO NEW.CODIGO ;'
+   +#13#10'      ELSE'
+   +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+   +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KSYS$DOMAIN, ''CAD_ENTIDADE'' )'
+   +#13#10'        INTO NEW.CODIGO ;'
+   +#13#10'    END'
+   +#13#10''
+   +#13#10'  IF ( NEW.PESSOA = ''F'' ) then'
+   +#13#10'      NEW.CPF_CNPJ = SUBSTRING ( NEW.CPF_CNPJ FROM 1 FOR 14 ) || ''    '' ;'
+   +#13#10''
+   +#13#10'END' ;
+
+   _ALTER_TRIGGER_CAD_ENTIDADES_DOMAIN =
+          'CREATE OR ALTER TRIGGER CAD_ENTIDADES_DOMAIN FOR CAD_ENTIDADES'
+   +#13#10'ACTIVE BEFORE INSERT POSITION 1002'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'  IF ( NEW.KSYS$DOMAIN IS NULL ) THEN NEW.KSYS$DOMAIN = NEW.KCAD_FAZENDA ; ELSE IF ( NEW.KCAD_FAZENDA IS NULL ) THEN NEW.KCAD_FAZENDA = NEW.KSYS$DOMAIN ;'
+   +#13#10'END' ;
+
+   _ALTER_TRIGGER_CAD_FAZENDA_PARAMETROS_DOMAIN =
+          'CREATE OR ALTER TRIGGER CAD_FAZENDA_PARAMETROS_DOMAIN FOR CAD_FAZENDA_PARAMETROS'
+   +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 1002'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'  IF ( NEW.KSYS$DOMAIN IS NULL ) THEN NEW.KSYS$DOMAIN = NEW.KCAD_FAZENDA ; ELSE IF ( NEW.KCAD_FAZENDA IS NULL ) THEN NEW.KCAD_FAZENDA = NEW.KSYS$DOMAIN ;'
+   +#13#10'END' ;
+
+
+   _ALTER_TRIGGER_CAD_TIPOS_DOMAIN =
+          'CREATE OR ALTER TRIGGER CAD_TIPOS_DOMAIN FOR CAD_TIPOS'
+   +#13#10'ACTIVE BEFORE INSERT POSITION 1002'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'  IF ( NEW.KSYS$DOMAIN IS NULL ) THEN NEW.KSYS$DOMAIN = NEW.KCAD_FAZENDA ; ELSE IF ( NEW.KCAD_FAZENDA IS NULL ) THEN NEW.KCAD_FAZENDA = NEW.KSYS$DOMAIN ;'
+   +#13#10'END' ;
+
+   _ALTER_TRIGGER_CAD_USUARIOS_FAZENDA_DOMAIN =
+          'CREATE OR ALTER TRIGGER CAD_USUARIOS_FAZENDA_DOMAIN FOR CAD_USUARIOS_FAZENDA'
+   +#13#10'ACTIVE BEFORE INSERT POSITION 1002'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'  IF ( NEW.KSYS$DOMAIN IS NULL ) THEN NEW.KSYS$DOMAIN = NEW.KCAD_FAZENDA ; ELSE IF ( NEW.KCAD_FAZENDA IS NULL ) THEN NEW.KCAD_FAZENDA = NEW.KSYS$DOMAIN ;'
+   +#13#10'END' ;
+
+begin
+   ExecuteDirect( _ALTER_TRIGGER_CAD_ENTIDADES_BI ) ;
+   ExecuteDirect( _ALTER_TRIGGER_CAD_ENTIDADES_DOMAIN ) ;
+   ExecuteDirect( _ALTER_TRIGGER_CAD_FAZENDA_PARAMETROS_DOMAIN ) ;
+   ExecuteDirect( _ALTER_TRIGGER_CAD_TIPOS_DOMAIN ) ;
+   ExecuteDirect( _ALTER_TRIGGER_CAD_USUARIOS_FAZENDA_DOMAIN ) ;
+end ;
+
+procedure TDBEntidadesUpdate._5_002_02;
+const
+  _ALTER_TABLE_CAD_FAZENDA_PARAMETROS_ADD_CONSIDERAR_NAOPRENHE_SEMCONFIRM =
+         'ALTER TABLE CAD_FAZENDA_PARAMETROS'
+  +#13#10'ADD CONSIDERAR_NAOPRENHE_SEMCONFIRM SYS$BOOL_T'
+  +#13#10', ALTER CONSIDERAR_NAOPRENHE_SEMCONFIRM POSITION 13';
+
+  _ALTER_TABLE_CAD_FAZENDA_PARAMETROS_ADD_CONSIDERAR_NAOPRENHE_DESCARTADO =
+         'ALTER TABLE CAD_FAZENDA_PARAMETROS'
+  +#13#10'ADD CONSIDERAR_NAOPRENHE_DESCARTADO SYS$BOOL_T'
+  +#13#10', ALTER CONSIDERAR_NAOPRENHE_DESCARTADO POSITION 14';
+begin
+  TryExecuteDirect( _ALTER_TABLE_CAD_FAZENDA_PARAMETROS_ADD_CONSIDERAR_NAOPRENHE_SEMCONFIRM );
+  TryExecuteDirect( _ALTER_TABLE_CAD_FAZENDA_PARAMETROS_ADD_CONSIDERAR_NAOPRENHE_DESCARTADO );
+end;
+
+{ TDBEntidadesUpdate }
+procedure TDBEntidadesUpdate._5_002_01;
+const
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_ENDOFDAY =
+          'CREATE OR ALTER PROCEDURE SYS$ENDOFDAY ('
+   +#13#10'    ATIMESTAMP TIMESTAMP)'
+   +#13#10'RETURNS ('
+   +#13#10'    AENDOFDAYTIMESTAMP TIMESTAMP)'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'  AENDOFDAYTIMESTAMP =  DATEADD(-1 MILLISECOND TO CAST(CAST(ATIMESTAMP AS DATE) + 1 AS TIMESTAMP));'
+   +#13#10'  SUSPEND;'
+   +#13#10'END' ;
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_COMPARE_TIMESTAMP =
+          'CREATE OR ALTER PROCEDURE SYS$COMPARE_TIMESTAMP ('
+   +#13#10'    ATIMESTAMP1 TIMESTAMP,'
+   +#13#10'    ATIMESTAMP2 TIMESTAMP)'
+   +#13#10'RETURNS ('
+   +#13#10'    RESULT INTEGER)'
+   +#13#10'AS'
+   +#13#10'BEGIN'
+   +#13#10'    RESULT = 0;'
+   +#13#10'    IF (DATEADD(-1 * EXTRACT(MILLISECOND FROM ATIMESTAMP1) MILLISECOND TO ATIMESTAMP1) ='
+   +#13#10'        DATEADD(-1 * EXTRACT(MILLISECOND FROM ATIMESTAMP2) MILLISECOND TO ATIMESTAMP2)) THEN'
+   +#13#10'      RESULT = 1;'
+   +#13#10'    SUSPEND;'
+   +#13#10'END' ;
+
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_SPLIT =
+          'CREATE OR ALTER PROCEDURE SYS$SPLIT('
+   +#13#10'    SEPARATOR VARCHAR(10),'
+   +#13#10'    ASTRING VARCHAR(8000))'
+   +#13#10'RETURNS ('
+   +#13#10'    STRINGITEM VARCHAR(1000))'
+   +#13#10'AS'
+   +#13#10'DECLARE VARIABLE STR VARCHAR(8000);'
+   +#13#10'DECLARE VARIABLE POS INTEGER;'
+   +#13#10'DECLARE VARIABLE SEPARATOR_LENGTH INTEGER;'
+   +#13#10'BEGIN'
+   +#13#10''
+   +#13#10'  STR = ASTRING;'
+   +#13#10'  SEPARATOR_LENGTH = CHAR_LENGTH(SEPARATOR);'
+   +#13#10'  '
+   +#13#10'  IF (SEPARATOR_LENGTH>0) THEN'
+   +#13#10'  BEGIN'
+   +#13#10'    POS = POSITION(SEPARATOR, STR);'
+   +#13#10'  '
+   +#13#10'    WHILE (POS <> 0) DO'
+   +#13#10'    BEGIN'
+   +#13#10'      IF (POS>1) THEN'
+   +#13#10'      BEGIN'
+   +#13#10'        STRINGITEM = SUBSTRING(STR FROM 1 FOR (POS-1));'
+   +#13#10'        SUSPEND;'
+   +#13#10'      END'
+   +#13#10'      STR = SUBSTRING(STR FROM (POS+SEPARATOR_LENGTH) );'
+   +#13#10'      POS = POSITION(SEPARATOR, STR);'
+   +#13#10'    END'
+   +#13#10'  END'
+   +#13#10'  '
+   +#13#10'  IF (CHAR_LENGTH(STR) >0 ) THEN'
+   +#13#10'  BEGIN'
+   +#13#10'    STRINGITEM = STR;'
+   +#13#10'    SUSPEND;'
+   +#13#10'  END'
+   +#13#10''
+   +#13#10'END' ;
+
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_SPLIT_INTEGER_STRING =
+          'CREATE OR ALTER PROCEDURE SYS$SPLIT_INTEGER_STRING ('
+   +#13#10'    ASTRING VARCHAR(100))'
+   +#13#10'RETURNS ('
+   +#13#10'    N INTEGER,'
+   +#13#10'    AN VARCHAR(100))'
+   +#13#10'AS'
+   +#13#10'DECLARE VARIABLE I INTEGER;'
+   +#13#10'DECLARE VARIABLE TMP_N VARCHAR(100);'
+   +#13#10'DECLARE VARIABLE C VARCHAR(1);'
+   +#13#10'BEGIN'
+   +#13#10'    I = 1;'
+   +#13#10'    TMP_N = '''';'
+   +#13#10'    N = 0;'
+   +#13#10'    AN = '''';'
+   +#13#10'    WHILE (I <= CHAR_LENGTH(ASTRING)) DO'
+   +#13#10'    BEGIN'
+   +#13#10'      C = SUBSTRING(ASTRING FROM I FOR 1);'
+   +#13#10'      IF (C IN (''1'',''2'',''3'',''4'',''5'',''6'',''7'',''8'',''9'',''0'') AND (AN = '''')) THEN'
+   +#13#10'        TMP_N = TMP_N || C;'
+   +#13#10'      ELSE'
+   +#13#10'        AN = AN || C;'
+   +#13#10'      I = I + 1;'
+   +#13#10'    END'
+   +#13#10''
+   +#13#10'    IF (TMP_N <> '''' ) THEN'
+   +#13#10'    BEGIN'
+   +#13#10'      N = CAST(TMP_N AS INTEGER);'
+   +#13#10'    END'
+   +#13#10'    SUSPEND;'
+   +#13#10''
+   +#13#10'END'  ;
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_TIMESTAMP_TO_UNIX_TIMESTAMP =
+          'CREATE OR ALTER PROCEDURE SYS$TIMESTAMP_TO_UNIX_TIMESTAMP ('
+   +#13#10'    ATIMESTAMP TIMESTAMP)'
+   +#13#10'RETURNS ('
+   +#13#10'    UNIX_TIMESTAMP BIGINT)'
+   +#13#10'AS'
+   +#13#10'  DECLARE VARIABLE UNIX_OFFSET TIMESTAMP = ''1970-01-01 00:00:00'';'
+   +#13#10'BEGIN'
+   +#13#10'  IF ((ATIMESTAMP IS NOT NULL) AND (ATIMESTAMP >= UNIX_OFFSET)) THEN'
+   +#13#10'    UNIX_TIMESTAMP = DATEDIFF(SECOND, :UNIX_OFFSET, :ATIMESTAMP) * 1000;'
+   +#13#10'  ELSE'
+   +#13#10'    UNIX_TIMESTAMP = 0;'
+   +#13#10'  SUSPEND;'
+   +#13#10'END' ;
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_UNIX_TIMESTAMP_TO_TIMESTAMP =
+          'CREATE OR ALTER PROCEDURE SYS$UNIX_TIMESTAMP_TO_TIMESTAMP ('
+   +#13#10'    AUNIX_TIMESTAMP BIGINT)'
+   +#13#10'RETURNS ('
+   +#13#10'    ATIMESTAMP TIMESTAMP)'
+   +#13#10'AS'
+   +#13#10'  DECLARE VARIABLE UNIX_OFFSET TIMESTAMP = ''1970-01-01 00:00:00'';'
+   +#13#10'BEGIN'
+   +#13#10'  /* PROCEDURE SYS$TEXT */'
+   +#13#10'  ATIMESTAMP = DATEADD(:AUNIX_TIMESTAMP / 1000 SECOND TO :UNIX_OFFSET);'
+   +#13#10'  SUSPEND;'
+   +#13#10'END' ;
+
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_REPLACE_ITEM_IN_STRING =
+          'CREATE OR ALTER PROCEDURE SYS$REPLACE_ITEM_IN_STRING ('
+   +#13#10'    SEPARATOR VARCHAR(10),'
+   +#13#10'    ASTRING VARCHAR(8000),'
+   +#13#10'    AOLDVALUE VARCHAR(10),'
+   +#13#10'    ANEWVALUE VARCHAR(10))'
+   +#13#10'RETURNS ('
+   +#13#10'    ARESULT VARCHAR(8000))'
+   +#13#10'AS'
+   +#13#10'DECLARE VARIABLE STR VARCHAR(8000);'
+   +#13#10'DECLARE VARIABLE POS INTEGER;'
+   +#13#10'DECLARE VARIABLE STRINGITEM VARCHAR(1000);'
+   +#13#10'DECLARE VARIABLE SEPARATOR_LENGTH INTEGER;'
+   +#13#10'BEGIN'
+   +#13#10''
+   +#13#10'  STR = ASTRING;'
+   +#13#10'  SEPARATOR_LENGTH = CHAR_LENGTH(SEPARATOR);'
+   +#13#10'  '
+   +#13#10'  IF (SEPARATOR_LENGTH > 0) THEN'
+   +#13#10'  BEGIN'
+   +#13#10'    POS = POSITION(SEPARATOR, STR);'
+   +#13#10'  '
+   +#13#10'    WHILE (POS <> 0) DO'
+   +#13#10'    BEGIN'
+   +#13#10'      IF (POS > 1) THEN'
+   +#13#10'      BEGIN'
+   +#13#10'        STRINGITEM = SUBSTRING(STR FROM 1 FOR (POS-1));'
+   +#13#10'        IF (STRINGITEM = :AOLDVALUE) THEN'
+   +#13#10'          STRINGITEM = :ANEWVALUE;'
+   +#13#10''
+   +#13#10'        IF (:ARESULT IS NULL) THEN'
+   +#13#10'          ARESULT = STRINGITEM;'
+   +#13#10'        ELSE IF (:STRINGITEM IS NOT NULL) THEN'
+   +#13#10'          ARESULT = ARESULT || SEPARATOR || STRINGITEM;'
+   +#13#10''
+   +#13#10'      END'
+   +#13#10'      STR = SUBSTRING(STR FROM (POS+SEPARATOR_LENGTH) );'
+   +#13#10'      POS = POSITION(SEPARATOR, STR);'
+   +#13#10'    END'
+   +#13#10'  END'
+   +#13#10'  '
+   +#13#10'  IF (CHAR_LENGTH(STR) > 0 ) THEN'
+   +#13#10'  BEGIN'
+   +#13#10'    STRINGITEM = STR;'
+   +#13#10''
+   +#13#10'    IF (STRINGITEM = :AOLDVALUE) THEN'
+   +#13#10'      STRINGITEM = :ANEWVALUE;'
+   +#13#10''
+   +#13#10'    IF (:ARESULT IS NULL) THEN'
+   +#13#10'      ARESULT = STRINGITEM;'
+   +#13#10'    ELSE IF (:STRINGITEM IS NOT NULL) THEN'
+   +#13#10'      ARESULT = ARESULT || SEPARATOR || STRINGITEM;'
+   +#13#10''
+   +#13#10'  END'
+   +#13#10''
+   +#13#10'  SUSPEND;'
+   +#13#10''
+   +#13#10'END' ;
+
+begin
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_ENDOFDAY                     ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_COMPARE_TIMESTAMP            ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_SPLIT                        ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_SPLIT_INTEGER_STRING         ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_TIMESTAMP_TO_UNIX_TIMESTAMP  ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_UNIX_TIMESTAMP_TO_TIMESTAMP  ) ;
+   ExecuteDirect ( _CREATE_OR_ALTER_PROCEDURE_SYS_REPLACE_ITEM_IN_STRING       ) ;
+end ;
+
+
+procedure TDBEntidadesUpdate._5_001_95;
+const
+  _ALTER_TABLE_SYSVERSION_APPVERSION =
+     'ALTER TABLE SYS$VERSION ADD SYS$APPVERSION SYS$INT';
+begin
+  TryExecuteDirect( _ALTER_TABLE_SYSVERSION_APPVERSION );
+end;
+
+
+procedure TDBEntidadesUpdate._5_001_94;
+const
+
+  _CREATE_TABLE_SYS_TYPES =
+         'CREATE TABLE SYS$TYPES ('
+  +#13#10'    ,KSYS$TYPE        SYS$PKGUID20'
+  +#13#10'    ,SYS$TYPE         SYS$ST_TYPE'
+  +#13#10'    ,SYS$VALUE        SYS$ST_VALUE_NULL'
+  +#13#10'    ,SYS$DESCRIPTION  SYS$ST_DESCRIPTION'
+  +#13#10'    ,SYS$ORDER        SYS$ST_ORDER'
+  +#13#10'    ,SYS$TYPEID       SYS$ST_TYPEID'
+  +#13#10'    ,CONSTRAINT PKSYS$TYPES PRIMARY KEY (KSYS$TYPE)'
+  +#13#10'    ,CONSTRAINT UQSYS$TYPES UNIQUE (SYS$TYPE, SYS$VALUE)'
+  +#13#10')' ;
+
+  _CREATE_OR_ALTER_PROCEDURE_SYS_TYPES_GETVALUE =
+         'CREATE OR ALTER PROCEDURE SYS$TYPES_GETVALUE ('
+  +#13#10'    SYS$TYPE TYPE OF SYS$ST_TYPE,'
+  +#13#10'    SYS$TYPEID TYPE OF SYS$ST_TYPEID)'
+  +#13#10'RETURNS ('
+  +#13#10'    SYS$VALUE TYPE OF SYS$ST_VALUE_NULL)'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  SELECT SYS$VALUE'
+  +#13#10'  FROM SYS$TYPES'
+  +#13#10'  WHERE SYS$TYPE = :SYS$TYPE AND SYS$TYPEID = :SYS$TYPEID'
+  +#13#10'  INTO :SYS$VALUE ;'
+  +#13#10'  SUSPEND;'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_OR_ALTER_PROCEDURE_SYS_TYPES_GETDESCRIPTION =
+         'CREATE OR ALTER PROCEDURE SYS$TYPES_GETDESCRIPTION ('
+  +#13#10'    SYS$TYPE TYPE OF SYS$ST_TYPE,'
+  +#13#10'    SYS$VALUE TYPE OF SYS$ST_VALUE_NULL)'
+  +#13#10'RETURNS ('
+  +#13#10'    SYS$DESCRIPTION TYPE OF SYS$ST_DESCRIPTION)'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10'  SELECT SYS$DESCRIPTION'
+  +#13#10'  FROM SYS$TYPES'
+  +#13#10'  WHERE SYS$TYPE = :SYS$TYPE AND SYS$VALUE = :SYS$VALUE'
+  +#13#10'  INTO :SYS$DESCRIPTION ;'
+  +#13#10'  SUSPEND;'
+  +#13#10'END' ;
+
+
+  _CREATE_TABLE_SYS_DOMAIN_TYPES =
+         'CREATE TABLE SYS$DOMAIN_TYPES ('
+  +#13#10'    KSYS$DOMAIN      SYS$PKGUID20'
+  +#13#10'  , SYS$TYPE         SYS$ST_TYPE'
+  +#13#10'  , SYS$VALUE        SYS$ST_VALUE_NULL'
+  +#13#10'  , SYS$DESCRIPTION  SYS$ST_DESCRIPTION'
+  +#13#10'  , SYS$ORDER        SYS$ST_ORDER'
+  +#13#10'  , SYS$TYPEID       SYS$ST_TYPEID'
+  +#13#10'  , CONSTRAINT UQSYS$DOMAIN_TYPES UNIQUE (KSYS$DOMAIN, SYS$TYPE, SYS$VALUE)'
+  +#13#10')' ;
+
+  _CREATE_OR_ALTER_PROCEDURE_SYS_DOMAIN_TYPES_GETVALUE =
+         'CREATE OR ALTER PROCEDURE SYS$DOMAIN_TYPES_GETVALUE ('
+  +#13#10'    KSYS$DOMAIN SYS$PKGUID20,'
+  +#13#10'    SYS$TYPE TYPE OF SYS$ST_TYPE,'
+  +#13#10'    SYS$TYPEID TYPE OF SYS$ST_TYPEID)'
+  +#13#10'RETURNS ('
+  +#13#10'    SYS$VALUE TYPE OF SYS$ST_VALUE_NULL)'
+  +#13#10'AS'
+  +#13#10'DECLARE EXISTS_ SYS$BOOL_NULL ;'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  SELECT SYS$VALUE, ''T'''
+  +#13#10'  FROM SYS$DOMAIN_TYPES'
+  +#13#10'  WHERE KSYS$DOMAIN = :KSYS$DOMAIN AND SYS$TYPE = :SYS$TYPE AND SYS$TYPEID = :SYS$TYPEID'
+  +#13#10'  INTO :SYS$VALUE, EXISTS_ ;'
+  +#13#10''
+  +#13#10'  IF ( EXISTS_ IS DISTINCT FROM ''T'' ) THEN'
+  +#13#10'    EXECUTE PROCEDURE SYS$TYPES_GETVALUE ( SYS$TYPE, SYS$TYPEID ) RETURNING_VALUES SYS$VALUE ;'
+  +#13#10''
+  +#13#10'  SUSPEND;'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_OR_ALTER_PROCEDURE_SYS_DOMAIN_TYPES_GETDESCRIPTION =
+         'CREATE OR ALTER PROCEDURE SYS$DOMAIN_TYPES_GETDESCRIPTION ('
+  +#13#10'    SYS$DOMAIN TYPE OF SYS$ST_TYPE,'
+  +#13#10'    SYS$TYPE TYPE OF SYS$ST_TYPE,'
+  +#13#10'    SYS$VALUE TYPE OF SYS$ST_VALUE_NULL)'
+  +#13#10'RETURNS ('
+  +#13#10'    SYS$DESCRIPTION TYPE OF SYS$ST_DESCRIPTION)'
+  +#13#10'AS'
+  +#13#10'DECLARE VARIABLE EXISTS_  SYS$BOOL_NULL ;'
+  +#13#10'BEGIN'
+  +#13#10'  SELECT SYS$DESCRIPTION, ''T'''
+  +#13#10'  FROM SYS$DOMAIN_TYPES'
+  +#13#10'  WHERE KSYS$DOMAIN = :SYS$DOMAIN AND SYS$TYPE = :SYS$TYPE AND SYS$VALUE = :SYS$VALUE'
+  +#13#10'  INTO SYS$DESCRIPTION, EXISTS_ ;'
+  +#13#10''
+  +#13#10'  IF ( EXISTS_ IS DISTINCT FROM ''T'' ) THEN'
+  +#13#10'    EXECUTE PROCEDURE SYS$TYPES_GETDESCRIPTION( SYS$TYPE, SYS$VALUE ) RETURNING_VALUES SYS$DESCRIPTION ;'
+  +#13#10''
+  +#13#10'  SUSPEND;'
+  +#13#10'END' ;
+
+  _CREATE_OR_ALTER_PROCEDURE_SYS_REBUILD_STATISTICS =
+          'CREATE OR ALTER PROCEDURE SYS$REBUILD_STATISTICS'
+  +#13#10'AS'
+  +#13#10'DECLARE VARIABLE S VARCHAR(200);'
+  +#13#10'BEGIN'
+  +#13#10'  FOR SELECT RDB$INDEX_NAME FROM RDB$INDICES INTO :S DO'
+  +#13#10'  BEGIN'
+  +#13#10'   S = ''SET STATISTICS INDEX '' || S || '';'' ;'
+  +#13#10'   EXECUTE STATEMENT :s;'
+  +#13#10'  END'
+  +#13#10'  SUSPEND;'
+  +#13#10'END' ;
+
+   _CREATE_OR_ALTER_PROCEDURE_SYS_REPLICATE =
+         'CREATE OR ALTER PROCEDURE SYS$REPLICATE ('
+  +#13#10'    X_ INTEGER)'
+  +#13#10'RETURNS ('
+  +#13#10'    COUNT_ INTEGER)'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10'  COUNT_ = 0 ;'
+  +#13#10'  WHILE ( COUNT_ < X_ ) DO'
+  +#13#10'     BEGIN'
+  +#13#10'        COUNT_ = COUNT_ + 1 ;'
+  +#13#10'        SUSPEND ;'
+  +#13#10'     END'
+  +#13#10'END' ;
+
+begin
+
+  TryExecuteDirect( _CREATE_TABLE_SYS_TYPES ) ;
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_TYPES_GETVALUE ) ;
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_TYPES_GETDESCRIPTION ) ;
+
+
+  TryExecuteDirect( _CREATE_TABLE_SYS_DOMAIN_TYPES ) ;
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_DOMAIN_TYPES_GETVALUE ) ;
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_DOMAIN_TYPES_GETDESCRIPTION ) ;
+
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_REBUILD_STATISTICS ) ;
+  ExecuteDirect( _CREATE_OR_ALTER_PROCEDURE_SYS_REPLICATE ) ;
+end;
+
+
+procedure TDBEntidadesUpdate._5_001_68;
+const
+  _ALTER_TABLE_CAD_FAZENDAS =
+       'ALTER TABLE CAD_FAZENDAS'
++#13#10'  ADD COOPERATIVA SYS$INT'
++#13#10', ALTER COOPERATIVA POSITION 12' ;
+
+begin
+  TryExecuteDirect ( _ALTER_TABLE_CAD_FAZENDAS ) ;
+end;
+
+procedure TDBEntidadesUpdate._5_001_14;
+const
+
+  _CREATE_TRIGGER_ON_CONNECT =
+        'CREATE OR ALTER TRIGGER ON_CONNECT'
+ +#13#10'ACTIVE ON CONNECT POSITION 1'
+ +#13#10'AS'
+ +#13#10'BEGIN'
+ +#13#10'   IN AUTONOMOUS TRANSACTION DO EXECUTE PROCEDURE SYS$INIT_TYPES ;'
+ +#13#10'   WHEN ANY DO BEGIN END'
+ +#13#10'END' ;
+
+begin
+  ExecuteDirect ( _CREATE_TRIGGER_ON_CONNECT ) ;
+end;
+
+
+procedure TDBEntidadesUpdate._5_001_13;
+const
+
+  _CREATE_DOMAIN_SYS_MODULE =
+        'CREATE DOMAIN SYS$MODULE INTEGER NOT NULL' ;
+
+  _CREATE_DOMAIN_SYS_MODULE_DOMAIN =
+        'CREATE DOMAIN SYS$MODULE_DOMAIN AS'
+  +#13#10'VARCHAR(32) CHARACTER SET ISO8859_1'
+  +#13#10'COLLATE ISO8859_1' ;
+
+  _CREATE_DOMAIN_SYS_MODULE_LOGIN =
+         'CREATE DOMAIN SYS$MODULE_LOGIN AS'
+  +#13#10'VARCHAR(32) CHARACTER SET ISO8859_1'
+  +#13#10'COLLATE ISO8859_1' ;
+
+  _CREATE_DOMAIN_SYS_MODULE_PASSWORD =
+        'CREATE DOMAIN SYS$MODULE_PASSWORD AS'
+  +#13#10'VARCHAR(32) CHARACTER SET ISO8859_1'
+  +#13#10'COLLATE ISO8859_1' ;
+
+  _CREATE_TABLE_SYS_USERS_MODULES =
+         'CREATE TABLE SYS$USERS_MODULES ('
+  +#13#10'    KSYS$USER_MODULE SYS$PKGUID20,'
+  +#13#10'    KSYS$USER        SYS$FKGUID20_NN,'
+  +#13#10'    KSYS$DOMAIN      SYS$FKGUID20_NN,'
+  +#13#10'    MODULE           SYS$MODULE,'
+  +#13#10'    MODULE_DOMAIN    SYS$MODULE_DOMAIN,'
+  +#13#10'    MODULE_LOGIN     SYS$MODULE_LOGIN,'
+  +#13#10'    MODULE_PASSWORD  SYS$MODULE_PASSWORD'
+  +#13#10')' ;
+
+begin
+  TryExecuteDirect ( _CREATE_DOMAIN_SYS_MODULE  ) ;
+  TryExecuteDirect ( _CREATE_DOMAIN_SYS_MODULE_DOMAIN  ) ;
+  TryExecuteDirect ( _CREATE_DOMAIN_SYS_MODULE_LOGIN  ) ;
+  TryExecuteDirect ( _CREATE_DOMAIN_SYS_MODULE_PASSWORD  ) ;
+  TryExecuteDirect ( _CREATE_TABLE_SYS_USERS_MODULES  ) ;
+end ;
+
+procedure TDBEntidadesUpdate._5_001_12;
+const
+
+  _CREATE_TRIGGER_RLOG_CAD_ENTIDADES =
+         'CREATE OR ALTER TRIGGER RLOG$CAD_ENTIDADES FOR CAD_ENTIDADES'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_TRIGGER_RLOG_CAD_FAZENDAS =
+            'CREATE OR ALTER TRIGGER RLOG$CAD_FAZENDAS FOR CAD_FAZENDAS'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_TRIGGER_RLOG_CAD_FAZENDA_PARAMETROS =
+
+            'CREATE OR ALTER TRIGGER RLOG$CAD_FAZENDA_PARAMETROS FOR CAD_FAZENDA_PARAMETROS'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+   _CREATE_TRIGGER_RLOG_CAD_TIPOS =
+            'CREATE OR ALTER TRIGGER RLOG$CAD_TIPOS FOR CAD_TIPOS'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_TRIGGER_RLOG_CAD_USUARIOS_FAZENDA =
+            'CREATE OR ALTER TRIGGER RLOG$CAD_USUARIOS_FAZENDA FOR CAD_USUARIOS_FAZENDA'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_TRIGGER_RLOG_GLB_ENDERECOS =
+            'CREATE OR ALTER TRIGGER RLOG$GLB_ENDERECOS FOR GLB_ENDERECOS'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _CREATE_TRIGGER_RLOG_SYS_USERS =
+         'CREATE OR ALTER TRIGGER RLOG$SYS$USERS FOR SYS$USERS'
+  +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 15000'
+  +#13#10'AS'
+  +#13#10'BEGIN'
+  +#13#10''
+  +#13#10'  if ( (RDB$GET_CONTEXT( ''USER_SESSION'',     ''RLOG$OFF'' ) = ''1'')'
+  +#13#10'    OR (RDB$GET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'' ) = ''1'') ) THEN'
+  +#13#10'     EXIT ;'
+  +#13#10''
+  +#13#10'  if ( inserting ) then'
+  +#13#10'  begin'
+  +#13#10'    if ( NEW.SYS$UI is NULL ) then'
+  +#13#10'      NEW.SYS$UI = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'    if ( NEW.SYS$DI is NULL ) then'
+  +#13#10'      NEW.SYS$DI = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'  if ( updating ) then'
+  +#13#10'  begin'
+  +#13#10'     NEW.SYS$UU = RDB$GET_CONTEXT ( ''USER_SESSION'', ''USERNAME'' ) ;'
+  +#13#10'     NEW.SYS$DU = CURRENT_TIMESTAMP ;'
+  +#13#10'  end'
+  +#13#10''
+  +#13#10'END' ;
+
+  _UPDATE_TABLES =
+        'EXECUTE BLOCK'
+ +#13#10'AS'
+ +#13#10'BEGIN'
+ +#13#10'  RDB$SET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'', ''1'' ) ;'
+ +#13#10'  UPDATE CAD_ENTIDADES SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE CAD_FAZENDAS  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE CAD_FAZENDA_PARAMETROS  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE CAD_TIPOS  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE CAD_USUARIOS_FAZENDA  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE GLB_ENDERECOS  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10'  UPDATE SYS$USERS  SET SYS$UI = ''SYSTEM'', SYS$DI = ''01.04.2016'' WHERE SYS$DI IS NULL ;'
+ +#13#10''
+ +#13#10'  UPDATE CAD_ENTIDADES SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE CAD_FAZENDAS  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE CAD_FAZENDA_PARAMETROS  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE CAD_TIPOS  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE CAD_USUARIOS_FAZENDA  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE GLB_ENDERECOS  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  UPDATE SYS$USERS  SET SYS$UU = ''SYSTEM'', SYS$DU = ''01.04.2016'' WHERE SYS$DU IS NULL ;'
+ +#13#10'  RDB$SET_CONTEXT( ''USER_TRANSACTION'', ''RLOG$OFF'', NULL) ;'
+ +#13#10'END' ;
+
+begin
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_CAD_ENTIDADES  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_CAD_FAZENDAS  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_CAD_FAZENDA_PARAMETROS  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_CAD_TIPOS  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_CAD_USUARIOS_FAZENDA  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_GLB_ENDERECOS  ) ;
+  ExecuteDirect ( _CREATE_TRIGGER_RLOG_SYS_USERS  ) ;
+  ExecuteDirect ( _UPDATE_TABLES  ) ;
+
+end;
+
+procedure TDBEntidadesUpdate._5_001_02;
+const
+
+  _CREATE_TRIGGER_CAD_ENTIDADES_BI =
+          'CREATE OR ALTER TRIGGER CAD_ENTIDADES_BI FOR CAD_ENTIDADES'
+  +#13#10'ACTIVE BEFORE INSERT POSITION 1001'
+  +#13#10'AS'
+  +#13#10'begin'
+  +#13#10''
+  +#13#10'  IF ( NEW.CODIGO IS NULL ) THEN'
+  +#13#10'    BEGIN'
+  +#13#10'      IF ( NEW.IS_CLIENTE = ''T'' ) THEN'
+  +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+  +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KCAD_FAZENDA, ''CAD_ENTIDADE_CLIENTE'' )'
+  +#13#10'        INTO NEW.CODIGO ;'
+  +#13#10'      ELSE IF ( NEW.IS_FORNECEDOR = ''T'' ) THEN'
+  +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+  +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KCAD_FAZENDA, ''CAD_ENTIDADE_FORNECEDOR'' )'
+  +#13#10'        INTO NEW.CODIGO ;'
+  +#13#10'      ELSE'
+  +#13#10'        SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+  +#13#10'        FROM  SYS$GET_SEQUENCE( NEW.KCAD_FAZENDA, ''CAD_ENTIDADE'' )'
+  +#13#10'        INTO NEW.CODIGO ;'
+  +#13#10'    END'
+  +#13#10''
+  +#13#10'  IF ( NEW.PESSOA = ''F'' ) then'
+  +#13#10'      NEW.CPF_CNPJ = SUBSTRING ( NEW.CPF_CNPJ FROM 1 FOR 14 ) || ''    '' ;'
+  +#13#10''
+  +#13#10'end' ;
+
+   _UPDATE_CAD_CLIENTE =
+        'EXECUTE BLOCK'
+  +#13#10'AS'
+  +#13#10'DECLARE KCAD_ENTIDADE SYS$FKGUID20 ;'
+  +#13#10'DECLARE CODIGO SYS$CODE ;'
+  +#13#10'BEGIN'
+  +#13#10'  EXECUTE PROCEDURE SYS$SET_SEQUENCE %s, ''CAD_ENTIDADE_CLIENTE'', 0 ;'
+  +#13#10''
+  +#13#10'  FOR'
+  +#13#10'   SELECT'
+  +#13#10'        KCAD_ENTIDADE'
+  +#13#10'   FROM CAD_ENTIDADES'
+  +#13#10'   WHERE IS_CLIENTE = ''T'''
+  +#13#10'    AND CHAR_LENGTH(CODIGO) = 6'
+  +#13#10'   ORDER BY SYS$DI'
+  +#13#10'  INTO KCAD_ENTIDADE DO'
+  +#13#10'    BEGIN'
+  +#13#10''
+  +#13#10'       SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+  +#13#10'       FROM  SYS$GET_SEQUENCE( %s, ''CAD_ENTIDADE_CLIENTE''  )'
+  +#13#10'       INTO CODIGO ;'
+  +#13#10''
+  +#13#10'       UPDATE CAD_ENTIDADES'
+  +#13#10'       SET'
+  +#13#10'          CODIGO = :CODIGO'
+  +#13#10'       WHERE KCAD_ENTIDADE = :KCAD_ENTIDADE ;'
+  +#13#10'    END'
+  +#13#10''
+  +#13#10'END' ;
+
+   _UPDATE_CAD_FORNECEDOR =
+         'EXECUTE BLOCK'
+  +#13#10'AS'
+  +#13#10'DECLARE KCAD_ENTIDADE SYS$FKGUID20 ;'
+  +#13#10'DECLARE CODIGO SYS$CODE ;'
+  +#13#10'BEGIN'
+  +#13#10'   EXECUTE PROCEDURE SYS$SET_SEQUENCE %s, ''CAD_ENTIDADE_FORNECEDOR'', 0 ;'
+  +#13#10''
+  +#13#10'  FOR'
+  +#13#10'   SELECT'
+  +#13#10'        KCAD_ENTIDADE'
+  +#13#10'   FROM CAD_ENTIDADES'
+  +#13#10'   WHERE IS_FORNECEDOR = ''T'''
+  +#13#10'    AND CHAR_LENGTH(CODIGO) = 6'
+  +#13#10'   ORDER BY SYS$DI'
+  +#13#10'  INTO KCAD_ENTIDADE DO'
+  +#13#10'    BEGIN'
+  +#13#10''
+  +#13#10'       SELECT Right ( ''000000'' || SEQUENCE_VALUE, 6 )'
+  +#13#10'       FROM  SYS$GET_SEQUENCE( %s, ''CAD_ENTIDADE_FORNECEDOR''  )'
+  +#13#10'       INTO CODIGO ;'
+  +#13#10''
+  +#13#10'       UPDATE CAD_ENTIDADES'
+  +#13#10'       SET'
+  +#13#10'          CODIGO = :CODIGO'
+  +#13#10'       WHERE KCAD_ENTIDADE = :KCAD_ENTIDADE ;'
+  +#13#10'    END'
+  +#13#10''
+  +#13#10'END' ;
+
+begin
+  ExecuteDirect ( _CREATE_TRIGGER_CAD_ENTIDADES_BI ) ;
+  ExecuteDirect ( Format ( _UPDATE_CAD_CLIENTE,    [ QuotedStr ( LoggedUser.DomainID ), QuotedStr ( LoggedUser.DomainID ) ] ) ) ;
+  ExecuteDirect ( Format ( _UPDATE_CAD_FORNECEDOR, [ QuotedStr ( LoggedUser.DomainID ), QuotedStr ( LoggedUser.DomainID ) ] ) ) ;
+end;
+
+procedure TDBEntidadesUpdate._5_000_91;
+const
+  _CREATE_TRIGGER_CAD_FAZENDAS_AI0 =
+         'CREATE OR ALTER TRIGGER CAD_FAZENDAS_AI0 FOR CAD_FAZENDAS'
+  +#13#10'ACTIVE AFTER INSERT POSITION 20001'
+  +#13#10'as'
+  +#13#10'BEGIN'
+  +#13#10'         /*'
+  +#13#10'   if ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'') ) = 1) then'
+  +#13#10'     EXECUTE STATEMENT ( ''INSERT INTO CAD_FAZENDAS( KCAD_FAZENDA, CODIGOCLINICA ) VALUES ( ?, ? )'' )'
+  +#13#10'            (NEW.KCAD_FAZENDA, NEW.CODIGOCLINICA )'
+  +#13#10'         ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' )'
+  +#13#10'         WITH COMMON TRANSACTION ;'
+  +#13#10'          */'
+  +#13#10'   if ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' ) ) = 1) then'
+  +#13#10'      execute statement ( ''UPDATE OR INSERT INTO CAD_FAZENDAS( KCAD_FAZENDA, CODIGOCLINICA ) VALUES ( ?, ? ) MATCHING ( KCAD_FAZENDA )'' )'
+  +#13#10'           (new.KCAD_FAZENDA, new.CODIGOCLINICA )'
+  +#13#10'        on external DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' )'
+  +#13#10'        with common transaction ;'
+  +#13#10''
+  +#13#10'END';
+
+begin
+  ExecuteDirect ( _CREATE_TRIGGER_CAD_FAZENDAS_AI0 ) ;
+end;
+
+procedure TDBEntidadesUpdate._5_000_80;
+begin
+  ExecuteDirect ( 'DELETE FROM SYS$TYPES WHERE SYS$TYPE = ''STATUS_PRODUCAO'' AND SYS$VALUE >= 1 AND SYS$VALUE NOT IN ( 1,2,4,10,43,50 )' ) ;
+end;
+
+procedure TDBEntidadesUpdate._5_000_64;
+begin
+  _5_000_35;
+end;
+
+(*
+procedure TDBEntidadesUpdate._5_000_61;
+const
+ _ADD_UNIDADE =
+        'EXECUTE BLOCK'
+ +#13#10'AS'
+ +#13#10'DECLARE KSYS$DOMAIN SYS$FKGUID20 = %s ;'
+ +#13#10'DECLARE DESCRICAO   SYS$DESCR = %s ;'
+ +#13#10'BEGIN'
+ +#13#10'  IF ( EXISTS(SELECT 1 FROM CAD_TIPOS WHERE TIPO = 2 AND DESCRICAO = :DESCRICAO ROWS 1) ) THEN'
+ +#13#10'   UPDATE  CAD_TIPOS'
+ +#13#10'     SET   DESCRICAO = :DESCRICAO'
+ +#13#10'   WHERE TIPO = 2 AND DESCRICAO = :DESCRICAO ;'
+ +#13#10'  ELSE'
+ +#13#10'    INSERT INTO CAD_TIPOS (KCAD_TIPOS, KSYS$DOMAIN, KCAD_FAZENDA, TIPO, DESCRICAO, SYS$UI, SYS$DI, SYS$UU, SYS$DU)'
+ +#13#10'    VALUES (GUID20(), :KSYS$DOMAIN, :KSYS$DOMAIN, 2, :DESCRICAO, NULL, NULL, NULL, NULL) ;'
+ +#13#10'END' ;
+var
+  LDomainID : string ;
+
+begin
+
+  try
+    LDomainID := LoggedUser.DomainID ;
+  except On E : Exception do
+    raise Exception.Create('LoggedUser.DomainID');
+  end;
+
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'Un'  ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'kg'  ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'L'   ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'ha'  ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 't'   ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'Sc.' ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'Cx.' ) ] ) ) ;
+  ExecuteDirect ( Format( _ADD_UNIDADE, [ QuotedStr( LDomainID ), QuotedStr( 'Fr.' ) ] ) ) ;
+end;
+*)
+procedure TDBEntidadesUpdate._5_000_35;
+begin
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$CODFEBRABAN AS CHAR(3)'  ) ;
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$CODFEBRABAN_NN AS CHAR(3) NOT NULL' ) ;
+
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$AGENCIA AS CHAR(8)' ) ;
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$AGENCIA_NN AS CHAR(8) NOT NULL' ) ;
+
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$CONTA AS CHAR(16)' ) ;
+  TryExecuteDirect ( 'CREATE DOMAIN FIN$CONTA_NN AS CHAR(16) NOT NULL' ) ;
+
+  TryExecuteDirect (  'ALTER TABLE CAD_ENTIDADES'
+               +#13#10'ADD BANCO FIN$CODFEBRABAN,'
+               +#13#10'ALTER BANCO POSITION 23' ) ;
+
+  TryExecuteDirect (  'ALTER TABLE CAD_ENTIDADES'
+               +#13#10'ADD AGENCIA FIN$AGENCIA,'
+               +#13#10'ALTER AGENCIA POSITION 24' ) ;
+
+  TryExecuteDirect ( 'ALTER TABLE CAD_ENTIDADES'
+              +#13#10'ADD CONTA FIN$CONTA,'
+              +#13#10'ALTER CONTA POSITION 25' ) ;
+
+  TryExecuteDirect (
+    'ALTER TABLE EST_PRODUTOS ADD KFIN_PLANOCONTA SYS$FKGUID20' ) ;
+end;
+
+procedure TDBEntidadesUpdate._5_000_34;
+begin
+
+          try
+              ExecuteDirect (
+                     'ALTER TABLE CAD_FAZENDA_PARAMETROS'
+              +#13#10'ADD EXCLUIR_TAREFAS_DESCARTE  SYS$BOOL_F,'
+              +#13#10'ALTER  EXCLUIR_TAREFAS_DESCARTE POSITION 10,'
+              +#13#10'ADD DIAS_PRE_SECAGEM_BST SYS$INT_NN DEFAULT 20,'
+              +#13#10'ALTER DIAS_PRE_SECAGEM_BST POSITION 11' ) ;
+          except on E : Exception do  ;
+
+          end;
+
+end;
+
+
+
+procedure TDBEntidadesUpdate._5_000_24;
+var
+  LDomainCode,
+  LDomainName : string ;
+  LGuidFazenda : string ;
+begin
+
+      LDomainCode := '001907' ;
+      if LoggedUser.DomainCode = LDomainCode then
+        begin
+          LGuidFazenda := GuidSuppl.GuidToStr20 ( Tc.RTL.MD5.MD5StringToGUID ( Format ( 'CL-%s', [ LDomainCode ] ) ) ) ;
+          LDomainName := 'Sérgio Paim Beraldo e outros' ;
+          ExecuteDirect( Format ( 'UPDATE OR INSERT INTO CAD_ENTIDADES          ( KCAD_ENTIDADE, KSYS$DOMAIN, KCAD_FAZENDA, APELIDO, NOME, ATIVO, PESSOA, IS_CLIENTE, IS_FORNECEDOR, IS_FUNCIONARIO, IS_TRANSPORTADORA )'
+                                                      +#13#10'VALUES( %s,           %s,           %s,           %s,      %s,   %s,    %s,     %s,         %s,            %s,             %s )'
+                                                      +#13#10'MATCHING ( KCAD_ENTIDADE )',
+              [ QuotedStr( LGuidFazenda ), QuotedStr( LGuidFazenda ), QuotedStr( LGuidFazenda ),
+                QuotedStr( LDomainName ), QuotedStr( LDomainName ),
+                QuotedStr( 'T' ), QuotedStr( 'J' ), QuotedStr( 'F' ), QuotedStr( 'F' ), QuotedStr( 'F' ), QuotedStr( 'F' ) ] ) ) ;
+        end;
+
+end;
+
+
+
+procedure TDBEntidadesUpdate._5_000_19;
+begin
+        ExecuteDirect (
+                    'UPDATE CAD_FAZENDA_PARAMETROS'
+             +#13#10'SET KSYS$DOMAIN = KCAD_FAZENDA'
+             +#13#10'WHERE KSYS$DOMAIN IS NULL' ) ;
+
+end;
+
+
+procedure TDBEntidadesUpdate._5_000_18;
+begin
+        ExecuteDirect (
+              'CREATE OR ALTER TRIGGER CAD_FAZENDA_PARAMETROS_DOMAIN FOR CAD_FAZENDA_PARAMETROS'
+       +#13#10'ACTIVE BEFORE INSERT OR UPDATE POSITION 1002'
+       +#13#10'AS'
+       +#13#10'BEGIN'
+       +#13#10''
+       +#13#10'   NEW.KSYS$DOMAIN = NEW.KCAD_FAZENDA ;'
+       +#13#10''
+       +#13#10'END' ) ;
+
+
+end;
+
+procedure TDBEntidadesUpdate._5_000_17;
+begin
+
+        ExecuteDirect (
+            'CREATE OR ALTER TRIGGER CAD_ENTIDADES_AIUD FOR CAD_ENTIDADES'
+     +#13#10'ACTIVE AFTER INSERT OR UPDATE OR DELETE POSITION 20001'
+     +#13#10'AS'
+     +#13#10'DECLARE VARIABLE vFARMCODE SYS$CODE;'
+     +#13#10'DECLARE PATH    VARCHAR( 256 );'
+     +#13#10'BEGIN'
+     +#13#10''
+     +#13#10'   vFARMCODE = NULL ;'
+     +#13#10'   SELECT CODIGOCLINICA FROM CAD_FAZENDAS WHERE KCAD_FAZENDA = NEW.KCAD_ENTIDADE'
+     +#13#10'   INTO vFARMCODE ;'
+     +#13#10''
+     +#13#10'   PATH = SU$EXTRACTFILEPATH ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ) ) ;'
+     +#13#10'   PATH = SU$EXTRACTFILEPATH ( SUBSTRING ( PATH FROM 1 FOR CHAR_LENGTH( PATH )- 1 ) ) ;'
+     +#13#10'   PATH = SU$EXTRACTFILEPATH ( SUBSTRING ( PATH FROM 1 FOR CHAR_LENGTH( PATH )- 1 ) ) ;'
+     +#13#10''
+     +#13#10'   IF ( INSERTING OR UPDATING ) THEN'
+     +#13#10'     BEGIN'
+     +#13#10'       IF (( vFARMCODE IS NOT NULL ) AND ( SU$FILEEXISTS( PATH || ''CLAG5.DB'' ) = 1)) THEN'
+     +#13#10'          EXECUTE STATEMENT (  ''UPDATE OR INSERT INTO SYS$DOMAINS ( KSYS$DOMAIN, DOMAIN_APP, DOMAIN_CODEPREFIX, DOMAIN_CODE, DOMAIN_CODESUFFIX, DOMAIN_NAME, DOMAIN_ALIAS, SYNC_STATUS ) '''
+     +#13#10'                            || ''VALUES ( ?, ?, ?, ?, ?, ?, ?, ? ) MATCHING (KSYS$DOMAIN)'' )'
+     +#13#10'          (NEW.KCAD_ENTIDADE, ''CLAG5'', ''CL-'', vFARMCODE, '''', NEW.NOME, NEW.APELIDO, 0 )'
+     +#13#10'          ON EXTERNAL DATA SOURCE PATH || ''CLAG5.DB'''
+     +#13#10'          WITH AUTONOMOUS TRANSACTION ;'
+     +#13#10''
+     +#13#10'       IF ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' ) ) = 1) THEN'
+     +#13#10'         BEGIN'
+     +#13#10'         /*'
+     +#13#10'            IF ( vFARMCODE IS NOT NULL ) THEN'
+     +#13#10'              EXECUTE STATEMENT (  ''UPDATE OR INSERT INTO SYS$DOMAINS ( KSYS$DOMAIN, DOMAIN_APP, DOMAIN_CODEPREFIX, DOMAIN_CODE, DOMAIN_CODESUFFIX, DOMAIN_NAME, DOMAIN_ALIAS ) '''
+     +#13#10'                            || ''VALUES ( ?, ?, ?, ?, ?, ?, ? ) matching (KSYS$DOMAIN)'' )'
+     +#13#10'              (NEW.KCAD_ENTIDADE, ''CLAG5'', ''CL-'', vFARMCODE, '''', NEW.NOME, NEW.APELIDO )'
+     +#13#10'               ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' )'
+     +#13#10'               WITH COMMON TRANSACTION ;'
+     +#13#10''
+     +#13#10'           */'
+     +#13#10'            EXECUTE STATEMENT ( ''UPDATE OR INSERT INTO CAD_ENTIDADES( KCAD_ENTIDADE, CODIGO, APELIDO, NOME ) VALUES ( ?, ?, ?, ? ) MATCHING ( KCAD_ENTIDADE )'' )'
+     +#13#10'              (NEW.KCAD_ENTIDADE, NEW.CODIGO, NEW.APELIDO, NEW.NOME )'
+     +#13#10'            ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' )'
+     +#13#10'            WITH COMMON TRANSACTION ;'
+     +#13#10''
+     +#13#10'         END'
+     +#13#10''
+     +#13#10'       IF ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' ) ) = 1) THEN'
+     +#13#10'         BEGIN'
+     +#13#10'            /*'
+     +#13#10'             IF ( vFARMCODE IS NOT NULL ) THEN'
+     +#13#10'              EXECUTE STATEMENT (  ''UPDATE OR INSERT INTO SYS$DOMAINS ( KSYS$DOMAIN, DOMAIN_APP, DOMAIN_CODEPREFIX, DOMAIN_CODE, DOMAIN_CODESUFFIX, DOMAIN_NAME, DOMAIN_ALIAS ) '''
+     +#13#10'                            || ''VALUES ( ?, ?, ?, ?, ?, ?, ? ) matching (KSYS$DOMAIN)'' )'
+     +#13#10'              (NEW.KCAD_ENTIDADE, ''CLAG5'', ''CL-'', vFARMCODE, '''', NEW.NOME, NEW.APELIDO )'
+     +#13#10'               ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' )'
+     +#13#10'               WITH COMMON TRANSACTION ;'
+     +#13#10'             */'
+     +#13#10'            EXECUTE STATEMENT ( ''UPDATE OR INSERT INTO CAD_ENTIDADES( KCAD_ENTIDADE, CODIGO, APELIDO, NOME ) VALUES ( ?, ?, ?, ? ) MATCHING ( KCAD_ENTIDADE )'' )'
+     +#13#10'              (NEW.KCAD_ENTIDADE, NEW.CODIGO, NEW.APELIDO, NEW.NOME )'
+     +#13#10'            ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' )'
+     +#13#10'            WITH COMMON TRANSACTION ;'
+     +#13#10''
+     +#13#10'         END'
+     +#13#10'     END'
+     +#13#10'    ELSE IF (DELETING) THEN'
+     +#13#10'     BEGIN'
+     +#13#10'       IF (( vFARMCODE IS NOT NULL ) AND ( SU$FILEEXISTS( PATH || ''CLAG5.DB'' ) = 1)) THEN'
+     +#13#10'          EXECUTE STATEMENT (  ''DELETE FROM SYS$DOMAINS WHERE (KSYS$DOMAIN = ?)'' )'
+     +#13#10'          (OLD.KCAD_ENTIDADE)'
+     +#13#10'          ON EXTERNAL DATA SOURCE PATH || ''CLAG5.DB'''
+     +#13#10'          WITH COMMON TRANSACTION ;'
+     +#13#10''
+     +#13#10'       IF ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' ) ) = 1) THEN'
+     +#13#10'          BEGIN'
+     +#13#10'           /*'
+     +#13#10'             EXECUTE STATEMENT ( ''DELETE FROM SYS$DOMAINS WHERE (KSYS$DOMAIN = ?)'' )'
+     +#13#10'               (OLD.KCAD_ENTIDADE)'
+     +#13#10'             ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' )'
+     +#13#10'             WITH COMMON TRANSACTION ;'
+     +#13#10'           */'
+     +#13#10'             EXECUTE STATEMENT ( ''DELETE FROM CAD_ENTIDADES WHERE (KCAD_ENTIDADE = ?)'' )'
+     +#13#10'               (OLD.KCAD_ENTIDADE)'
+     +#13#10'             ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.ZOO'' )'
+     +#13#10'             WITH COMMON TRANSACTION ;'
+     +#13#10'          END'
+     +#13#10''
+     +#13#10'       IF ( SU$FILEEXISTS( SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' ) ) = 1) THEN'
+     +#13#10'         BEGIN'
+     +#13#10'             /*'
+     +#13#10'             EXECUTE STATEMENT ( ''DELETE FROM SYS$DOMAINS WHERE (KSYS$DOMAIN = ?)'' )'
+     +#13#10'               (OLD.KCAD_ENTIDADE)'
+     +#13#10'             ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' )'
+     +#13#10'             WITH COMMON TRANSACTION ;'
+     +#13#10'             */'
+     +#13#10''
+     +#13#10'             EXECUTE STATEMENT ( ''DELETE FROM CAD_ENTIDADES WHERE (KCAD_ENTIDADE = ?)'' )'
+     +#13#10'               (OLD.KCAD_ENTIDADE)'
+     +#13#10'             ON EXTERNAL DATA SOURCE SU$CHANGEFILEEXT ( RDB$GET_CONTEXT( ''SYSTEM'', ''DB_NAME'' ), ''.FIN'' )'
+     +#13#10'             WITH COMMON TRANSACTION ;'
+     +#13#10'         END'
+     +#13#10'     END'
+     +#13#10''
+     +#13#10'END' ) ;
+
+end;
+
+
+procedure TDBEntidadesUpdate._5_000_03;
+begin
+        try
+          ExecuteDirect ( 'DROP TRIGGER JNL$CAD_ENTIDADES' ) ;
+          ExecuteDirect ( 'ALTER TABLE CAD_ENTIDADES DROP KSYS$LICENSE' ) ;
+          ExecuteDirect ( 'DROP TRIGGER JNL$CAD_FAZENDAS' ) ;
+          ExecuteDirect ( 'ALTER TABLE CAD_FAZENDAS DROP KSYS$LICENSE' ) ;
+          ExecuteDirect ( 'DROP TRIGGER JNL$SYS$USERS' ) ;
+          ExecuteDirect ( 'ALTER TABLE SYS$USERS DROP KSYS$LICENSE' ) ;
+        except
+        end;
+
+end ;
+
+
+procedure TDBEntidadesUpdate._5_000_01;
+begin
+        try
+          ExecuteDirect( 'DROP TRIGGER JNL$SYS$USERS' ) ;
+          ExecuteDirect( 'ALTER TABLE SYS$USERS DROP KSYS$LICENSE' ) ;
+        except
+        end;
+
+        try
+          ExecuteDirect( 'DROP TRIGGER JNL$CAD_ENTIDADES' ) ;
+          ExecuteDirect( 'ALTER TABLE CAD_ENTIDADES DROP KSYS$LICENSE' ) ;
+        except
+        end;
+
+        try
+          ExecuteDirect( 'DROP TRIGGER JNL$CAD_FAZENDAS' ) ;
+          ExecuteDirect( 'ALTER TABLE CAD_FAZENDAS DROP KSYS$LICENSE' ) ;
+        except
+        end;
+end ;
+
+
+end.

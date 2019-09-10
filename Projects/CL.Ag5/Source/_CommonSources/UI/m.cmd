@@ -1,0 +1,20 @@
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\DBForm.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormDialog.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormReportDialog.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormWizard.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysWizardReportDialog.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysPrintGridDialog.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormDialogError.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormSearch.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\AnimationThread.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormPesquisaFicha.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormEditaLista.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysFormListaFicha.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\UfrmSYS_SelPeriodo.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysExceptions.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysReportTypes.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysQuerySaveIgnoreCancel.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysQueryProcessIgnoreCancel.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysTypes.* .
+move  C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\SysCommonResources.* .
+pause 

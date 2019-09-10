@@ -1,0 +1,51 @@
+package CL.Ag5.Estoque.EntradaDados.Movimento ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Svc.Estoque.Patrimonio,
+  CL.Ag5.Svc.Estoque.Produtos,
+  dsnapcon;
+
+contains
+  UFIN_EntradaEstoqueDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_EntradaEstoqueDatamodule.pas' {FIN_EntradaEstoqueDatamodule: T_dtmBASEDBListEdit},
+  UFIN_EntradaEstoqueWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_EntradaEstoqueWizard.pas' {FIN_EntradaEstoqueWizard: TTcForm},
+  UfrmFIN_DesktopSaidas in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UfrmFIN_DesktopSaidas.pas' {frmFIN_DesktopSaidas},
+  UFIN_SaidaEstoqueDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_SaidaEstoqueDatamodule.pas' {FIN_SaidaEstoqueDatamodule: T_dtmBASEDBListEdit},
+  UFIN_SaidaEstoqueWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_SaidaEstoqueWizard.pas' {FIN_SaidaEstoqueWizard: TTcForm},
+  UFIN_SaidaRapidaEstoqueWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_SaidaRapidaEstoqueWizard.pas' {FIN_SaidaRapidaEstoqueWizard: TTcForm},
+  UfrmFIN_FechamentoMensal in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UfrmFIN_FechamentoMensal.pas' {frmFIN_FechamentoMensal: TTcForm},
+  UdtmFIN_FechamentoMensal in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UdtmFIN_FechamentoMensal.pas' {dtmFIN_FechamentoMensal: T_dtmBASEDBListEdit},
+  UFIN_SaidaRapidaEstoqueDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Movimento\UFIN_SaidaRapidaEstoqueDatamodule.pas' {FIN_SaidaRapidaEstoqueDatamodule: T_dtmBASE};
+
+end.

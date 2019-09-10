@@ -1,0 +1,55 @@
+package CL.Ag5.Estoque.Cadastros ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.DB.Financeiro,
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Entidades.Cadastros,
+  CL.Ag5.Svc.Estoque.Patrimonio,
+  CL.Ag5.Svc.Estoque.Produtos,
+  vclwinx,
+  JvCmp;
+
+contains
+  UfrmEST_Produtos in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\UfrmEST_Produtos.pas' {frmEST_Produtos: TTcForm},
+  UdtmEST_Produtos in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\UdtmEST_Produtos.pas' {dtmEST_Produtos: TDataModule},
+  UFin_CadastroPatrimonioWizard in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\UFin_CadastroPatrimonioWizard.pas' {Fin_CadastroPatrimonioWizard: TTcForm},
+  UFin_CadastroPatrimonioDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\UFin_CadastroPatrimonioDatamodule.pas' {Fin_CadastroPatrimonioDatamodule: T_dtmBASEDBListEdit},
+  UCAD_PatrimonioReport in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\Reports\UCAD_PatrimonioReport.pas' {qrCAD_PatrimonioReport: TTcForm},
+  UEST_ProdutosInsumosReport in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\Reports\UEST_ProdutosInsumosReport.pas' {EST_ProdutosInsumosReport: TTcForm},
+  UEST_ProdutosInsumosReportDialog in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\Reports\UEST_ProdutosInsumosReportDialog.pas' {EST_ProdutosInsumosReportDialog: TTcForm},
+  UEST_ServicosReport in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\Reports\UEST_ServicosReport.pas' {EST_ServicosReport: TTcForm},
+  UFIN_InventarioProdutosReport in '..\..\..\Source\CL.Ag5Client\Estoque\Cadastros\Reports\UFIN_InventarioProdutosReport.pas' {FIN_InventarioProdutosReport: TTcForm},
+  UCAD_TiposEstoqueDatamodule in '..\..\..\Source\CL.Ag5Client\Estoque\UCAD_TiposEstoqueDatamodule.pas' {CAD_TiposEstoqueDatamodule: T_dtmBASEDBListEdit},
+  UCAD_TiposEstoqueWizard in '..\..\..\Source\CL.Ag5Client\Estoque\UCAD_TiposEstoqueWizard.pas' {CAD_TiposEstoqueWizard: TTcForm};
+
+end.

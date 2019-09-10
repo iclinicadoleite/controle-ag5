@@ -1,0 +1,44 @@
+package CL.Ag5.Zootecnico.BancoDados.Machos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico.BancoDados;
+
+contains
+  UZoo_BancoDadosMachoForm in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Macho\UZoo_BancoDadosMachoForm.pas' {Zoo_BancoDadosMachoForm: T__Form},
+  UZoo_BancoDadosMachoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Macho\UZoo_BancoDadosMachoDatamodule.pas' {Zoo_BancoDadosMachoDatamodule: TDataModule},
+  UZoo_BancoDadosMachoEventosReprodutivosForm in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Macho\UZoo_BancoDadosMachoEventosReprodutivosForm.pas' {Zoo_BancoDadosMachoEventosReprodutivosForm},
+  UZoo_BancoDadosMachoEventosReprodutivosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Macho\UZoo_BancoDadosMachoEventosReprodutivosDatamodule.pas' {Zoo_BancoDadosMachoEventosReprodutivosDatamodule: TDataModule},
+  UZoo_BancoDadosEmbriaoForm in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Embriao\UZoo_BancoDadosEmbriaoForm.pas' {Zoo_BancoDadosEmbriaoForm},
+  UZoo_BancoDadosEmbriaoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Embriao\UZoo_BancoDadosEmbriaoDatamodule.pas' {Zoo_BancoDadosEmbriaoDatamodule: TDataModule},
+  UInclusaoEmbriaoWizard in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Embriao\UInclusaoEmbriaoWizard.pas' {InclusaoEmbriaoWizard: T__Form},
+  UInclusaoMachoWizard in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Macho\UInclusaoMachoWizard.pas' {InclusaoMachoWizard: T__Form};
+
+end.

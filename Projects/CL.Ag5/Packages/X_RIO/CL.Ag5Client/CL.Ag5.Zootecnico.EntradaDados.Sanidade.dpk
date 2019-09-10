@@ -1,0 +1,55 @@
+package CL.Ag5.Zootecnico.EntradaDados.Sanidade;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico,
+  CL.Ag5.Zootecnico.EntradaDados,
+  CL.Ag5.Zootecnico.Configuracoes,
+  VclSmp;
+
+contains
+  UfrmZoo_DesktopSanidade in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UfrmZoo_DesktopSanidade.pas' {frmZoo_DesktopSanidade},
+  UZoo_SanidadeBaixarTarefasWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeBaixarTarefasWizard.pas' {Zoo_SanidadeBaixarTarefasWizard},
+  UZoo_SanidadeBaixarTarefasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeBaixarTarefasDatamodule.pas' {Zoo_SanidadeBaixarTarefasDatamodule: T_dtmBASE},
+  UZoo_SanidadeProtocolosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeProtocolosDatamodule.pas' {Zoo_SanidadeProtocolosDatamodule: TDataModule},
+  UZoo_SanidadeProtocolosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeProtocolosWizard.pas' {Zoo_SanidadeProtocolosWizard},
+  UZoo_SanidadeEscoresDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeEscoresDatamodule.pas' {Zoo_SanidadeEscoresDatamodule: TDataModule},
+  UZoo_SanidadeBSTWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeBSTWizard2.pas' {Zoo_SanidadeBSTWizard2},
+  UZoo_SanidadeBSTDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeBSTDatamodule2.pas' {Zoo_SanidadeBSTDatamodule2: TDataModule},
+  UZoo_SanidadeCMTDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeCMTDatamodule.pas' {Zoo_SanidadeCMTDatamodule: TDataModule},
+  UZoo_SanidadeCMTWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeCMTWizard.pas' {Zoo_SanidadeCMTWizard},
+  UZoo_SanidadeCondicaoCorporalDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeCondicaoCorporalDatamodule.pas' {Zoo_SanidadeCondicaoCorporalDatamodule: TDataModule},
+  UZoo_SanidadeCondicaoCorporalWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeCondicaoCorporalWizard.pas' {Zoo_SanidadeCondicaoCorporalWizard},
+  UZoo_SanidadeEscoresWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeEscoresWizard.pas' {Zoo_SanidadeEscoresWizard},
+  UZoo_SanidadeDiagnosticosDatamodule5 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeDiagnosticosDatamodule5.pas' {Zoo_SanidadeDiagnosticosDatamodule: TDataModule},
+  UZoo_SanidadeDiagnosticosWizard5 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Sanidade\UZoo_SanidadeDiagnosticosWizard5.pas' {Zoo_SanidadeDiagnosticosWizard: TTcForm};
+
+end.

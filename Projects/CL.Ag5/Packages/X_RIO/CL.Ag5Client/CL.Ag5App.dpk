@@ -1,0 +1,103 @@
+package CL.Ag5App;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Tc.WindowsAPI,
+  CL.Ag5.DB,
+  CL.Ag5.DB.Session,
+  CL.Ag5.DB.Entidades,
+  CL.Ag5.DB.Zootecnico,
+  CL.Ag5.DB.Financeiro,
+  CL.Ag5.DB.Anexos,
+  Tc.VCL.Ctrls.Edits,
+  MPCore,
+  Tc.IBEScriptRunner,
+  DataSnapProviderClient,
+  IndyIPClient,
+  IndyIPCommon,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  CL.Ag5.Svc.NSMsgs,
+  tmsdXE10,
+  SynEditDR;
+
+contains
+  CL.Ag5.Exceptions in '..\..\..\Source\_CommonSources\CL.Ag5.Exceptions.pas',
+  UApplResources in '..\..\..\Source\CL.Ag5Client\Core\UApplResources.pas' {ApplResources},
+  CLAg5Types in '..\..\..\Source\_CommonSources\CLAg5Types.pas',
+  UfrmGlb_Desktop in '..\..\..\Source\_CommonSources\UfrmGlb_Desktop.pas' {frmGlb_Desktop},
+  Wrappers in '..\..\..\Source\_CommonSources\Wrappers.pas',
+  Validates in '..\..\..\Source\_CommonSources\Validates.pas',
+  UdtmSYS_Login in '..\..\..\Source\CL.Ag5Client\Core\UdtmSYS_Login.pas' {dtmSYS_Login: TDataModule},
+  UfrmSYS_Login in '..\..\..\Source\CL.Ag5Client\Core\UfrmSYS_Login.pas' {frmSYS_Login},
+  UDashLogin in '..\..\..\Source\CL.Ag5Client\Core\UDashLogin.pas' {frmDash_Login},
+  UfrmSYS_Splash in '..\..\..\Source\CL.Ag5Client\Core\UfrmSYS_Splash.pas' {frmSYS_Splash},
+  UfrmSYS_DefaultDialogError in '..\..\..\Source\_CommonSources\UfrmSYS_DefaultDialogError.pas',
+  ReportTypes in '..\..\..\Source\_CommonSources\ReportTypes.pas',
+  UQuickReport in '..\..\..\Source\_CommonSources\QReports\Base\UQuickReport.pas' {_QuickReport},
+  UCustomQuickReport in '..\..\..\Source\_CommonSources\QReports\Base\UCustomQuickReport.pas' {_CustomQuickReport},
+  UfqrSYS_BaseReport in '..\..\..\Source\_CommonSources\QReports\UfqrSYS_BaseReport.pas' {fqrSYS_BaseReport},
+  UMessagePrintDialog in '..\..\..\Source\_CommonSources\UMessagePrintDialog.pas' {MessagePrintDialog: TTcForm},
+  UReportMemoList in '..\..\..\Source\_CommonSources\QReports\UReportMemoList.pas' {ReportMemoList},
+  ULogger in '..\..\..\..\Cl.Ag5SyncServer\Source\ULogger.pas',
+  ClAg5.Common.BackupRestore in '..\..\..\Source\_CommonSources\ClAg5.Common.BackupRestore.pas',
+  ClAg5.Common.BackupRestoreAgenda5 in '..\..\..\Source\_CommonSources\ClAg5.Common.BackupRestoreAgenda5.pas',
+  ClAg5.Common.BackupRestoreAgenda5Local in '..\..\..\Source\_CommonSources\ClAg5.Common.BackupRestoreAgenda5Local.pas',
+  ClAg5.Common.BackupRestoreAgenda5Remote in '..\..\..\Source\_CommonSources\ClAg5.Common.BackupRestoreAgenda5Remote.pas',
+  ClAg5.Common.BackupRestoreAgenda5Intf in '..\..\..\Source\_CommonSources\ClAg5.Common.BackupRestoreAgenda5Intf.pas',
+  UDatabaseListForm in '..\..\..\Source\CL.Ag5Client\Core\UDatabaseListForm.pas' {DatabaseListForm},
+  UDomainListForm in '..\..\..\Source\CL.Ag5Client\Core\UDomainListForm.pas' {DomainListForm: TForm},
+  UDomainListDatamodule in '..\..\..\Source\CL.Ag5Client\Core\UDomainListDatamodule.pas' {DomainListDatamodule: TDataModule},
+  CLAg5.AccessKeyGen in '..\..\..\Source\_CommonSources\CLAg5.AccessKeyGen.pas',
+  CLAg5.ComputerID in '..\..\..\Source\_CommonSources\CLAg5.ComputerID.pas',
+  FBControllerServerProxyClasses in '..\..\..\..\CL.Ag5FBController\Source\ProxyClasses\FBControllerServerProxyClasses.pas',
+  UDomainValidateForm in '..\..\..\Source\CL.Ag5Client\Core\UDomainValidateForm.pas' {DomainValidateForm},
+  UDomainValidateDatamodule in '..\..\..\Source\CL.Ag5Client\Core\UDomainValidateDatamodule.pas' {DomainValidateDatamodule: TDataModule},
+  UClAg5ClientInitFarmDatamodule in '..\..\..\Source\CL.Ag5InitFarm\UClAg5ClientInitFarmDatamodule.pas' {ClAg5ClientInitFarmDatamodule: TDataModule},
+  ClAg5ClientCommonTypes in '..\..\..\Source\CL.Ag5Client\ClAg5ClientCommonTypes.pas',
+  CLAg5.CompareDataFromClientDataSet in '..\..\..\Source\_CommonSources\CLAg5.CompareDataFromClientDataSet.pas',
+  CL.Ag5.SelectDataFromPersonalizado in '..\..\..\Source\_CommonSources\CL.Ag5.SelectDataFromPersonalizado.pas',
+  UFin_RelatoriosBaseWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\UFin_RelatoriosBaseWizard.pas' {Fin_RelatoriosBaseWizard: TTcForm},
+  Tc.DBXFBExtract in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\DBRTL\DBX\Tc.DBXFBExtract.pas',
+  pFIBMetaData in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\DBRTL\DBX\pFIBMetaData.pas',
+  pFIBScripter in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\DBRTL\DBX\pFIBScripter.pas',
+  UDBViewer in '..\..\..\Source\_CommonSources\UDBViewer.pas' {frmDBViewer},
+  UDBViewerHelpers in '..\..\..\Source\_CommonSources\UDBViewerHelpers.pas',
+  UDBViewerDatamodule in '..\..\..\Source\_CommonSources\UDBViewerDatamodule.pas' {dtmDBViewer: TDataModule};
+
+//  FBHeader in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\DBRTL\FBSuppl\Services\FBHeader.pas';
+
+///  Tc.Vcl.Forms.RSP12971 in '..\..\..\Source\_CommonSources\Tc.Vcl.Forms.RSP12971.pas';
+
+end.
+
+
+

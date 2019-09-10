@@ -1,0 +1,48 @@
+package CL.Ag5.Estoque.EntradaDados.Vendas ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Svc.Estoque.Patrimonio,
+  CL.Ag5.Svc.Estoque.Produtos,
+  CL.Ag5.Svc.Estoque.EntradaDados.Vendas;
+
+contains
+  UfrmVENDAS_Pedido2 in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\UfrmVENDAS_Pedido2.pas' {frmVENDAS_Pedido},
+  UdtmVENDAS_Pedido2 in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\UdtmVENDAS_Pedido2.pas' {dtmVENDAS_Pedido: TDataModule},
+  UfqrVENDAS_Pedido in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\Report\UfqrVENDAS_Pedido.pas' {fqrVENDAS_Pedido},
+  UFin_VendasPorCentroCustoDialog in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\Report\UFin_VendasPorCentroCustoDialog.pas' {Fin_VendasPorCentroCustoDialog: TTcForm},
+  UFin_VendasPorCentroCustoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\Report\UFin_VendasPorCentroCustoReport.pas' {FIN_VendasPorCentroCustoReport: TTcForm},
+  UFin_VendasPorPeriodoDialog in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\Report\UFin_VendasPorPeriodoDialog.pas' {Fin_VendasPorPeriodoDialog: TTcForm},
+  UFin_VendasPorPeriodoReport in '..\..\..\Source\CL.Ag5Client\Estoque\Vendas\Report\UFin_VendasPorPeriodoReport.pas' {Fin_VendasPorPeriodoReport: TTcForm};
+
+end.

@@ -1,0 +1,42 @@
+package CL.Ag5.Inicial.Zootecnico.ImportSISBOV;
+
+{$R *.res}
+{$R *.dres}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Clínica do Leite - Importação SISBOV'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.Zootecnico,
+  SMImportDX_RIO;
+
+contains
+  UZoo_ImportarSISBOVWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_ImportarSISBOVWizard.pas' {Zoo_ImportarSISBOVWizard},
+  UZoo_ImportarSISBOVDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_ImportarSISBOVDatamodule.pas' {Zoo_ImportarSISBOVDatamodule: TDataModule};
+
+end.

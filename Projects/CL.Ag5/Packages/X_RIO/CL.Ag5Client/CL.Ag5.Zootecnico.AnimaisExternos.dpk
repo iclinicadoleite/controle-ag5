@@ -1,0 +1,43 @@
+package CL.Ag5.Zootecnico.AnimaisExternos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Tc.RTL,
+  CL.Ag5.Zootecnico.BancoDados;
+
+contains
+  UZoo_AnimaisExternosFemeaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\FemeaExt\UZoo_AnimaisExternosFemeaDatamodule.pas' {Zoo_AnimaisExternosFemeaDatamodule: T_dtmBASEDBListEdit},
+  UZoo_AnimaisExternosFemeaForm in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\FemeaExt\UZoo_AnimaisExternosFemeaForm.pas' {Zoo_AnimaisExternosFemeaForm: TTcForm},
+  UInclusaoMachoExtWizard in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\MachoExt\UInclusaoMachoExtWizard.pas' {InclusaoMachoExtWizard: TTcForm},
+  UZoo_AnimaisExternosMachoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\MachoExt\UZoo_AnimaisExternosMachoDatamodule.pas' {Zoo_AnimaisExternosMachoDatamodule: T_dtmBASEDBListEdit},
+  UZoo_AnimaisExternosMachoForm in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\MachoExt\UZoo_AnimaisExternosMachoForm.pas' {Zoo_AnimaisExternosMachoForm: TTcForm},
+  UInclusaoFemeaExtWizard in '..\..\..\Source\CL.Ag5Client\Zoo\AnimaisExternos\FemeaExt\UInclusaoFemeaExtWizard.pas' {InclusaoFemeaExtWizard: TTcForm};
+
+end.

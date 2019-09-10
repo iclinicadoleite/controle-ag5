@@ -1,0 +1,42 @@
+package CL.Ag5.Svc.Entidades.CadastroTipos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  dsnap;
+
+contains
+  CLAg5SvcEntidadesCadastroClientes in '..\..\..\Source\CL.Ag5Client\Entidades\CLAg5SvcEntidadesCadastroClientes.pas',
+  CLAg5SvcEntidadesCadastroFornecedores in '..\..\..\Source\CL.Ag5Client\Entidades\CLAg5SvcEntidadesCadastroFornecedores.pas',
+  CLAg5SvcEntidadesCadastroTipos in '..\..\..\Source\CL.Ag5Client\Entidades\CLAg5SvcEntidadesCadastroTipos.pas';
+
+end.

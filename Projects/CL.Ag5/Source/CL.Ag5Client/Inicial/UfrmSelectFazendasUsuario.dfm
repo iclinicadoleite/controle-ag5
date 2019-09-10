@@ -1,0 +1,390 @@
+inherited frmSelectFazendasUsuario: TfrmSelectFazendasUsuario
+  Left = 297
+  Top = 263
+  Caption = 'Sele'#231#227'o...'
+  ClientHeight = 353
+  ClientWidth = 700
+  ExplicitWidth = 706
+  ExplicitHeight = 382
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited _pnlForm: TJvPanel
+    Width = 700
+    Height = 353
+    ExplicitWidth = 700
+    ExplicitHeight = 353
+    inherited _pnlDetail: TJvPanel
+      Width = 696
+      Height = 320
+      Color = 15921906
+      ExplicitWidth = 696
+      ExplicitHeight = 320
+      object Bevel1: TBevel
+        Left = 332
+        Top = 23
+        Width = 34
+        Height = 237
+        Shape = bsFrame
+      end
+      object _btnAdd: TTcGDIButton
+        Left = 336
+        Top = 54
+        Width = 25
+        Height = 26
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Action = _actAdd
+        Caption = '>'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+      object _btnRemove: TTcGDIButton
+        Left = 336
+        Top = 161
+        Width = 25
+        Height = 26
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Action = _actRemove
+        Caption = '<'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 2
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+      object _btnAddAll: TTcGDIButton
+        Left = 336
+        Top = 82
+        Width = 25
+        Height = 25
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Action = _actAddAll
+        Caption = '>>'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 1
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+      object _btnRemoveAll: TTcGDIButton
+        Left = 336
+        Top = 189
+        Width = 25
+        Height = 24
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Action = _actRemoveAll
+        Caption = '<<'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 3
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+      object dbgIn: TDBGrid
+        Left = 372
+        Top = 19
+        Width = 317
+        Height = 249
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        DataSource = dtsIn
+        Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        ReadOnly = True
+        TabOrder = 4
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        OnDblClick = dbgInDblClick
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'APELIDO'
+            Title.Caption = 'Fazendas selecionadas'
+            Width = 284
+            Visible = True
+          end>
+      end
+    end
+    inherited _pnlFooter: TJvPanel
+      Top = 322
+      Width = 696
+      Color = clSilver
+      ExplicitTop = 322
+      ExplicitWidth = 696
+      inherited _imageBottom: TImage
+        Width = 696
+        ExplicitWidth = 696
+      end
+      object _btbSave: TTcGDIButton
+        Left = 496
+        Top = 2
+        Width = 100
+        Height = 29
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Anchors = [akRight, akBottom]
+        Caption = '&OK'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGreen
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnClick = _btbSaveClick
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+      object _btbCancel: TTcGDIButton
+        Left = 598
+        Top = 2
+        Width = 100
+        Height = 29
+        Margins.Left = 2
+        Margins.Top = 2
+        Margins.Right = 2
+        Margins.Bottom = 2
+        Anchors = [akRight, akBottom]
+        Caption = 'Cancela&r'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -11
+        Font.Name = 'Verdana'
+        Font.Style = [fsBold]
+        ModalResult = 2
+        NotesFont.Charset = DEFAULT_CHARSET
+        NotesFont.Color = clWindowText
+        NotesFont.Height = -11
+        NotesFont.Name = 'Tahoma'
+        NotesFont.Style = []
+        ParentFont = False
+        TabOrder = 1
+        Appearance.ColorChecked = 16111818
+        Appearance.ColorCheckedTo = 16367008
+        Appearance.ColorDisabled = 15921906
+        Appearance.ColorDisabledTo = 15921906
+        Appearance.ColorDown = 16111818
+        Appearance.ColorDownTo = 16367008
+        Appearance.ColorHot = 16117985
+        Appearance.ColorHotTo = 16372402
+        Appearance.ColorMirrorHot = 16107693
+        Appearance.ColorMirrorHotTo = 16775412
+        Appearance.ColorMirrorDown = 16102556
+        Appearance.ColorMirrorDownTo = 16768988
+        Appearance.ColorMirrorChecked = 16102556
+        Appearance.ColorMirrorCheckedTo = 16768988
+        Appearance.ColorMirrorDisabled = 11974326
+        Appearance.ColorMirrorDisabledTo = 15921906
+      end
+    end
+    object dbgOut: TDBGrid
+      Left = 12
+      Top = 21
+      Width = 316
+      Height = 249
+      Margins.Left = 2
+      Margins.Top = 2
+      Margins.Right = 2
+      Margins.Bottom = 2
+      DataSource = dtsOut
+      Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnDblClick = dbgOutDblClick
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'APELIDO'
+          Title.Caption = 'Fazendas'
+          Width = 285
+          Visible = True
+        end>
+    end
+  end
+  inherited ActionList: TInternalActionList
+    object _actAdd: TAction
+      Caption = 'Incluir'
+      OnExecute = _actAddExecute
+    end
+    object _actAddAll: TAction
+      Caption = 'Incluir Todos'
+      OnExecute = _actAddAllExecute
+    end
+    object _actRemove: TAction
+      Caption = 'Remover'
+      OnExecute = _actRemoveExecute
+    end
+    object _actRemoveAll: TAction
+      Caption = 'Remover Todos'
+      OnExecute = _actRemoveAllExecute
+    end
+    object _actOK: TAction
+      Caption = '_actOK'
+    end
+    object _actCancel: TAction
+      Caption = '_actCancel'
+    end
+  end
+  object dtsIn: TDataSource
+    DataSet = cdsIn
+    Left = 456
+    Top = 84
+  end
+  object dtsOut: TDataSource
+    DataSet = cdsOut
+    Left = 44
+    Top = 88
+  end
+  object cdsIn: TClientDataSet
+    Aggregates = <>
+    Filter = 'Selected = '#39'T'#39
+    Filtered = True
+    Params = <>
+    Left = 488
+    Top = 124
+  end
+  object cdsOut: TClientDataSet
+    Aggregates = <>
+    Filter = 'Selected = '#39'F'#39
+    Filtered = True
+    Params = <>
+    Left = 84
+    Top = 128
+  end
+end

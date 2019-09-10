@@ -1,0 +1,18 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <DCC_MapFile>3</DCC_MapFile>
+        <Debugger_DebugSourcePath>T:\TcDevPck\DelphiC++\3rdParty\QuSoft\Quickrep506\Source\;T:\TcDevPck\DelphiC++\TcPcks\Framework\Source\VCL\Report\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Build>0</VerInfo_Build>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

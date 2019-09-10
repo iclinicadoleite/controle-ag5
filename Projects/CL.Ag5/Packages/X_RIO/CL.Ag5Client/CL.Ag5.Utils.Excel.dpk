@@ -1,0 +1,50 @@
+package CL.Ag5.Utils.Excel;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclx,
+  vcl,
+  vclimg,
+  tmsdXE12,
+  FlexCel_Core,
+  FlexCel_Pdf,
+  FlexCel_XlsAdapter,
+  FlexCel_Render,
+  VCL_FlexCel_Core,
+  AdvGridExportFilters,
+  VirtualTreesDR;
+
+contains
+  ClAg5.Utils.Excel.Viewer in '..\..\..\Source\_CommonSources\ClAg5.Utils.Excel.Viewer.pas' {Frame1: TFrame},
+  ExportDataSetToExcel in '..\..\..\Source\_CommonSources\ExportDataSetToExcel.pas',
+  ExportTreeViewToExcel in '..\..\..\Source\_CommonSources\ExportTreeViewToExcel.pas';
+
+end.

@@ -1,0 +1,76 @@
+package CL.Ag5.Zootecnico.BancoDados.Femeas;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Tc.RTL,
+  CL.Ag5.Zootecnico.BancoDados,
+  CL.Ag5.Zootecnico.EntradaDados.Sanidade,
+  KControls_RX_RIO,
+  Tc.VirtualTrees.Extender;
+
+contains
+  UdtmZoo_AcasalamentoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_AcasalamentoAnimal.pas' {dtmZoo_AcasalamentoAnimal: T_dtmBASE},
+  UdtmZoo_BSTAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_BSTAnimal.pas' {dtmZoo_BSTAnimal: T_dtmBASE},
+  UdtmZoo_ClassificacaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_ClassificacaoAnimal.pas' {dtmZoo_ClassificacaoAnimal: T_dtmBASE},
+  UdtmZoo_CMTAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_CMTAnimal.pas' {dtmZoo_CMTAnimal: T_dtmBASE},
+  UdtmZoo_CondicaoCorporalAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_CondicaoCorporalAnimal.pas' {dtmZoo_CondicaoCorporalAnimal: T_dtmBASE},
+  UdtmZoo_CrescimentoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_CrescimentoAnimal.pas' {dtmZoo_CrescimentoAnimal: T_dtmBASE},
+  UdtmZoo_EscoreAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_EscoreAnimal.pas' {dtmZoo_EscoreAnimal: T_dtmBASE},
+  UdtmZoo_FilhosAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_FilhosAnimal.pas' {dtmZoo_FilhosAnimal: T_dtmBASE},
+  UdtmZoo_GraficoLactacaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_GraficoLactacaoAnimal.pas' {dtmZoo_GraficoLactacaoAnimal: T_dtmBASE},
+  UdtmZoo_HistoricoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_HistoricoAnimal.pas' {dtmZoo_HistoricoAnimal: T_dtmBASE},
+  UdtmZoo_InformacoesAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_InformacoesAnimal.pas' {dtmZoo_InformacoesAnimal: T_dtmBASE},
+  UfrmZoo_OcorrenciasAnimal3 in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_OcorrenciasAnimal3.pas' {frmZoo_OcorrenciasAnimal: TTcForm},
+  UdtmZoo_OcorrenciasAnimal3 in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_OcorrenciasAnimal3.pas' {dtmZoo_OcorrenciasAnimal: T_dtmBASE},
+  UdtmZoo_ProducaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_ProducaoAnimal.pas' {dtmZoo_ProducaoAnimal: T_dtmBASE},
+  UdtmZoo_ResultadoExamesAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UdtmZoo_ResultadoExamesAnimal.pas' {dtmZoo_ResultadoExamesAnimal: T_dtmBASE},
+  UfrmZoo_AcasalamentoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_AcasalamentoAnimal.pas' {frmZoo_AcasalamentoAnimal: TTcForm},
+  UfrmZoo_ClassificacaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_ClassificacaoAnimal.pas' {frmZoo_ClassificacaoAnimal: TTcForm},
+  UfrmZoo_CrescimentoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_CrescimentoAnimal.pas' {frmZoo_CrescimentoAnimal: TTcForm},
+  UfrmZoo_FilhosAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_FilhosAnimal.pas' {frmZoo_FilhosAnimal},
+  UfrmZoo_GraficoLactacaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_GraficoLactacaoAnimal.pas' {frmZoo_GraficoLactacaoAnimal},
+  UfrmZoo_HistoricoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_HistoricoAnimal.pas' {frmZoo_HistoricoAnimal: TTcForm},
+  UfrmZoo_InformacoesAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_InformacoesAnimal.pas' {frmZoo_InformacoesAnimal: TTcForm},
+  UfrmZoo_ProducaoAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_ProducaoAnimal.pas' {frmZoo_ProducaoAnimal: TTcForm},
+  UfrmZoo_ResultadoExamesAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfrmZoo_ResultadoExamesAnimal.pas' {frmZoo_ResultadoExamesAnimal: TTcForm},
+  UfwzZoo_BSTAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfwzZoo_BSTAnimal.pas' {fwzZoo_BSTAnimal: TTcForm},
+  UfwzZoo_CMTAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfwzZoo_CMTAnimal.pas' {fwzZoo_CMTAnimal: TTcForm},
+  UfwzZoo_CondicaoCorporalAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfwzZoo_CondicaoCorporalAnimal.pas' {fwzZoo_CondicaoCorporalAnimal: TTcForm},
+  UfwzZoo_EscoreAnimal in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfwzZoo_EscoreAnimal.pas' {fwzZoo_EscoreAnimal: TTcForm},
+  UInclusaoFemeaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UInclusaoFemeaWizard.pas' {InclusaoFemeaWizard: TTcForm},
+  UZoo_BancoDadosFemeaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UZoo_BancoDadosFemeaDatamodule.pas' {Zoo_BancoDadosFemeaDatamodule: T_dtmBASEDBListEdit},
+  UZoo_BancoDadosFemeaEventosReprodutivosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UZoo_BancoDadosFemeaEventosReprodutivosDatamodule.pas' {Zoo_BancoDadosFemeaEventosReprodutivosDatamodule: T_dtmBASE},
+  UZoo_BancoDadosFemeaEventosReprodutivosForm in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UZoo_BancoDadosFemeaEventosReprodutivosForm.pas' {Zoo_BancoDadosFemeaEventosReprodutivosForm: TTcForm},
+  UZoo_BancoDadosFemeaForm in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UZoo_BancoDadosFemeaForm.pas' {Zoo_BancoDadosFemeaForm: TTcForm},
+  UfdlgZoo_CadastroCrias in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfdlgZoo_CadastroCrias.pas' {fdlgZoo_CadastroCrias: TTcForm},
+  UZooQueryInclusaoDiagnosticoProtocoloTarefa in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UZooQueryInclusaoDiagnosticoProtocoloTarefa.pas' {ZooQueryInclusaoDiagnosticoProtocoloTarefa: TTcForm},
+  UfqrZoo_FichaFemea in '..\..\..\Source\CL.Ag5Client\Zoo\BancoDados\Femea\UfqrZoo_FichaFemea.pas' {fqrZoo_FichaFemea: TTcForm};
+
+end.

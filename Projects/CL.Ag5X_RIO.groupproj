@@ -1,0 +1,1106 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0B78081A-2E74-4E48-A677-084694CAF84A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NewFastRegister.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Entidades.Cadastros.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.Apropriacao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.APagar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.AReceber.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Patrimonio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Produtos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Compras.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Vendas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Devolucoes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Zootecnico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NSMsgs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.Excel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.WB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualFinanceiro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualZootecnico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.UI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Session.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Anexos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Entidades.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Financeiro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Zootecnico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5_.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.ModulesDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.AppDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Entidades.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Utils.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.APagar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.AReceber.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Movimento.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Financiamentos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Cadastros.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Relatorios.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Cadastros.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Compras.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Vendas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Devolucoes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Movimento.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Relatorios.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.Zootecnico.ImportSISBOV.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Sanidade.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Producao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Reproducao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Crescimento.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Machos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Femeas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.AnimaisExternos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Atividades.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Configuracoes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Relatorios.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CL_Ag5_Svc_NewFastRegister">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NewFastRegister.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NewFastRegister:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NewFastRegister.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NewFastRegister:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NewFastRegister.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Entidades_Cadastros">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Entidades.Cadastros.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Entidades_Cadastros:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Entidades.Cadastros.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Entidades_Cadastros:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Entidades.Cadastros.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_Apropriacao">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.Apropriacao.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_Apropriacao:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.Apropriacao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_Apropriacao:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.Apropriacao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_APagar">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.APagar.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_APagar:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.APagar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_APagar:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.APagar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_AReceber">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.AReceber.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_AReceber:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.AReceber.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Financeiro_EntradaDados_AReceber:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.AReceber.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Patrimonio">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Patrimonio.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Patrimonio:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Patrimonio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Patrimonio:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Patrimonio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Produtos">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Produtos.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Produtos:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Produtos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_Produtos:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Produtos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Compras">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Compras.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Compras:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Compras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Compras:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Compras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Vendas">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Vendas.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Vendas:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Vendas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Vendas:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Vendas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Devolucoes.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Devolucoes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Devolucoes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Zootecnico">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Zootecnico.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Zootecnico:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Zootecnico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_Zootecnico:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Zootecnico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NSMsgs.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NSMsgs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NSMsgs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_Excel">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.Excel.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_Excel:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.Excel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_Excel:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.Excel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_WB">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.WB.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_WB:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.WB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Utils_WB:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.WB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualFinanceiro">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualFinanceiro.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualFinanceiro:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualFinanceiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualFinanceiro:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualFinanceiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualZootecnico">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualZootecnico.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualZootecnico:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualZootecnico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_WB_ManualZootecnico:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualZootecnico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_UI">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.UI.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_UI:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.UI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_UI:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.UI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Session">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Session.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Session:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Session.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Session:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Session.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Anexos">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Anexos.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Anexos:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Anexos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Anexos:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Anexos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Entidades">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Entidades.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Entidades:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Entidades.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Entidades:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Entidades.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Financeiro">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Financeiro.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Financeiro:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Financeiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Financeiro:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Financeiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Zootecnico">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Zootecnico.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Zootecnico:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Zootecnico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_DB_Zootecnico:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Zootecnico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5_.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5_.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5_.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_ModulesDesktop">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.ModulesDesktop.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_ModulesDesktop:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.ModulesDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_ModulesDesktop:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.ModulesDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_AppDesktop">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.AppDesktop.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_AppDesktop:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.AppDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_AppDesktop:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.AppDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Entidades">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Entidades.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Entidades:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Entidades.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Entidades:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Entidades.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Utils">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Utils.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Utils:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Utils.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Utils:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Utils.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_APagar">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.APagar.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_APagar:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.APagar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_APagar:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.APagar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_AReceber">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.AReceber.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_AReceber:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.AReceber.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_AReceber:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.AReceber.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Movimento">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Movimento.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Movimento:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Movimento.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Movimento:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Movimento.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Financiamentos">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Financiamentos.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Financiamentos:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Financiamentos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados_Financiamentos:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Financiamentos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_EntradaDados:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Cadastros">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Cadastros.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Cadastros:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Cadastros.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Cadastros:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Cadastros.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Relatorios">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Relatorios.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Relatorios:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Relatorios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro_Relatorios:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Relatorios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Financeiro:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Cadastros">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Cadastros.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Cadastros:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Cadastros.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Cadastros:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Cadastros.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Compras">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Compras.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Compras:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Compras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Compras:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Compras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Vendas">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Vendas.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Vendas:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Vendas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Vendas:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Vendas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Devolucoes">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Devolucoes.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Devolucoes:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Devolucoes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Devolucoes:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Devolucoes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Movimento">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Movimento.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Movimento:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Movimento.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados_Movimento:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Movimento.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_EntradaDados:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Relatorios">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Relatorios.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Relatorios:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Relatorios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque_Relatorios:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Relatorios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Estoque:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial_Zootecnico_ImportSISBOV">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.Zootecnico.ImportSISBOV.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial_Zootecnico_ImportSISBOV:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.Zootecnico.ImportSISBOV.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Inicial_Zootecnico_ImportSISBOV:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.Zootecnico.ImportSISBOV.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Sanidade">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Sanidade.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Sanidade:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Sanidade.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Sanidade:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Sanidade.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Producao">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Producao.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Producao:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Producao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Producao:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Producao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Reproducao">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Reproducao.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Reproducao:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Reproducao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Reproducao:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Reproducao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Crescimento">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Crescimento.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Crescimento:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Crescimento.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_EntradaDados_Crescimento:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Crescimento.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Machos">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Machos.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Machos:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Machos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Machos:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Machos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Femeas">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Femeas.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Femeas:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Femeas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_BancoDados_Femeas:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Femeas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_AnimaisExternos">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.AnimaisExternos.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_AnimaisExternos:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.AnimaisExternos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_AnimaisExternos:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.AnimaisExternos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Atividades">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Atividades.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Atividades:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Atividades.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Atividades:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Atividades.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Configuracoes">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Configuracoes.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Configuracoes:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Configuracoes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Configuracoes:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Configuracoes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Relatorios">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Relatorios.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Relatorios:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Relatorios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Zootecnico_Relatorios:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Relatorios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CL_Ag5_Svc_NewFastRegister;CL_Ag5_Svc_Entidades_Cadastros;CL_Ag5_Svc_Financeiro_Apropriacao;CL_Ag5_Svc_Financeiro_EntradaDados_APagar;CL_Ag5_Svc_Financeiro_EntradaDados_AReceber;CL_Ag5_Svc_Estoque_Patrimonio;CL_Ag5_Svc_Estoque_Produtos;CL_Ag5_Svc_Estoque_EntradaDados_Compras;CL_Ag5_Svc_Estoque_EntradaDados_Vendas;CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes;CL_Ag5_Svc_Zootecnico;CL_Ag5_Svc_NSMsgs;CL_Ag5_Utils_Excel;CL_Ag5_Utils_WB;CL_Ag5_WB_ManualFinanceiro;CL_Ag5_WB_ManualZootecnico;CL_Ag5_DB;CL_Ag5_UI;CL_Ag5_DB_Session;CL_Ag5_DB_Anexos;CL_Ag5_DB_Entidades;CL_Ag5_DB_Financeiro;CL_Ag5_DB_Zootecnico;CL_Ag5_;CL_Ag5_ModulesDesktop;CL_Ag5_AppDesktop;CL_Ag5_Entidades;CL_Ag5_Financeiro_Utils;CL_Ag5_Financeiro_EntradaDados_APagar;CL_Ag5_Financeiro_EntradaDados_AReceber;CL_Ag5_Financeiro_EntradaDados_Movimento;CL_Ag5_Financeiro_EntradaDados_Financiamentos;CL_Ag5_Financeiro_EntradaDados;CL_Ag5_Financeiro_Cadastros;CL_Ag5_Financeiro_Relatorios;CL_Ag5_Financeiro;CL_Ag5_Estoque_Cadastros;CL_Ag5_Estoque_EntradaDados_Compras;CL_Ag5_Estoque_EntradaDados_Vendas;CL_Ag5_Estoque_EntradaDados_Devolucoes;CL_Ag5_Estoque_EntradaDados_Movimento;CL_Ag5_Estoque_EntradaDados;CL_Ag5_Estoque_Relatorios;CL_Ag5_Estoque;CL_Ag5_Inicial;CL_Ag5_Zootecnico;CL_Ag5_Inicial_Zootecnico_ImportSISBOV;CL_Ag5_Zootecnico_EntradaDados;CL_Ag5_Zootecnico_EntradaDados_Sanidade;CL_Ag5_Zootecnico_EntradaDados_Producao;CL_Ag5_Zootecnico_EntradaDados_Reproducao;CL_Ag5_Zootecnico_EntradaDados_Crescimento;CL_Ag5_Zootecnico_BancoDados;CL_Ag5_Zootecnico_BancoDados_Machos;CL_Ag5_Zootecnico_BancoDados_Femeas;CL_Ag5_Zootecnico_AnimaisExternos;CL_Ag5_Zootecnico_Atividades;CL_Ag5_Zootecnico_Configuracoes;CL_Ag5_Zootecnico_Relatorios;CL_Ag5"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CL_Ag5_Svc_NewFastRegister:Clean;CL_Ag5_Svc_Entidades_Cadastros:Clean;CL_Ag5_Svc_Financeiro_Apropriacao:Clean;CL_Ag5_Svc_Financeiro_EntradaDados_APagar:Clean;CL_Ag5_Svc_Financeiro_EntradaDados_AReceber:Clean;CL_Ag5_Svc_Estoque_Patrimonio:Clean;CL_Ag5_Svc_Estoque_Produtos:Clean;CL_Ag5_Svc_Estoque_EntradaDados_Compras:Clean;CL_Ag5_Svc_Estoque_EntradaDados_Vendas:Clean;CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes:Clean;CL_Ag5_Svc_Zootecnico:Clean;CL_Ag5_Svc_NSMsgs:Clean;CL_Ag5_Utils_Excel:Clean;CL_Ag5_Utils_WB:Clean;CL_Ag5_WB_ManualFinanceiro:Clean;CL_Ag5_WB_ManualZootecnico:Clean;CL_Ag5_DB:Clean;CL_Ag5_UI:Clean;CL_Ag5_DB_Session:Clean;CL_Ag5_DB_Anexos:Clean;CL_Ag5_DB_Entidades:Clean;CL_Ag5_DB_Financeiro:Clean;CL_Ag5_DB_Zootecnico:Clean;CL_Ag5_:Clean;CL_Ag5_ModulesDesktop:Clean;CL_Ag5_AppDesktop:Clean;CL_Ag5_Entidades:Clean;CL_Ag5_Financeiro_Utils:Clean;CL_Ag5_Financeiro_EntradaDados_APagar:Clean;CL_Ag5_Financeiro_EntradaDados_AReceber:Clean;CL_Ag5_Financeiro_EntradaDados_Movimento:Clean;CL_Ag5_Financeiro_EntradaDados_Financiamentos:Clean;CL_Ag5_Financeiro_EntradaDados:Clean;CL_Ag5_Financeiro_Cadastros:Clean;CL_Ag5_Financeiro_Relatorios:Clean;CL_Ag5_Financeiro:Clean;CL_Ag5_Estoque_Cadastros:Clean;CL_Ag5_Estoque_EntradaDados_Compras:Clean;CL_Ag5_Estoque_EntradaDados_Vendas:Clean;CL_Ag5_Estoque_EntradaDados_Devolucoes:Clean;CL_Ag5_Estoque_EntradaDados_Movimento:Clean;CL_Ag5_Estoque_EntradaDados:Clean;CL_Ag5_Estoque_Relatorios:Clean;CL_Ag5_Estoque:Clean;CL_Ag5_Inicial:Clean;CL_Ag5_Zootecnico:Clean;CL_Ag5_Inicial_Zootecnico_ImportSISBOV:Clean;CL_Ag5_Zootecnico_EntradaDados:Clean;CL_Ag5_Zootecnico_EntradaDados_Sanidade:Clean;CL_Ag5_Zootecnico_EntradaDados_Producao:Clean;CL_Ag5_Zootecnico_EntradaDados_Reproducao:Clean;CL_Ag5_Zootecnico_EntradaDados_Crescimento:Clean;CL_Ag5_Zootecnico_BancoDados:Clean;CL_Ag5_Zootecnico_BancoDados_Machos:Clean;CL_Ag5_Zootecnico_BancoDados_Femeas:Clean;CL_Ag5_Zootecnico_AnimaisExternos:Clean;CL_Ag5_Zootecnico_Atividades:Clean;CL_Ag5_Zootecnico_Configuracoes:Clean;CL_Ag5_Zootecnico_Relatorios:Clean;CL_Ag5:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CL_Ag5_Svc_NewFastRegister:Make;CL_Ag5_Svc_Entidades_Cadastros:Make;CL_Ag5_Svc_Financeiro_Apropriacao:Make;CL_Ag5_Svc_Financeiro_EntradaDados_APagar:Make;CL_Ag5_Svc_Financeiro_EntradaDados_AReceber:Make;CL_Ag5_Svc_Estoque_Patrimonio:Make;CL_Ag5_Svc_Estoque_Produtos:Make;CL_Ag5_Svc_Estoque_EntradaDados_Compras:Make;CL_Ag5_Svc_Estoque_EntradaDados_Vendas:Make;CL_Ag5_Svc_Estoque_EntradaDados_Devolucoes:Make;CL_Ag5_Svc_Zootecnico:Make;CL_Ag5_Svc_NSMsgs:Make;CL_Ag5_Utils_Excel:Make;CL_Ag5_Utils_WB:Make;CL_Ag5_WB_ManualFinanceiro:Make;CL_Ag5_WB_ManualZootecnico:Make;CL_Ag5_DB:Make;CL_Ag5_UI:Make;CL_Ag5_DB_Session:Make;CL_Ag5_DB_Anexos:Make;CL_Ag5_DB_Entidades:Make;CL_Ag5_DB_Financeiro:Make;CL_Ag5_DB_Zootecnico:Make;CL_Ag5_:Make;CL_Ag5_ModulesDesktop:Make;CL_Ag5_AppDesktop:Make;CL_Ag5_Entidades:Make;CL_Ag5_Financeiro_Utils:Make;CL_Ag5_Financeiro_EntradaDados_APagar:Make;CL_Ag5_Financeiro_EntradaDados_AReceber:Make;CL_Ag5_Financeiro_EntradaDados_Movimento:Make;CL_Ag5_Financeiro_EntradaDados_Financiamentos:Make;CL_Ag5_Financeiro_EntradaDados:Make;CL_Ag5_Financeiro_Cadastros:Make;CL_Ag5_Financeiro_Relatorios:Make;CL_Ag5_Financeiro:Make;CL_Ag5_Estoque_Cadastros:Make;CL_Ag5_Estoque_EntradaDados_Compras:Make;CL_Ag5_Estoque_EntradaDados_Vendas:Make;CL_Ag5_Estoque_EntradaDados_Devolucoes:Make;CL_Ag5_Estoque_EntradaDados_Movimento:Make;CL_Ag5_Estoque_EntradaDados:Make;CL_Ag5_Estoque_Relatorios:Make;CL_Ag5_Estoque:Make;CL_Ag5_Inicial:Make;CL_Ag5_Zootecnico:Make;CL_Ag5_Inicial_Zootecnico_ImportSISBOV:Make;CL_Ag5_Zootecnico_EntradaDados:Make;CL_Ag5_Zootecnico_EntradaDados_Sanidade:Make;CL_Ag5_Zootecnico_EntradaDados_Producao:Make;CL_Ag5_Zootecnico_EntradaDados_Reproducao:Make;CL_Ag5_Zootecnico_EntradaDados_Crescimento:Make;CL_Ag5_Zootecnico_BancoDados:Make;CL_Ag5_Zootecnico_BancoDados_Machos:Make;CL_Ag5_Zootecnico_BancoDados_Femeas:Make;CL_Ag5_Zootecnico_AnimaisExternos:Make;CL_Ag5_Zootecnico_Atividades:Make;CL_Ag5_Zootecnico_Configuracoes:Make;CL_Ag5_Zootecnico_Relatorios:Make;CL_Ag5:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Controle MDA - Ag5'">
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Zootecnico.dproj">
+            <ProjectGuid>{B9AE4897-EAA1-4ACB-9BE4-C90AE5C0810D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.Excel.dproj">
+            <ProjectGuid>{A00AD772-F883-46AA-9CEF-4B5232D880B3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Configuracoes.dproj">
+            <ProjectGuid>{F1C058C7-5AEB-49ED-9E9E-72598381BF2B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NewFastRegister.dproj">
+            <ProjectGuid>{F364EF80-882E-4DF8-ADB3-1FE567907BAB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.dproj">
+            <ProjectGuid>{709E8E2E-B669-4E48-AF7B-1F9310D40D54}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.APagar.dproj">
+            <ProjectGuid>{40E9555F-065B-4755-A3E1-E31587019783}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Entidades.Cadastros.dproj">
+            <ProjectGuid>{A0365507-2B14-4233-A7BF-688F7952F9C9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualFinanceiro.dproj">
+            <ProjectGuid>{8996D280-43C4-4767-A25D-191B11293A2D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Machos.dproj">
+            <ProjectGuid>{17DB7E85-F2C6-4FF6-9A30-42DBE54DD361}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.dproj">
+            <ProjectGuid>{5C3E5E26-4728-4D45-98D7-33C112C7F286}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.dproj">
+            <ProjectGuid>{434B395F-51D1-46ED-8E8A-374747E62A34}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.dproj">
+            <ProjectGuid>{37275879-002C-4C8E-B1C1-1707A5B1EC5A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.APagar.dproj">
+            <ProjectGuid>{DAEC1842-20B7-495A-BFCE-B9818883C4F5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.dproj">
+            <ProjectGuid>{78B4E4B1-C98D-4546-BD7F-932815EAFCAC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.EntradaDados.AReceber.dproj">
+            <ProjectGuid>{7620701F-A846-4944-B42B-DC785FDA0E28}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.dproj">
+            <ProjectGuid>{E979759B-1A1F-4999-A05F-198A27AF884C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Relatorios.dproj">
+            <ProjectGuid>{430F4D22-1828-4EFE-8F52-B46AE7348DEB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.dproj">
+            <ProjectGuid>{FAF287A8-F81D-4A50-A503-097C91E00E02}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Entidades.dproj">
+            <ProjectGuid>{C0C6645F-FF11-4168-880C-C69C29018BFC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Cadastros.dproj">
+            <ProjectGuid>{2A740A58-724B-4982-9BEF-C9E9134D163F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5_.dproj">
+            <ProjectGuid>{F4861617-2C41-4BFB-AB05-08FABD86D8A7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.dproj">
+            <ProjectGuid>{145CAAEC-81F6-4752-AABC-E50663CB7A20}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Relatorios.dproj">
+            <ProjectGuid>{B992E7BF-31FF-4549-BCAA-4836B80DA723}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Entidades.dproj">
+            <ProjectGuid>{C420BA97-BC6F-4182-9100-EE92CC7D46A6}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Session.dproj">
+            <ProjectGuid>{7AC72D93-EEE6-407F-9AD2-F160B9994EE6}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.dproj">
+            <ProjectGuid>{0D5514DC-CDD2-46A4-9C41-D3290734A13B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.UI.dproj">
+            <ProjectGuid>{49112BB8-446B-409A-A7D0-90DDA0CC0468}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Zootecnico.dproj">
+            <ProjectGuid>{E4B2F825-5FDE-4930-9E2A-C06A821BABA1}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Patrimonio.dproj">
+            <ProjectGuid>{72F943CD-61E0-41B2-AED1-DF117920C9DA}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.WB.ManualZootecnico.dproj">
+            <ProjectGuid>{1D365C4D-F214-4125-8F54-4B024CB646F3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Devolucoes.dproj">
+            <ProjectGuid>{006B0C3F-DE89-43B2-9E84-782E2C06CF48}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.Atividades.dproj">
+            <ProjectGuid>{17A5E6E7-6B9E-4DBD-89B7-2F6AF3A93CD3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.ModulesDesktop.dproj">
+            <ProjectGuid>{5834BB1B-04F4-4606-B7C3-A55B551E27FD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Sanidade.dproj">
+            <ProjectGuid>{ADFBA533-D551-462B-8F4F-3B390BFA5365}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.dproj">
+            <ProjectGuid>{A34D0841-03DC-4BF7-942A-C14DA455E028}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Crescimento.dproj">
+            <ProjectGuid>{24174AA6-2DBE-4555-A4D1-EE79F10F86EF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Reproducao.dproj">
+            <ProjectGuid>{C3566351-E90C-4D5B-A760-75C8D7587807}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Financeiro.dproj">
+            <ProjectGuid>{A43CF32F-B110-4858-B0BD-18E89BB79911}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Inicial.Zootecnico.ImportSISBOV.dproj">
+            <ProjectGuid>{B4CA2C99-5CC3-4C04-AC06-9C9A1C99654B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Utils.WB.dproj">
+            <ProjectGuid>{3FE171C4-52A2-4C74-A62A-B6ABE9085E57}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Utils.dproj">
+            <ProjectGuid>{A1369790-8B40-4488-9A4E-ECB70A343C47}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Compras.dproj">
+            <ProjectGuid>{C021EA4B-17DF-452E-9384-BADEA33E3575}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.AnimaisExternos.dproj">
+            <ProjectGuid>{FAE4F3FC-74C6-4A13-9C42-03A68809656D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.AReceber.dproj">
+            <ProjectGuid>{3AAE07BF-FFF0-4570-8C5C-131492CFD13D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.BancoDados.Femeas.dproj">
+            <ProjectGuid>{8A420834-72CD-4EBC-B314-68766E3A10A3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Financeiro.Apropriacao.dproj">
+            <ProjectGuid>{F4AF4190-81B2-4660-B5C7-34B100DB567D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.NSMsgs.dproj">
+            <ProjectGuid>{2C8C3853-351C-4D0B-ADD2-E779EB4AB76E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.DB.Anexos.dproj">
+            <ProjectGuid>{52B56162-4889-498B-A209-F038E7D3019C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Devolucoes.dproj">
+            <ProjectGuid>{1F8FAC28-A05A-452E-8F40-5AE6EA2CEDCD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Financiamentos.dproj">
+            <ProjectGuid>{AC90EE94-652E-44DF-8C0F-3BDE9D7FA205}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.AppDesktop.dproj">
+            <ProjectGuid>{DA8D34D8-0AFC-4F70-A510-513A5A6417C3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Vendas.dproj">
+            <ProjectGuid>{6226907E-A247-4134-997E-B6F614C981AE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.EntradaDados.Movimento.dproj">
+            <ProjectGuid>{373AF495-8DE7-414F-96B1-E2B19C5A32B6}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.Produtos.dproj">
+            <ProjectGuid>{F27E5AD7-364C-4F80-860B-98F5CD320042}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Svc.Estoque.EntradaDados.Compras.dproj">
+            <ProjectGuid>{5C39638C-2FBC-4FEB-A0A5-698580BCA54C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Zootecnico.EntradaDados.Producao.dproj">
+            <ProjectGuid>{DB5B3A64-6DCE-46F3-BBD2-B706AE1DF67D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.Relatorios.dproj">
+            <ProjectGuid>{35B28A77-2B58-41B1-80B7-D2C04754CC3B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Movimento.dproj">
+            <ProjectGuid>{E0791EC6-E405-4FD1-962D-4471FB5AEFBC}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Financeiro.Cadastros.dproj">
+            <ProjectGuid>{B9D5DF41-1D45-48A4-A379-192CC70D9D29}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CL.Ag5\Packages\X_RIO\CL.Ag5Client\CL.Ag5.Estoque.EntradaDados.Vendas.dproj">
+            <ProjectGuid>{7C3740BB-91E4-4E90-8AAF-09F0F1775399}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

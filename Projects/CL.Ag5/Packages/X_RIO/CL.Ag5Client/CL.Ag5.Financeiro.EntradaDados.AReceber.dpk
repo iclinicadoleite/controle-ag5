@@ -1,0 +1,58 @@
+package CL.Ag5.Financeiro.EntradaDados.AReceber ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Financeiro.Utils,
+  CL.Ag5.Svc.Financeiro.Apropriacao,
+  CL.Ag5.Svc.Financeiro.EntradaDados.AReceber,
+  CL.Ag5.Svc.Estoque.EntradaDados.Vendas;
+
+contains
+  FIN_AReceberTypes in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\FIN_AReceberTypes.pas',
+  UFIN_OutrasReceitasDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UFIN_OutrasReceitasDatamodule.pas' {FIN_OutrasReceitasDatamodule: T_dtmBASEDBListEdit},
+  UFIN_OutrasReceitasWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UFIN_OutrasReceitasWizard.pas' {FIN_OutrasReceitasWizard: TTcForm},
+  UFin_BaixaAReceberDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UFin_BaixaAReceberDatamodule.pas' {Fin_BaixaAReceberDatamodule: T_dtmBASE},
+  UFin_BaixaAReceberWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UFin_BaixaAReceberWizard.pas' {Fin_BaixaAReceberWizard: TTcForm},
+  UdtmFIN_AReceberBaixaTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UdtmFIN_AReceberBaixaTitulo.pas' {dtmFIN_AReceberBaixaTitulo: TDataModule},
+  UfrmFIN_AReceberBaixaTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\UfrmFIN_AReceberBaixaTitulo.pas' {frmFIN_AReceberBaixaTitulo},
+  UfqrFIN_AReceber in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfqrFIN_AReceber.pas' {fqrFIN_AReceber: TTcForm},
+  UfdrFIN_AReceber in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfdrFIN_AReceber.pas' {fdrFIN_AReceber: TTcForm},
+  UfqrFIN_AReceberAtraso in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfqrFIN_AReceberAtraso.pas' {fqrFIN_AReceberAtraso: TTcForm},
+  UfqrFIN_AReceberDataBase in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfqrFIN_AReceberDataBase.pas' {fqrFIN_AReceberDataBase: TTcForm},
+  UfqrFIN_AReceberEntidade in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfqrFIN_AReceberEntidade.pas' {fqrFIN_AReceberEntidade: TTcForm},
+  UfdrFIN_AReceberEntidade in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfdrFIN_AReceberEntidade.pas' {fdrFIN_AReceberEntidade: TTcForm},
+  UfqrFIN_AReceberTitulo in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Reports\UfqrFIN_AReceberTitulo.pas' {fqrFIN_AReceberTitulo: TTcForm},
+  UFin_BaixaAReceberColetivoDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Coletivo\UFin_BaixaAReceberColetivoDatamodule.pas' {Fin_BaixaAReceberColetivoDatamodule: T_dtmBASE},
+  UfrmFIN_DesktopRecebimentos in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Coletivo\UfrmFIN_DesktopRecebimentos.pas' {frmFIN_DesktopRecebimentos: TTcForm},
+  UFin_BaixaAReceberColetivo in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Coletivo\UFin_BaixaAReceberColetivo.pas' {FIN_BaixaAReceberColetivo: TTcForm},
+  UfrmFIN_AReceberBaixaApropriacao in '..\..\..\Source\CL.Ag5Client\Financeiro\AReceber\Coletivo\UfrmFIN_AReceberBaixaApropriacao.pas' {frmFIN_AreceberBaixaApropriacao: TTcForm};
+
+end.

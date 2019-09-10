@@ -1,0 +1,7 @@
+Data/Client/CLAG5.DB filter=lfs diff=lfs merge=lfs -text
+*.JNL filter=lfs diff=lfs merge=lfs -text
+*.ZOO filter=lfs diff=lfs merge=lfs -text
+*.FIN filter=lfs diff=lfs merge=lfs -text
+*.ENT filter=lfs diff=lfs merge=lfs -text
+*.ATT filter=lfs diff=lfs merge=lfs -text
+*.DB filter=lfs diff=lfs merge=lfs -text

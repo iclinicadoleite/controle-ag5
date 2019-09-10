@@ -1,0 +1,51 @@
+package CL.Ag5.Zootecnico.EntradaDados.Reproducao;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico,
+  CL.Ag5.Zootecnico.EntradaDados;
+
+contains
+  UfrmZoo_DesktopReproducao in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UfrmZoo_DesktopReproducao.pas' {frmZoo_DesktopReproducao},
+  UZoo_ReproducaoCiosCoberturasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoCiosCoberturasDatamodule.pas' {Zoo_ReproducaoCiosCoberturasDatamodule: TDataModule},
+  UZoo_ReproducaoCiosCoberturasWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoCiosCoberturasWizard.pas' {Zoo_ReproducaoCiosCoberturasWizard},
+  UZoo_ReproducaoPartosAbortosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoPartosAbortosDatamodule.pas' {Zoo_ReproducaoPartosAbortosDatamodule: TDataModule},
+  UfdlgZoo_PartosAbortosCrias in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UfdlgZoo_PartosAbortosCrias.pas' {fdlgZoo_PartosAbortosCrias},
+  UZoo_ReproducaoPartosAbortosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoPartosAbortosWizard.pas' {Zoo_ReproducaoPartosAbortosWizard},
+  UZoo_ReproducaoColetaEmbriaoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoColetaEmbriaoDatamodule.pas' {Zoo_ReproducaoColetaEmbriaoDatamodule: TDataModule},
+  UZoo_ReproducaoColetaEmbriaoWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoColetaEmbriaoWizard.pas' {Zoo_ReproducaoColetaEmbriaoWizard},
+  UZoo_ReproducaoFIVDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoFIVDatamodule.pas' {Zoo_ReproducaoFIVDatamodule: T_dtmBASE},
+  UZoo_ReproducaoFIVWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoFIVWizard.pas' {Zoo_ReproducaoFIVWizard: TTcForm},
+  UZoo_ReproducaoDiagnosticosGestacaoDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoDiagnosticosGestacaoDatamodule2.pas' {Zoo_ReproducaoDiagnosticosGestacaoDatamodule: T_dtmBASE},
+  UZoo_ReproducaoDiagnosticosGestacaoWizard2 in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Reproducao\UZoo_ReproducaoDiagnosticosGestacaoWizard2.pas' {Zoo_ReproducaoDiagnosticosGestacaoWizard: TTcForm};
+
+end.
+

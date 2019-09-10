@@ -1,0 +1,380 @@
+// TextWidth
+
+function FormatMD5 ( AMD5 : string ) : string ;
+begin
+  AMD5   := UpperCase ( AMD5 )  ;
+  StringChangeEx ( AMD5, '-', '', False ) ; 
+
+  Result := Copy ( AMD5, 1, 8 ) ;
+  if Length ( AMD5 ) > 8  then 
+     Result := Result + '-' 
+  Result := Result + Copy ( AMD5,  9, 4 ) ;
+  if Length ( AMD5 ) > 13  then 
+     Result := Result + '-' 
+  Result := Result + Copy ( AMD5, 13, 4 ) ;
+  if Length ( AMD5 ) > 17  then 
+     Result := Result + '-' 
+  Result := Result + Copy ( AMD5, 17, 4 ) ;
+  if Length ( AMD5 ) > 21  then 
+     Result := Result + '-' 
+  Result := Result + Copy ( AMD5, 21, 12 ) ;
+
+end ;
+
+function digits ( AString : string ) : string ;
+var
+ x : integer;
+begin
+ Result := '' ;
+ for x := 1 to length ( AString ) do
+    if (AString[ x ] >= '0' ) and (AString[ x ] <=  '9') then
+      Result := Result + AString[ x ]  
+end ;
+
+function GetTextWidth ( AText : string ; AFontName : string ; AFontSize : integer ) : integer ;
+var
+  BI : TBitmapImage ;
+begin
+  BI := TBitmapImage.Create ( nil ) ;
+  with BI.Bitmap.Canvas do 
+    begin
+       Font.Name := AFontName ;
+       Font.Size := AFontSize ;
+       Result := TextWidth ( AText ) ;
+    end ;
+  BI.free
+end ;
+
+
+//IP
+
+function GetIpAddrTable( pIpAddrTable: PAnsiChar ; 
+  var pdwSize: Cardinal ; bOrder: Word ): DWORD ; 
+external 'GetIpAddrTable@IPHLPAPI.dll stdcall' ; 
+ 
+const 
+ ERROR_INSUFFICIENT_BUFFER = 122 ; 
+ START_OF_IP_LIST          = 4   ;
+ IP_ADDRESS_SIZE_BYTES     = 24  ;
+  
+procedure GetIpAddresses(Addresses : TStringList ; AddLoopBack : boolean ); 
+var  
+ Size : cardinal ; 
+ Buffer : ansistring ; 
+ AddrCount : Integer; 
+ IterateAddresses  : Integer; 
+begin 
+  // Find Size 
+  Size := 0 ;  
+  GetIpAddrTable( '', Size, 0 ) ;
+  if Size > 0 then 
+  begin 
+     Buffer := StringOfChar ( #0, Size + 1 ) ; 
+     // Get List of IP Addresses into Buffer 
+     if GetIpAddrTable(Buffer,Size, 1) = 0 then 
+     begin        
+       // Find out how many addresses will be returned. 
+       AddrCount := (Ord ( Buffer[2] ) * 256) + ord ( Buffer[1] ); 
+       // Loop through addresses. 
+       For IterateAddresses := 0 to AddrCount - 1 do 
+         if (    Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 1 ] ) 
+              +  Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 2 ] ) 
+              +  Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 3 ] ) 
+              +  Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 4 ] ) <> 0 )
+           and ( AddLoopBack or  (Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 1 ] ) <> 127 ) )then
+            Addresses.Add( 
+              Format('%d.%d.%d.%d', [
+                Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 1 ] ), 
+                Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 2 ] ), 
+                Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 3 ] ), 
+                Ord ( Buffer[START_OF_IP_LIST + IterateAddresses * IP_ADDRESS_SIZE_BYTES + 4 ] ) ] 
+           ) 
+         );         
+     end; 
+  end; 
+end; 
+
+
+// FIREWALL
+
+Const 
+ // protocols
+ NET_FW_IP_PROTOCOL_UDP     = 17 ;
+ NET_FW_IP_PROTOCOL_TCP     = 6  ;
+
+ // scopes
+ NET_FW_SCOPE_ALL           = 0  ;
+ NET_FW_SCOPE_LOCAL_SUBNET  = 1  ;
+
+ // actions 
+ NET_FW_ACTION_ALLOW        = 1  ;
+
+
+// FirewallOpenPort( 'FBS', 3050, NET_FW_IP_PROTOCOL_TCP ) 
+
+procedure WinAPIFirewallOpenPort( APortName : string ; APortNumber : integer  ; AProtocol : integer ) ;
+var
+  fwMgr, profile, port : variant ; 
+begin
+
+ //Create the firewall manager object.
+ fwMgr := CreateOleObject('HNetCfg.FwMgr') ;
+
+ //Get the current profile for the local firewall policy.
+ profile := fwMgr.LocalPolicy.CurrentProfile ; 
+ 
+ port := CreateOleObject('HNetCfg.FWOpenPort') ;
+ port.Name     := APortName   ;
+ port.Port     := APortNumber ;
+ port.Protocol := AProtocol   ;
+
+ // If using Scope, don't use RemoteAddresses
+ port.Scope := NET_FW_SCOPE_ALL
+ //Use this line to scope the port to Local Subnet only
+ //port.Scope := NET_FW_SCOPE_LOCAL_SUBNET
+
+ port.Enabled := TRUE
+ //Use this line instead if you want to add the port, but disabled
+ //port.Enabled := FALSE
+
+ profile.GloballyOpenPorts.Add ( port )  ;
+
+end ;
+
+
+procedure WinAPIAdvFirewallOpenPort( APortName : string ; APortNumber : integer  ; AProtocol : integer ) ;
+var
+  fwPolicy2, RulesObject, NewRule, CurrentProfiles : variant ;
+begin
+
+ // Create the FwPolicy2 object.
+ fwPolicy2 := CreateOleObject('HNetCfg.FwPolicy2') ;
+
+ // Get the Rules object 
+ RulesObject     := fwPolicy2.Rules ;
+ CurrentProfiles := fwPolicy2.CurrentProfileTypes ;
+
+ //Create a Rule Object.
+ NewRule := CreateOleObject('HNetCfg.FWRule') ;
+    
+ NewRule.Name            := APortName ;
+ NewRule.Protocol        := NET_FW_IP_PROTOCOL_TCP ;
+ NewRule.LocalPorts      := APortNumber ;
+ NewRule.Grouping        := '@firewallapi.dll,-23255' ;
+ NewRule.Profiles        := CurrentProfiles ;
+ NewRule.Enabled         := TRUE ;
+ NewRule.Action          := NET_FW_ACTION_ALLOW ;
+      
+ // Add a new rule
+ RulesObject.Add ( NewRule ) ;
+end ;
+
+procedure FirewallOpenPort ( APortName : string ; APortNumber : integer  ; AProtocol : integer ) ;
+var
+  WindowsVersion: TWindowsVersion;
+begin
+ GetWindowsVersionEx(WindowsVersion);
+
+ if (WindowsVersion.Major >= 6) then
+   WinAPIAdvFirewallOpenPort( APortName, APortNumber, AProtocol )
+ else
+   WinAPIFirewallOpenPort( APortName, APortNumber, AProtocol )
+end ;
+
+
+// MsgBox(FindVolumeSerial('c:\'), mbInformation, mb_Ok); 
+function GetVolumeInformation( 
+  lpRootPathName: PAnsiChar; 
+  lpVolumeNameBuffer: PAnsiChar; 
+  nVolumeNameSize: DWORD; 
+  var lpVolumeSerialNumber: DWORD; 
+  var lpMaximumComponentLength: DWORD; 
+  var lpFileSystemFlags: DWORD; 
+  lpFileSystemNameBuffer: PAnsiChar; 
+  nFileSystemNameSize: DWORD 
+  ): BOOL; 
+  external 'GetVolumeInformationA@kernel32.dll stdcall'; 
+ 
+ 
+function LoWord(dw: DWORD): WORD; 
+begin 
+  Result := WORD(dw); 
+end; 
+ 
+function HiWord(dw: DWORD): WORD; 
+begin 
+  Result := WORD((dw shr 16) and $FFFF); 
+end; 
+ 
+function WordToHex(w: WORD): string; 
+begin 
+  Result := Format('%.4x', [w]); 
+end; 
+ 
+function FindVolumeSerial(const Drive: string): string; 
+var 
+  FileSystemFlags: DWORD; 
+  VolumeSerialNumber: DWORD; 
+  MaximumComponentLength: DWORD; 
+begin 
+  Result := ''; 
+  // Note on passing PChars using RemObjects Pascal Script: 
+  // '' pass a nil PChar   
+  // #0 pass an empty PChar     
+  if GetVolumeInformation( 
+    PAnsiChar(Drive),  
+    '', // nil 
+    0, 
+    VolumeSerialNumber, 
+    MaximumComponentLength, 
+    FileSystemFlags, 
+    '', // nil 
+    0) 
+  then 
+    Result := WordToHex(HiWord(VolumeSerialNumber)) + '-' + WordToHex(LoWord(VolumeSerialNumber)); 
+end; 
+
+procedure StartFirebirdSupperclassic ( APath : string ; AServiceName : string ) ;
+var
+  ExecResult : integer ;
+begin
+     Exec( APath + 'Bin\instsvc.exe', // ExeName
+           Format ( 'start -n %s', [ AServiceName ] ), // parameters
+           APath + 'Bin',           // working dir
+           SW_HIDE,                   // show mode
+           ewWaitUntilTerminated,     // wait mode 
+           ExecResult ) ;             // result
+end ;
+ 
+procedure StopFirebirdSupperclassic ( APath : string ; AServiceName : string ) ;
+var
+  ExecResult : integer ;
+begin
+     Exec( APath + 'Bin\instsvc.exe', // ExeName
+           Format ( 'stop -n %s', [ AServiceName ] ), // parameters
+           APath + 'Bin',           // working dir
+           SW_HIDE,                   // show mode
+           ewWaitUntilTerminated,     // wait mode 
+           ExecResult ) ;             // result
+end ;
+ 
+procedure InstallFirebirdSupperclassic ( APath : string ; AServiceName : string ; APort : integer ; AStartService : boolean ; AOpenPort : boolean  ) ;
+var
+  ExecResult : integer ;
+  CfgString : string ;
+begin
+
+  
+  APath := AddBackslash ( APath ) ;  
+
+  if LoadStringFromFile ( APath + 'firebird.conf', CfgString) then
+   begin
+     StringChangeEx(  CfgString, '#RemoteServicePort = 3050', Format ( 'RemoteServicePort = %d', [ APort ] ), False ) ;
+     SaveStringToFile ( APath + 'firebird.conf', CfgString, False ) ;
+   end ; 
+
+   // Exec filename, parameters, workingdir, show, ewNoWait|ewWaitUntilTerminated|ewWaitUntilIdle, var Result ; 
+
+   Exec( APath + 'Bin\instsvc.exe', // FileName
+         Format ( 'install -auto -classic -multithreaded -z -n %s', [ AServiceName ] ), // parameters
+         APath + 'Bin',           // working dir
+         SW_HIDE,                   // show mode
+         ewWaitUntilTerminated,     // wait mode 
+         ExecResult ) ;             // result
+
+  if AStartService then
+     Exec( APath + 'Bin\instsvc.exe', // ExeName
+           Format ( 'start -n %s', [ AServiceName ] ), // parameters
+           APath + 'Bin',           // working dir
+           SW_HIDE,                   // show mode
+           ewWaitUntilTerminated,     // wait mode 
+           ExecResult ) ;             // result
+
+  if AOpenPort then               
+     FirewallOpenPort ( AServiceName , APort, NET_FW_IP_PROTOCOL_TCP ) ; 
+end ;
+
+procedure UnInstallFirebirdSupperclassic ( APath : string ; AServiceName : string ) ;
+var
+  ExecResult : integer ;
+begin
+
+  APath := AddBackslash ( APath ) ;  
+
+  // Exec filename, parameters, workingdir, show, ewNoWait|ewWaitUntilTerminated|ewWaitUntilIdle, var Result ; 
+
+   StopFirebirdSupperclassic ( APath, AServiceName ) ;
+
+   Exec( APath + 'Bin\instsvc.exe', // FileName
+         Format ( 'remove -z -n %s', [ AServiceName ] ), // parameters
+         APath + 'Bin',           // working dir
+         SW_HIDE,                   // show mode
+         ewWaitUntilTerminated,     // wait mode 
+         ExecResult ) ;             // result
+end ;
+
+
+var  
+  SHAutoCompleteInitialized: Boolean;  
+  SHAutoCompleteSuccessInitialized: Boolean;
+
+function SHAutoComplete(hwndEdit: HWND; dwFlags: dWord): LongInt; 
+external 'SHAutoComplete@shlwapi.dll stdcall delayload' ;
+
+const  
+  SHACF_FILESYSTEM = $1 ;
+
+procedure TryEnableAutoCompleteFileSystem(Wnd: HWND);
+var  
+  ErrorCode : integer ;
+begin  
+   if not SHAutoCompleteInitialized then 
+    begin    
+     SHAutoCompleteSuccessInitialized := LoadDLL( AddBackslash(GetSystemDir) + 'shlwapi.dll', ErrorCode ) <> 0 ;
+     SHAutoCompleteInitialized := True;  
+   end;  
+
+   if SHAutoCompleteSuccessInitialized then    
+     SHAutoComplete(Wnd, SHACF_FILESYSTEM);
+end;
+
+procedure TaskKill(FileName: String);
+var
+  ResultCode: Integer;
+begin
+    Exec(ExpandConstant('taskkill.exe'), '/f /im ' + '"' + FileName + '"', '', SW_HIDE,
+     ewWaitUntilTerminated, ResultCode);
+end;
+
+
+(* MySQL Sample
+;[Files]
+;Source: "J:\mysql-5.5.11-win32.msi"; DestDir: "{tmp}"; Flags: nocompression dontcopy
+
+;[Run]
+;Filename: "{reg:HKLM\SOFTWARE\MySQL AB\MySQL Server 5.5,Location}\bin\mysqld.exe"; 
+;  Parameters: "--install"; WorkingDir: "{reg:HKLM\SOFTWARE\MySQL AB\MySQL Server 5.5,Location}\bin"; 
+;  StatusMsg: "Sto installando il Servizio MySQL"; 
+;  Description: "Installing MySQL Service"; 
+;  Flags: runhidden; Check: MySQL_Is
+
+function MySQL_Is(): Boolean;
+var
+iResultCode: Integer;
+begin
+  Result := true;
+  if (not RegKeyExists(HKLM, 'SOFTWARE\MySQL AB\MySQL Server 5.5')) or 
+   (not FileExists(ExpandConstant('{reg:HKLM\SOFTWARE\MySQL AB\MySQL Server 5.5,Location}\bin\mysql.exe'))) then 
+   begin
+     ExtractTemporaryFile('mysql-5.5.11-win32.msi');
+     Exec('msiexec.exe', '/i mysql-5.5.11-win32.msi /qn INSTALLDIR="C:\mysql"', 
+      ExpandConstant('{tmp}'), SW_HIDE, ewWaitUntilTerminated, iResultCode);
+         if not FileExists(ExpandConstant('{reg:HKLM\SOFTWARE\MySQL AB\MySQL Server 5.5,Location}\bin\mysql.exe')) then 
+		 begin
+            MsgBox('Something went wrong! Installation should be terminated', 
+              mbInformation, MB_OK);
+            Result := false;
+         end;
+  end;
+end;
+*)

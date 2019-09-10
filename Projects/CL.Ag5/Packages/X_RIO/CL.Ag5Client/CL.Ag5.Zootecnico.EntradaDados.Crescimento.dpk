@@ -1,0 +1,45 @@
+package CL.Ag5.Zootecnico.EntradaDados.Crescimento;
+
+{$R *.res}
+{$R *.dres}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Zootecnico,
+  CL.Ag5.Zootecnico.EntradaDados;
+
+contains
+  UfrmZoo_DesktopCrescimento in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UfrmZoo_DesktopCrescimento.pas' {frmZoo_DesktopCrescimento: TTcForm},
+  UZoo_CrescimentoPesoAlturaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UZoo_CrescimentoPesoAlturaDatamodule.pas' {Zoo_CrescimentoPesoAlturaDatamodule: TDataModule},
+  UZoo_CrescimentoPesoAlturaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UZoo_CrescimentoPesoAlturaWizard.pas' {Zoo_CrescimentoPesoAlturaWizard},
+  UZoo_CrescimentoDesmameDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UZoo_CrescimentoDesmameDatamodule.pas' {Zoo_CrescimentoDesmameDatamodule: TDataModule},
+  UZoo_CrescimentoDesmameWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UZoo_CrescimentoDesmameWizard.pas' {Zoo_CrescimentoDesmameWizard},
+  UZoo_ImportaPesoAlturaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\EntradaDados\Crescimento\UZoo_ImportaPesoAlturaWizard.pas' {TZoo_ImportaPesoAlturaWizard} ;
+
+end.

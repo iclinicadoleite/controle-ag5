@@ -1,0 +1,49 @@
+package CL.Ag5.AppDesktop;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  fmx,
+  FMXContainer_Runtime_X10RIO,
+  Tc.VCL,
+  Tc.VCL.Ctrls.Edits,
+  CL.Ag5_,
+  CL.Ag5.ModulesDesktop,
+  CL.Ag5.Svc.NSMsgs,
+  vclwinx;
+
+contains
+  ModulesDashboard in '..\..\..\Source\_CommonSources\ModulesDashboard.pas' {ModulesDashboard},
+  UDashboard in '..\..\..\Source\CL.Ag5Client\Dash\UDashboard.pas' {Dashboard},
+  UDashMenu in '..\..\..\Source\CL.Ag5Client\Dash\UDashMenu.pas' {DashMenu},
+  UUpdateAppForm in '..\..\..\Source\_CommonSources\UUpdateAppForm.pas' {UpdateAppForm};
+
+end.
+
+

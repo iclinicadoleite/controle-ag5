@@ -1,0 +1,58 @@
+package CL.Ag5.Inicial;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.ModulesDesktop,
+  CL.Ag5.Entidades,
+  Tc.VCLDB;
+
+contains
+  ModuleDesktopInicial in '..\..\..\Source\CL.Ag5Client\Inicial\ModuleDesktopInicial.pas' {InicialDesktop},
+  UfrmCAD_Fazendas in '..\..\..\Source\CL.Ag5Client\Inicial\UfrmCAD_Fazendas.pas' {frmCAD_Fazendas},
+  UdtmCAD_Fazendas in '..\..\..\Source\CL.Ag5Client\Inicial\UdtmCAD_Fazendas.pas' {dtmCAD_Fazendas: TDataModule},
+  UfrmSYS_USERS in '..\..\..\Source\CL.Ag5Client\Inicial\UfrmSYS_USERS.pas' {frmSYS_USERS},
+  UdtmSYS_USERS in '..\..\..\Source\CL.Ag5Client\Inicial\UdtmSYS_USERS.pas' {dtmSYS_USERS},
+  UfrmCAD_Funcionarios in '..\..\..\Source\CL.Ag5Client\Inicial\UfrmCAD_Funcionarios.pas' {frmCAD_Funcionarios},
+  UdtmCAD_Funcionarios in '..\..\..\Source\CL.Ag5Client\Inicial\UdtmCAD_Funcionarios.pas' {dtmCAD_Funcionarios: TDataModule},
+  UfrmSelectFazendasUsuario in '..\..\..\Source\CL.Ag5Client\Inicial\UfrmSelectFazendasUsuario.pas' {frmSelectFazendasUsuario},
+  UdtmSelectFazendasUsuario in '..\..\..\Source\CL.Ag5Client\Inicial\UdtmSelectFazendasUsuario.pas' {dtmSelectFazendasUsuario: TDataModule},
+  UfrmSelectUsuariosFazenda in '..\..\..\Source\CL.Ag5Client\Inicial\UfrmSelectUsuariosFazenda.pas' {frmSelectUsuariosFazenda},
+  UdtmSelectUsuariosFazenda in '..\..\..\Source\CL.Ag5Client\Inicial\UdtmSelectUsuariosFazenda.pas' {dtmSelectUsuariosFazenda: TDataModule},
+  UInicial_BackupRestoreDesktop in '..\..\..\Source\CL.Ag5Client\Inicial\UInicial_BackupRestoreDesktop.pas' {Inicial_BackupRestoreDesktop: TTcForm},
+  USYS_BackupWizard in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_BackupWizard.pas' {SYS_BackupWizard: TTcForm},
+  USYS_RestoreWizard in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_RestoreWizard.pas' {SYS_RestoreWizard: TTcForm},
+  USYS_BackupDatamodule in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_BackupDatamodule.pas' {SYS_BackupDatamodule: TDataModule},
+  USYS_RestoreDatamodule in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_RestoreDatamodule.pas' {SYS_RestoreDatamodule: TDataModule},
+  USYS_ConfigBackupWizard in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_ConfigBackupWizard.pas' {SYS_ConfigBackupWizard: TTcForm},
+  USYS_ConfigBackupDataModule in '..\..\..\Source\CL.Ag5Client\Inicial\USYS_ConfigBackupDataModule.pas' {SYS_ConfigBackupDataModule: TDataModule};
+
+end.

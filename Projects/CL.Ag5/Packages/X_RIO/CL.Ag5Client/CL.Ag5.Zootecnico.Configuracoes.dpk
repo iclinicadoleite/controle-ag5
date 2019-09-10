@@ -1,0 +1,62 @@
+package CL.Ag5.Zootecnico.Configuracoes;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.Zootecnico,
+  Tc.VirtualTrees.Extender;
+
+contains
+  UZoo_CfgParamNovilhasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParamNovilhasDatamodule.pas' {Zoo_CfgParamNovilhasDatamodule: TDataModule},
+  UZoo_CfgParamMatrizesForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParamMatrizesForm.pas' {Zoo_CfgParamMatrizesForm},
+  UZoo_CfgParamNovilhasForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParamNovilhasForm.pas' {Zoo_CfgParamNovilhasForm},
+  UZoo_CfgParamMatrizesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParamMatrizesDatamodule.pas' {Zoo_CfgParamMatrizesDatamodule: TDataModule},
+  UZoo_CfgCategoriasForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgCategoriasForm.pas' {Zoo_CfgCategoriasForm},
+  UZoo_CfgCategoriasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgCategoriasDatamodule.pas' {Zoo_CfgCategoriasDatamodule: TDataModule},
+  UZoo_CfgDiagnosticosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgDiagnosticosDatamodule.pas' {Zoo_CfgDiagnosticosDatamodule: TDataModule},
+  UZoo_CfgDiagnosticosForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgDiagnosticosForm.pas' {Zoo_CfgDiagnosticosForm},
+  UZoo_AutomacaoExames in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_AutomacaoExames.pas' {Zoo_AutomacaoExamesWizard},
+  UZoo_AutomacaoExamesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_AutomacaoExamesDatamodule.pas' {Zoo_AutomacaoExamesDatamodule: TDataModule},
+  UZoo_AtribuicaoAutomaticaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_AtribuicaoAutomaticaDatamodule.pas' {Zoo_AtribuicaoAutomaticaDatamodule: T_dtmBASE},
+  UZoo_AtribuicaoAutomaticaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_AtribuicaoAutomaticaWizard.pas' {Zoo_AtribuicaoAutomaticaWizard: TTcForm},
+  UZoo_CfgProtocolosForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgProtocolosForm.pas' {Zoo_CfgProtocolosForm},
+  UZoo_CfgProtocolosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgProtocolosDatamodule.pas' {Zoo_CfgProtocolosDatamodule: TDataModule},
+  UZoo_CfgTarefasForm2 in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgTarefasForm2.pas' {Zoo_CfgTarefasForm},
+  UZoo_CfgTarefasDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgTarefasDatamodule2.pas' {Zoo_CfgTarefasDatamodule: TDataModule},
+  UZoo_CfgExamesForm in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgExamesForm.pas' {Zoo_CfgExamesForm},
+  UZoo_CfgExamesDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgExamesDatamodule.pas' {Zoo_CfgExamesDatamodule: TDataModule},
+  UZoo_CfgImportExportProtocolosWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgImportExportProtocolosWizard.pas' {Zoo_CfgImportExportProtocolosWizard},
+  UZoo_CfgImportExportProtocolosDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgImportExportProtocolosDatamodule.pas' {Zoo_CfgImportExportProtocolosDatamodule: TDataModule},
+  UZoo_CfgParametrosFazendaWizard in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParametrosFazendaWizard.pas' {Zoo_CfgParametrosFazendaWizard},
+  UZoo_CfgParametrosFazendaDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgParametrosFazendaDatamodule.pas' {Zoo_CfgParametrosFazendaDatamodule: T_dtmBASE},
+  UZoo_CfgProtocolosForm2 in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgProtocolosForm2.pas' {Zoo_CfgProtocolosForm2},
+  UZoo_CfgProtocolosDatamodule2 in '..\..\..\Source\CL.Ag5Client\Zoo\Cfg\UZoo_CfgProtocolosDatamodule2.pas' {Zoo_CfgProtocolosDatamodule2: TDataModule};
+
+end.

@@ -1,0 +1,144 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0B78081A-2E74-4E48-A677-084694CAF84A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\TcDevPck\DelphiC++\TcPcks\Framework\Packages\X_RIO\MPCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Admin\CL.Ag5.Svc.NSMsgs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5Admin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Desktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.DB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Zootecnico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Financeiro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5AdminServer\CL.Ag5AdminServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CL.Ag5\Packages\X_RIO\CL.Ag5Server\CL.Ag5Server.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MPCore">
+        <MSBuild Projects="C:\TcDevPck\DelphiC++\TcPcks\Framework\Packages\X_RIO\MPCore.dproj"/>
+    </Target>
+    <Target Name="MPCore:Clean">
+        <MSBuild Projects="C:\TcDevPck\DelphiC++\TcPcks\Framework\Packages\X_RIO\MPCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MPCore:Make">
+        <MSBuild Projects="C:\TcDevPck\DelphiC++\TcPcks\Framework\Packages\X_RIO\MPCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Admin\CL.Ag5.Svc.NSMsgs.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Admin\CL.Ag5.Svc.NSMsgs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Svc_NSMsgs:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Admin\CL.Ag5.Svc.NSMsgs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5Admin">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5Admin.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5Admin:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5Admin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5Admin:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5Admin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Desktop">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Desktop.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Desktop:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Desktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Desktop:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Desktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_DB">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.DB.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_DB:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.DB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_DB:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.DB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Zootecnico">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Zootecnico.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Zootecnico:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Zootecnico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Zootecnico:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Zootecnico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Financeiro">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Financeiro.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Financeiro:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Financeiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin_Financeiro:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.Financeiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5_Admin:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\Cl.Ag5Admin\CL.Ag5.Admin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5AdminServer">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5AdminServer\CL.Ag5AdminServer.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5AdminServer:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5AdminServer\CL.Ag5AdminServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5AdminServer:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5AdminServer\CL.Ag5AdminServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CL_Ag5Server">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Server\CL.Ag5Server.dproj"/>
+    </Target>
+    <Target Name="CL_Ag5Server:Clean">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Server\CL.Ag5Server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CL_Ag5Server:Make">
+        <MSBuild Projects="CL.Ag5\Packages\X_RIO\CL.Ag5Server\CL.Ag5Server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MPCore;CL_Ag5_Svc_NSMsgs;CL_Ag5Admin;CL_Ag5_Desktop;CL_Ag5_Admin_DB;CL_Ag5_Admin_Zootecnico;CL_Ag5_Admin_Financeiro;CL_Ag5_Admin;CL_Ag5AdminServer;CL_Ag5Server"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MPCore:Clean;CL_Ag5_Svc_NSMsgs:Clean;CL_Ag5Admin:Clean;CL_Ag5_Desktop:Clean;CL_Ag5_Admin_DB:Clean;CL_Ag5_Admin_Zootecnico:Clean;CL_Ag5_Admin_Financeiro:Clean;CL_Ag5_Admin:Clean;CL_Ag5AdminServer:Clean;CL_Ag5Server:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MPCore:Make;CL_Ag5_Svc_NSMsgs:Make;CL_Ag5Admin:Make;CL_Ag5_Desktop:Make;CL_Ag5_Admin_DB:Make;CL_Ag5_Admin_Zootecnico:Make;CL_Ag5_Admin_Financeiro:Make;CL_Ag5_Admin:Make;CL_Ag5AdminServer:Make;CL_Ag5Server:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,72 @@
+package CL.Ag5.Financeiro.Relatorios ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.Svc.Estoque.Produtos,
+  CL.Ag5.Financeiro.Utils,
+  vclwinx;
+
+contains
+  FIN_FluxoCaixaTypes in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\FIN_FluxoCaixaTypes.pas',
+  UdtmFIN_FluxoCaixa2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UdtmFIN_FluxoCaixa2.pas' {dtmFIN_FluxoCaixa2: TDataModule},
+  UfwzFIN_FluxoCaixa2 in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UfwzFIN_FluxoCaixa2.pas' {fwzFIN_FluxoCaixa2: TTcForm},
+  UFin_FluxoCaixaAnaliticoReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFin_FluxoCaixaAnaliticoReport.pas' {FIN_FluxoCaixaAnaliticoReport: TTcForm},
+  UFin_FluxoCaixaSinteticoReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFin_FluxoCaixaSinteticoReport.pas' {FIN_FluxoCaixaSinteticoReport: TTcForm},
+  UFIN_FluxoCaixaRealizadoDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_FluxoCaixaRealizadoDatamodule.pas' {FIN_FluxoCaixaRealizadoDatamodule: TDataModule},
+  UFIN_FluxoCaixaRealizadoWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_FluxoCaixaRealizadoWizard.pas' {FIN_FluxoCaixaRealizadoWizard},
+  UFIN_APagarReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_APagarReport.pas' {FIN_APagarReport: TTcForm},
+  UFIN_AReceberReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_AReceberReport.pas' {FIN_AReceberReport: TTcForm},
+  UFIN_ContasAPagarReportWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ContasAPagarReportWizard.pas' {FIN_ContasAPagarReportWizard: TTcForm},
+  UFIN_ContasAReceberReportWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ContasAReceberReportWizard.pas' {FIN_ContasAReceberReportWizard: TTcForm},
+  UfqrFIN_APagarDataBase in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UfqrFIN_APagarDataBase.pas' {fqrFIN_APagarDataBase: TTcForm},
+  UfqrFIN_APagarPlanoContas in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UfqrFIN_APagarPlanoContas.pas' {fqrFIN_APagarPlanoContas: TTcForm},
+  UFIN_ChequesReport in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ChequesReport.pas' {FIN_ChequesReport: TTcForm},
+  UFIN_ChequesReportDatamodule in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ChequesReportDatamodule.pas' {FIN_ChequesReportDatamodule: T_dtmBASE},
+  UFIN_ChequesReportWizard in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ChequesReportWizard.pas' {FIN_ChequesReportWizard: TTcForm},
+  UFIN_ContasAPagarReportDataModule in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ContasAPagarReportDataModule.pas' {FIN_ContasAPagarReportDataModule: TDataModule},
+  UFIN_ContasAReceberReportDataModule in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN_ContasAReceberReportDataModule.pas' {FIN_ContasAReceberReportDataModule: TDataModule},
+
+  UFIN.DespesasReceitasRealizadas.Data in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DespesasReceitasRealizadas.Data.pas' {dtmFin_DespesasReceitasRealizadas: T_dtmBASE},
+  UFIN.DespesasReceitasRealizadas.Rpt in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DespesasReceitasRealizadas.Rpt.pas' {FIN_DespesasReceitasReport: TTcForm},
+  UFIN.DespesasReceitasRealizadas.UI in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DespesasReceitasRealizadas.UI.pas' {frmFIN_DespesasReceitas: TTcForm},
+
+  UFIN.PagamentosRecebimentos.Rpt in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.PagamentosRecebimentos.Rpt.pas' {rptFIN_PagamentosRecebimentos},
+  UFIN.PagamentosRecebimentos.Data in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.PagamentosRecebimentos.Data.pas' {dtmFIN_PagamentosRecebimentos: T_dtmBASE},
+  UFIN.PagamentosRecebimentos.UI in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.PagamentosRecebimentos.UI.pas' {frmFIN_PagamentosRecebimentos: TTcForm},
+
+  UFIN.DRE.Common in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Common.pas',
+  UFIN.DRE.Data in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Data.pas' {dtmFIN_DRE: T_dtmBASE},
+  UFIN.DRE.Rpt in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Rpt.pas' {rptFIN_DRE: TTcForm},
+  UFIN.DRE.UI in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.UI.pas' {frmFIN_DRE: TTcForm},
+  UFIN.DRE.Caixa in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Caixa.pas',
+  UFIN.DRE.Competencia in '..\..\..\Source\CL.Ag5Client\Financeiro\Relatorios\UFIN.DRE.Competencia.pas' ;
+
+end.

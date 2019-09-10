@@ -1,0 +1,79 @@
+package CL.Ag5.UI ;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Tc.JVCL.Extender,
+  CL.Ag5.Svc.NSMsgs,
+  CL.Ag5.Svc.NewFastRegister,
+  vclx,
+  vcl,
+  vclimg,
+  DbxCommonDriver,
+  dbrtl,
+  vcldb,
+  VclSmp,
+  dsnap,
+  dbexpress,
+  CL.Ag5.DB,
+  Tc.VCL.Report,
+  Tc.VCL,
+  Tc.VCL.Ctrls.Edits,
+  CL.Ag5.Utils.Excel,
+  JvDotNetCtrls,
+  JvXPCtrls;
+
+contains
+  GBlur2 in '..\..\..\Source\_CommonSources\GBlur2.pas',
+  ShadowBox in '..\..\..\Source\_CommonSources\ShadowBox.pas',
+  Wrappers in '..\..\..\Source\_CommonSources\Wrappers.pas',
+  SysTypes in '..\..\..\Source\_CommonSources\UI\SysTypes.pas',
+  SysExceptions in '..\..\..\Source\_CommonSources\UI\SysExceptions.pas',
+  SysCommonResources in '..\..\..\Source\_CommonSources\UI\SysCommonResources.pas' {CommonResources: TDataModule},
+  SysFormDialog in '..\..\..\Source\_CommonSources\UI\SysFormDialog.pas' {_FormDialog: TTcForm},
+  SysFormDialogError in '..\..\..\Source\_CommonSources\UI\SysFormDialogError.pas' {_FormDialogError: TTcForm},
+  SysReportTypes in '..\..\..\Source\_CommonSources\UI\SysReportTypes.pas',
+  SysFormWizard in '..\..\..\Source\_CommonSources\UI\SysFormWizard.pas' {_FormWizard: TTcForm},
+  SysWizardReportDialog in '..\..\..\Source\_CommonSources\UI\SysWizardReportDialog.pas' {_WizardReportDialog: TTcForm},
+  SysFormSearch in '..\..\..\Source\_CommonSources\UI\SysFormSearch.pas' {frmCustomSearch},
+  SysPrintGridDialog in '..\..\..\Source\_CommonSources\UI\SysPrintGridDialog.pas' {PrintGridDialog: TTcForm},
+  SysQueryProcessIgnoreCancel in '..\..\..\Source\_CommonSources\UI\SysQueryProcessIgnoreCancel.pas' {QueryProcessIgnoreCancel: TTcForm},
+  SysQuerySaveIgnoreCancel in '..\..\..\Source\_CommonSources\UI\SysQuerySaveIgnoreCancel.pas' {QuerySaveIgnoreCancel: TTcForm},
+  DBForm in '..\..\..\Source\_CommonSources\UI\DBForm.pas' {_DBForm: TTcForm},
+  SysFormEditaLista in '..\..\..\Source\_CommonSources\UI\SysFormEditaLista.pas' {_FormEditaLista: TTcForm},
+  SysFormListaFicha in '..\..\..\Source\_CommonSources\UI\SysFormListaFicha.pas' {_FormListaFicha: TTcForm},
+  SysFormReportDialog in '..\..\..\Source\_CommonSources\UI\SysFormReportDialog.pas' {_FormReportDialog: TTcForm},
+  DBResourcesIntf in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\DBResourcesIntf.pas',
+  UdtmSYS_BASE in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\UdtmSYS_BASE.pas' {_dtmBASE: TDataModule},
+  UdtmSYS_BASEDBListEdit in 'C:\TcDevPck\DelphiC++\TcPcks\Framework\Source\Core\UdtmSYS_BASEDBListEdit.pas' {_dtmBASEDBListEdit: T_dtmBASE};
+
+end.
+
+end.
+

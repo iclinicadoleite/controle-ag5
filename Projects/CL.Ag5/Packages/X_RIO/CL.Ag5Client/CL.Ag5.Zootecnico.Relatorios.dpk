@@ -1,0 +1,58 @@
+package CL.Ag5.Zootecnico.Relatorios;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE _2010}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  CL.Ag5.DB,
+  CL.Ag5.Zootecnico.BancoDados,
+  vclwinx;
+
+contains
+  Tc.VCL.SysCore.MIB in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\Tc.VCL.SysCore.MIB.pas',
+  UZoo_RelatorioPersonalizado in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioPersonalizado.pas' {Zoo_RelatorioPersonalizado: TTcForm},
+  UZoo_RelatorioRastreamento in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioRastreamento.pas' {Zoo_RelatorioRastreamento: TTcForm},
+  UZoo_RelatorioInventario in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioInventario.pas' {Zoo_RelatorioInventario: TTcForm},
+  UZoo_RelatorioInventarioDetail in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioInventarioDetail.pas' {Zoo_RelatorioInventarioDetail},
+  UZoo_RelatorioNascimentos in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioNascimentos.pas' {Zoo_RelatorioNascimentos: TTcForm},
+  UZoo_RelatorioCoberturas in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioCoberturas.pas' {Zoo_RelatorioCoberturas: TTcForm},
+  UZoo_RelatorioSISBOV in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioSISBOV.pas' {Zoo_RelatorioSISBOV: TTcForm},
+  UZoo_RelatorioSISBOVDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioSISBOVDatamodule.pas' {Zoo_RelatorioSISBOVDatamodule: T_dtmBASE},
+  UZoo_RelatorioPersonalizadoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioPersonalizadoDatamodule.pas' {Zoo_RelatorioPersonalizadoDatamodule: TDataModule},
+  UZoo_RelatorioRastreamentoFormDialog in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioRastreamentoFormDialog.pas' {Zoo_RelatorioRastreamentoFormDialog: TTcForm},
+  UZoo_RelatorioTaxaConcepcao in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioTaxaConcepcao.pas' {Zoo_RelatorioTaxaConcepcao: TTcForm},
+  UZoo_RelatorioTaxaConcepcaoDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioTaxaConcepcaoDatamodule.pas' {Zoo_RelatorioTaxaConcepcaoDataModule: TDataModule},
+  UZoo_RelatorioEventosReprodutivos in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioEventosReprodutivos.pas' {Zoo_RelatorioEventosReprodutivos: TTcForm},
+  UZoo_RelatorioEventosReprodutivosDataModule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioEventosReprodutivosDataModule.pas' {Zoo_RelatorioEventosReprodutivosDataModule: T_dtmBASE},
+  UZoo_RelatorioAvaliacaoBezerrasForm in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioAvaliacaoBezerrasForm.pas' {ZooRelatotioAvaliacaoBezerras_frm: TTcForm},
+  UZoo_RelatorioAvaliacaoBezerrasDatamodule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioAvaliacaoBezerrasDatamodule.pas' {ZooRelatotioAvaliacaoBezerras_dtm: TDataModule},
+  UZoo_RelatorioProtocolosReprodutivosIATFDataModule in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioProtocolosReprodutivosIATFDataModule.pas' {Zoo_RelatorioProtocolosReprodutivosIATFDataModule: TDataModule},
+  UZoo_RelatorioProtocolosReprodutivosIATF in '..\..\..\Source\CL.Ag5Client\Zoo\Relatorios\UZoo_RelatorioProtocolosReprodutivosIATF.pas' {Zoo_RelatorioProtocolosReprodutivosIATF: TTcForm};
+
+end.
